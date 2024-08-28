@@ -1,0 +1,481 @@
+{
+  "tool": "[red1]MCP[bold white]Tool[/bold white][/red1]",
+  "description": "یک ابزار تست نفوذ پیشرفته برای ماینکرفت",
+  "ctrlC": "\n%spaces%%prefix% [red1]CtrlC [bright_white]گرفته شد. توقف فرآیند در حال اجرا...[/bright_white]",
+  "exit": "\n\n%spaces%%prefix% [bright_white]خروج...[/bright_white]",
+  "invalidCommand": "\n%spaces%%prefix% [red1]دستور نامعتبر است. [bright_white]برای مشاهده دستورات موجود، [green1]help [bright_white]را تایپ کنید.[/bright_white]",
+  "checkingProxies": "%spaces%%prefix% [bright_white]در حال بررسی سرورهای پراکسی...",
+  "stoppingProxiesSearch": "\n%spaces%%prefix% [bright_white]توقف جستجوی سرورهای پراکسی",
+  "auth": {
+    "title": "احراز هویت",
+    "welcome": "[bright_white]به [red1]MCP[bright_white]Tool[bright_white] خوش آمدید\nابزار نهایی تست نفوذ برای ماینکرفت\nحساب کاربری ندارید؟ از اینجا خریداری کنید: [underline][bold]https://buy.mcptool.net[/bold][/underline]\n",
+    "loginMessage": "%prefix% [bright_white]لطفاً [green1]نام کاربری[/green1] و [green1]رمز عبور[/green1] خود را وارد کنید تا وارد شوید\n",
+    "username": ":gem: [bright_white]نام کاربری",
+    "password": ":key: [bright_white]رمز عبور",
+    "loggingIn": "\n%prefix% [bright_white]در حال ورود...[/bright_white]",
+    "invalidCredentials": "\n%prefix% [red1]اعتبارنامه‌های نامعتبر.[/red1][bright_white] اگر رمز عبور خود را فراموش کرده‌اید، می‌توانید آن را در سرور دیسکورد بازنشانی کنید.",
+    "unauthorizedDevice": "\n%prefix% [red1]دستگاه غیرمجاز.[/red1][bright_white] شما به حداکثر تعداد دستگاه‌های متصل به حساب خود رسیده‌اید. می‌توانید با باز کردن یک تیکت در سرور دیسکورد، یک دستگاه را حذف کنید.",
+    "success": "\n%prefix% [green1]ورود موفقیت‌آمیز![/green1]\n",
+    "apiOffline": "\n%prefix% [red1]API در حال حاضر آفلاین است. لطفاً بعداً دوباره امتحان کنید.[/red1]"
+  },
+  "commands": {
+    "help": {
+      "table": {
+        "commandName": "نام فرمان",
+        "args": "آرگومان‌ها",
+        "description": "توضیحات",
+        "available": "موجود"
+      }
+    },
+    "server": {
+      "args": ["<سرور>"],
+      "description": "دریافت اطلاعات سرور داده شده (motd، نسخه، بازیکنان آنلاین، و غیره)",
+      "messages": {
+        "gettingServerData": "\n%spaces%%prefix% [bright_white]در حال دریافت داده‌ها از سرور [green1]%server%[/green1]...",
+        "sendingBot": "\n%spaces%%prefix% [bright_white]ارسال بات به سرور [green1]%server%[/green1]..."
+      }
+    },
+    "uuid": {
+      "args": ["<uuid/نام کاربری>"],
+      "description": "دریافت UUID بازیکن داده شده یا نام کاربری مرتبط با UUID داده شده",
+      "messages": {
+        "gettingUUID": "\n%spaces%%prefix% [bright_white]در حال دریافت UUID برای نام کاربری داده شده [bright_black]([green1]%username%[bright_black])[/bright_black]",
+        "gettingUsername": "\n%spaces%%prefix% [bright_white]در حال دریافت نام کاربری برای UUID داده شده [bright_black]([green1]%uuid%[bright_black])[/bright_black]",
+        "uuid": "%spaces%[red1][[bright_red]یو یو[bright_white]آی دی[red1]] %uuid% [bright_black]([bright_cyan]%uuidVariant%[bright_black])[/bright_black]",
+        "username": "\n%spaces%%prefix% [bright_white]نام کاربری برای UUID داده شده: [green1]%username%[/green1]",
+        "usernameNotFound": "\n%spaces%%prefix% [bright_white]نام کاربری برای UUID داده شده یافت نشد. ممکن است نادرست باشد.[/bright_white]"
+      }
+    },
+    "ipinfo": {
+      "args": ["<آی‌پی>"],
+      "description": "دریافت اطلاعات درباره آدرس آی‌پی داده شده",
+      "messages": {
+        "gettingIpData": "\n%spaces%%prefix% [bright_white]در حال دریافت داده‌ها برای آی‌پی داده شده...[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]امکان دریافت داده‌ها برای آی‌پی داده شده وجود ندارد. ممکن است نادرست باشد.[/bright_white]",
+        "continent": "\n%spaces%[red1][[bright_red]قاره[bright_white][red1]] [bright_white]%continent% [bright_black]([bright_cyan]+%continentCode%[bright_black])[/bright_black]",
+        "country": "%spaces%[red1][[bright_red]کشور[bright_white][red1]] [bright_white]%country% [bright_black]([bright_cyan]+%countryCode%[bright_black])[/bright_black]",
+        "region": "%spaces%[red1][[bright_red]منطقه[bright_white][red1]] [bright_white]%region% [bright_black]([bright_cyan]+%regionName%[bright_black])[/bright_black]",
+        "city": "%spaces%[red1][[bright_red]شهر[bright_white][red1]] [bright_white]%city%[/bright_white]",
+        "timezone": "%spaces%[red1][[bright_red]منطقه زمانی[bright_white][red1]] [bright_white]%timezone%[/bright_white]",
+        "isp": "%spaces%[red1][[bright_red]آی‌اس‌پی[red1]] [bright_white]%isp%[/bright_white]",
+        "organization": "%spaces%[red1][[bright_red]سازمان[bright_white][red1]] [bright_white]%organization%[/bright_white]"
+      }
+    },
+    "iphistory": {
+      "args": ["<دامنه>"],
+      "description": "دریافت تاریخچه آی‌پی دامنه داده شده",
+      "messages": {
+        "gettingIpHistory": "\n%spaces%%prefix% [bright_white]در حال دریافت تاریخچه آی‌پی برای دامنه داده شده...[/bright_white]",
+        "noIpHistory": "\n%spaces%%prefix% [bright_white]تاریخچه آی‌پی برای دامنه داده شده یافت نشد.[/bright_white]",
+        "ipHistoryFound": "\n%spaces%%prefix% [bright_white]تاریخچه آی‌پی یافت شد:[/bright_white]",
+        "ipHistoryEnd": "%spaces%%prefix% [green1]%ips% [bright_white]آدرس آی‌پی یافت شد که با تاریخچه [green1]%domain%[/bright_white] مرتبط است"
+      }
+    },
+    "dnsrecords": {
+      "args": ["<دامنه>"],
+      "description": "دریافت رکوردهای DNS دامنه داده شده",
+      "messages": {
+        "lookingUpDnsRecords": "\n%spaces%%prefix% [bright_white]در حال جستجوی رکوردهای DNS برای دامنه داده شده [bright_black]([green1]%domain%[bright_black])[/bright_black]...",
+        "noDnsRecords": "\n%spaces%%prefix% [bright_white]هیچ رکورد DNS برای دامنه داده شده یافت نشد.[/bright_white]",
+        "dnsRecordsFound": "\n%spaces%%prefix% [bright_white]رکوردهای DNS یافت شد:[/bright_white]",
+        "dnsRecordsEnd": "%spaces%%prefix% [green1]%records% [bright_white]رکورد DNS یافت شد برای [green1]%domain%[/bright_white]"
+      }
+    },
+    "checker": {
+      "args": ["<فایل>"],
+      "description": "بررسی وضعیت سرورهای ماینکرفت از لیست سرورها در فایل",
+      "messages": {
+        "checkingServers": "\n%spaces%%prefix% [bright_white]در حال بررسی سرورها در فایل داده شده...[/bright_white]",
+        "noServersFound": "\n%spaces%%prefix% [bright_white]هیچ سروری در فایل داده شده یافت نشد.[/bright_white]",
+        "serversFound": "\n%spaces%%prefix% [green1]%servers% [bright_white]سرور در فایل داده شده [green1]%file%[bright_white] یافت شد.[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]توقف بررسی سرورها...[/bright_white]"
+      }
+    },
+    "subdomains": {
+      "args": ["<دامنه>", "{wordlist}"],
+      "description": "دریافت زیر دامنه‌های دامنه داده شده با استفاده از یک لیست واژگان",
+      "messages": {
+        "wordlist": "\n%spaces%%prefix% [bright_white]استفاده از لیست واژگان [bright_black]([green1]%wordlist%[bright_black])[/bright_black] برای [bright_white][green1]%subdomains% [bright_white]زیر دامنه‌ها...[/bright_white]",
+        "gettingSubdomains": "\n%spaces%%prefix% [bright_white]در حال دریافت زیر دامنه‌ها برای دامنه داده شده [bright_black]([green1]%domain%[bright_black])[/bright_white]...[/bright_white]\n",
+        "noSubdomains": "\n%spaces%%prefix% [bright_white]هیچ زیر دامنه‌ای برای دامنه داده شده [bright_black]([green1]%domain%[bright_black]) [bright_white]با استفاده از لیست واژگان داده شده یافت نشد.[/bright_white]",
+        "subdomainFound": "%spaces%%prefix% [bright_white]زیر دامنه‌ها یافت شد: [green1]%subdomain% [bright_black]([green1]%ip%[bright_black])[/bright_black]",
+        "subdomainsEnd": "\n%spaces%%prefix% [green1]%subdomains% [bright_white]زیر دامنه‌ها یافت شد برای [green1]%domain%[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]توقف جستجوی زیر دامنه‌ها...[/bright_white]"
+      }
+    },
+    "seeker": {
+      "args": ["<توکن/سرورها>"],
+      "description": "جستجوی سرورهای ماینکرفت با استفاده از API جستجوگر",
+      "messages": {
+        "token": {
+          "startingServer": "\n%spaces%%prefix% [bright_white]راه‌اندازی سرور HTTP در [green1]http://localhost:%port%[/green1]",
+          "openingSeekerDiscordUrl": "\n%spaces%%prefix% [bright_white]باز کردن URL دیسکورد جستجوگر...[/bright_white]",
+          "waitingForToken": "\n%spaces%%prefix% [bright_white]در انتظار توکن...[/bright_white]",
+          "tokenReceived": "\n%spaces%%prefix% [bright_white]توکن دریافت شد![/bright_white]",
+          "note": "\n%spaces%%prefix% [bright_white]توجه: اگر برنامه را تأیید کرده‌اید اما توکن دریافت نکرده‌اید، ابزار را دوباره راه‌اندازی کرده و دستور را دوباره اجرا کنید.[/bright_white]",
+          "invalidToken": "\n%spaces%%prefix% [bright_white]توکن نامعتبر. لطفاً از دستور [green1]seeker token[/green1] برای دریافت توکن جدید استفاده کنید.[/bright_white]"
+        },
+        "servers": {
+          "sendingRequest": "\n%spaces%%prefix% [bright_white]در حال ارسال درخواست به API جستجوگر...[/bright_white]",
+          "gettingServers": "\n%spaces%%prefix% [bright_white]در حال دریافت سرورها از API جستجوگر...[/bright_white]",
+          "filterByData": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس داده‌ها فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByCountryCode": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس کد کشور فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByCountryCodeText": "\n%spaces%%prefix% [bright_white]کد کشور را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً US[/green1])[/bright_black][/bright_white]",
+          "filterByCracked": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس وضعیت کرک شده فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByDescription": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس توضیحات فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByDescriptionText": "\n%spaces%%prefix% [bright_white]توضیحی را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً survival[/green1])[/bright_black][/bright_white]",
+          "filterByOnlyBungeeSpoofable": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید فقط سرورهایی را فیلتر کنید که از طریق BungeeCord قابل بهره‌برداری هستند؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByProtocol": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس پروتکل فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByProtocolText": "\n%spaces%%prefix% [bright_white]پروتکل را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً 47[/green1])[/bright_black][/bright_white]",
+          "filterByOnlinePlayers": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس تعداد بازیکنان آنلاین فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByOnlinePlayersText": "\n%spaces%%prefix% [bright_white]حداقل تعداد بازیکنان آنلاین را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً 5[/green1])[/bright_black][/bright_white]",
+          "serversObtained": "\n%spaces%%prefix% [green1]%servers% [bright_white]سرور از API جستجوگر دریافت شد.[/bright_white]",
+          "gettingData": "\n%spaces%%prefix% [bright_white]در حال دریافت داده‌ها از سرورها...[/bright_white]",
+          "serversFound": "\n%spaces%%prefix% [green1]%servers% [bright_white]سرور در API جستجوگر یافت شد.[/bright_white]",
+          "noServers": "\n%spaces%%prefix% [bright_white]هیچ سروری در API جستجوگر یافت نشد.[/bright_white]",
+          "stopped": "\n%spaces%%prefix% [bright_white]توقف جستجوی سرورها...[/bright_white]"
+        }
+      }
+    },
+    "websearch": {
+      "args": [],
+      "description": "جستجوی سرورهای ماینکرفت در سایت‌های مختلف",
+      "messages": {
+        "filterByData": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس داده‌ها فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByOnlyBotCanJoin": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورهایی را فیلتر کنید که فقط یک بات می‌تواند به آنها متصل شود؟ [bright_black]([red1]سرورهای آفلاین[bright_black]) ([green1]y/n[/green1])[/bright_black]",
+        "filterByDescription": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس توضیحات فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByDescriptionText": "\n%spaces%%prefix% [bright_white]توضیحی را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً survival[/green1])[/bright_black][/bright_white]",
+        "filterByOnlinePlayers": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس تعداد بازیکنان آنلاین فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByOnlinePlayersText": "\n%spaces%%prefix% [bright_white]حداقل تعداد بازیکنان آنلاین را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً 5[/green1])[/bright_black][/bright_white]",
+        "filterByProtocol": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس پروتکل فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByProtocolText": "\n%spaces%%prefix% [bright_white]پروتکل را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً 47[/bright_black])[/bright_white]",
+        "searchingWebsites": "\n%spaces%%prefix% [bright_white]در حال جستجوی سرورها در سایت‌های مختلف...[/bright_white]",
+        "searchingInPage": "\n%spaces%%prefix% [bright_white]در حال جستجو در [green1]%page%[/green1]...[/bright_white]",
+        "filterDataShow": "\n%spaces%%prefix% [bright_white]فیلتر کردن داده‌ها: \n%spaces%  [bright_black]• [bright_white]فقط یک بات می‌تواند متصل شود: [green1]%onlyBotCanJoin%\n%spaces%  [bright_black]• [bright_white]توضیحات: [green1]%description%\n%spaces%  [bright_black]• [bright_white]بازیکنان آنلاین: [green1]%onlinePlayers%\n%spaces%  [bright_black]• [bright_white]پروتکل: [green1]%protocol%[/green1]",
+        "noServersFound": "\n%spaces%%prefix% [bright_white]هیچ سروری در سایت‌ها یافت نشد.[/bright_white]",
+        "serversFound": "\n%spaces%%prefix% [green1]%servers% [bright_white]سرور در سایت‌ها یافت شد.[/bright_white]",
+        "failedToLoadConfigurationFile": "\n%spaces%%prefix% [bright_white]بارگذاری فایل پیکربندی (mcserver-scrapper.json) ناموفق بود.[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]توقف جستجوی وب...[/bright_white]"
+      }
+    },
+    "scan": {
+      "args": ["<آی‌پی/فایل>", "<پورت‌ها>", "<روش>"],
+      "description": "آی‌پی داده شده (یا آی‌پی‌ها از فایل) را در محدوده پورت داده شده با استفاده از nmap، qubo یا masscan اسکن کنید",
+      "messages": {
+        "scanning": "\n%spaces%%prefix% [bright_white]اسکن آی‌پی [green1]%ip%[/green1] در محدوده پورت [green1]%portRange%[/green1] با استفاده از روش [green1]%method%[/green1]...[/bright_white]",
+        "noOpenPorts": "\n%spaces%%prefix% [bright_white]هیچ پورتی باز برای آی‌پی [green1]%ip%[/green1] در محدوده پورت [green1]%portRange%[/green1] یافت نشد.[/bright_white]",
+        "openPortsFound": "\n%spaces%%prefix% [green1]%openPorts% [bright_white]پورت باز برای آی‌پی [green1]%ip%[/green1] در محدوده پورت [green1]%portRange%[/green1] یافت شد.[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]توقف اسکن...[/bright_white]"
+      }
+    },
+    "listening": {
+      "args": ["<سرور>"],
+      "description": "به سرور گوش دهید تا لیست بازیکنان را دریافت کنید",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]در حال بررسی سرور [green1]%server%[/green1]...[/bright_white]",
+        "showPlayersMode": "\n%spaces%%prefix% [bright_white]حالت نمایش اتصالات بازیکنان را انتخاب کنید. [bright_black]([green1]جدول ساده[/green1])[/bright_black]",
+        "invalidShowPlayersMode": "\n%spaces%%prefix% [bright_white]حالت نامعتبر است. حالت نمایش اتصالات بازیکنان را انتخاب کنید. [bright_black]([green1]جدول ساده[/green1])[/bright_black]",
+        "verticalOverflowAsk": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرریز عمودی را فعال کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "waitingPlayers": "\n%spaces%%prefix% [bright_white]در حال گوش دادن به اتصالات بازیکنان به سرور [green1]%server%[/green1]...[/bright_white]",
+        "connected": "%spaces% 🟢 [bright_cyan]%player%[/bright_cyan] [bright_black](%uuid%[bright_black]) [bright_white]به سرور [bright_black]([bright_cyan]%time%[/bright_cyan])[bright_black] متصل شد",
+        "disconnected": "%spaces% 🔴 [bright_cyan]%player%[/bright_cyan] [bright_black](%uuid%[bright_black]) [bright_white]از سرور [bright_black]([bright_cyan]%time%[/bright_cyan])[bright_black] قطع شد",
+        "reconnected": "%spaces% 🟡 [bright_cyan]%player%[/bright_cyan] [bright_black](%uuid%[bright_black]) [bright_white]دوباره به سرور [bright_black]([bright_cyan]%time%[/bright_cyan])[bright_black] متصل شد"
+      }
+    },
+    "proxy": {
+      "args": ["<سرور>", "<حالت>"],
+      "description": "یک پراکسی ایجاد کنید تا اتصالات به سرور را پنهان کنید",
+      "messages": {
+        "configuringProxy": "\n%spaces%%prefix% [bright_white]در حال پیکربندی پراکسی...[/bright_white]",
+        "proxyConfigured": "\n%spaces%%prefix% [bright_white]پراکسی با موفقیت پیکربندی شد.[/bright_white]",
+        "newVelocityVersionAvailable": "\n%spaces%%prefix% [green1]نسخه جدید Velocity موجود است![/green1]",
+        "downloadingJar": "\n%spaces%%prefix% [bright_white]در حال دانلود فایل جار پراکسی از سایت Velocity [bright_black]([bright_cyan]%jarName%[/bright_cyan])[/bright_white]",
+        "jarDownloaded": "\n%spaces%%prefix% [bright_white]فایل جار پراکسی با موفقیت دانلود شد.[/bright_white]",
+        "replacingJar": "\n%spaces%%prefix% [bright_white]در حال جایگزینی فایل جار پراکسی...[/bright_white]",
+        "jarReplaced": "\n%spaces%%prefix% [bright_white]فایل جار پراکسی با موفقیت جایگزین شد.[/bright_white]",
+        "startingProxy": "\n%spaces%%prefix% [bright_white]در حال راه‌اندازی پراکسی...[/bright_white]",
+        "proxyStarted": "\n%spaces%%prefix% [bright_white]پراکسی با موفقیت در [green1]%proxyIp%:%proxyPort%[/green1] راه‌اندازی شد.[/bright_white]"
+      }
+    },
+    "fakeproxy": {
+      "args": ["<سرور>", "<حالت>"],
+      "description": "یک پراکسی جعلی ایجاد کنید تا داده‌های بازیکن را پنهان کنید",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]در حال بررسی سرور [green1]%server%[/green1]...[/bright_white]",
+        "updateMode": "\n%spaces%%prefix% [bright_white]حالت به‌روزرسانی داده‌های پراکسی جعلی را انتخاب کنید.\n\n%spaces% [green1]1)[/green1] [bright_white]پراکسی داده‌ها را از سرور backend برای هر پینگ دریافتی از سرور دریافت کرده و استفاده می‌کند.\n\n%spaces% [green1]2)[/green1] [bright_white]MCPTool داده‌ها را از سرور backend هر ۳ ثانیه یکبار دریافت کرده و در پراکسی جعلی اعمال می‌کند.",
+        "updateModeInput": "\n%spaces%%prefix% [bright_white]حالت به‌روزرسانی پراکسی جعلی را انتخاب کنید. [bright_black]([green1]1 2[/green1])[/bright_black]",
+        "protocolMode": "\n%spaces%%prefix% [bright_white]حالت مدیریت پروتکل را در پراکسی جعلی انتخاب کنید. \n\n%spaces% [green1]1)[/green1] [bright_white]مانند سرور backend رفتار می‌کند. [bright_black]([/bright_black]فقط به نسخه‌های خاص اجازه می‌دهد به پراکسی متصل شوند[bright_black]) \n\n%spaces% [green1]2)[/green1] [bright_white]همیشه با کلاینت مطابقت دارد، اجازه می‌دهد هر نسخه‌ای وارد پراکسی شود. [bright_black]([/bright_black]این به این معنی نیست که همه نسخه‌ها می‌توانند به سرور backend متصل شوند، فقط آنهایی که مجاز هستند[bright_black])[/bright_black]",
+        "protocolModeInput": "\n%spaces%%prefix% [bright_white]حالت پروتکل را برای پراکسی جعلی انتخاب کنید. [bright_black]([green1]1 2[/green1])[/bright_black]",
+        "pinggyIO": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید یک آی‌پی عمومی و پورت برای پراکسی جعلی با استفاده از سرویس pinggy.io دریافت کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "pinggyIOCommand": "\n%spaces%%prefix% [bright_white]از این دستور برای دریافت دامنه و پورت از سرویس pinggy.io استفاده کنید: [green1]ssh -p 443 -R0:localhost:%port% tcp@a.pinggy.io[/green1].",
+        "pinggyIODomain": "\n%spaces%%prefix% [bright_white]دامنه سرویس pinggy.io را وارد کنید[/bright_white]",
+        "gettingPinggyIP": "\n%spaces%%prefix% [bright_white]در حال دریافت آی‌پی عمومی و پورت برای پراکسی جعلی از سرویس pinggy.io...[/bright_white]",
+        "couldNotGetPinggyIOIP": "\n%spaces%%prefix% [bright_red]امکان دریافت آی‌پی عمومی و پورت برای پراکسی جعلی از سرویس pinggy.io وجود ندارد.[/bright_red]",
+        "pinggyIOIPAndPort": "\n%spaces%%prefix% [bright_white]آی‌پی عمومی و پورت پراکسی جعلی. [bright_black]([green1]%ipAndPort%[/green1])[/bright_black]",
+        "connected": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🟢 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_white]به سرور پراکسی جعلی متصل شد[/bright_white]",
+        "disconnected": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔴 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_white]از سرور پراکسی جعلی قطع شد[/bright_white]",
+        "chat": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] ✉️ [bright_white] %username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_black]▶ [bright_white]%message%[/bright_white]",
+        "command": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 💣 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_black]▶ [bright_white]دستور [bright_cyan]%command%[/bright_cyan] را اجرا کرد",
+        "adminKey": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔑 [bright_white]کلید مدیر [bright_black]▶ [bright_magenta]%adminKey%[/bright_magenta]",
+        "adminKeyHelp": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔑 [bright_white]از کلید مدیر برای اجرای دستورات مدیر در سرور پراکسی جعلی استفاده کنید[/bright_white]",
+        "adminKeyUsed": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔑 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_black]▶ [bright_white]از کلید مدیر استفاده کرد[/bright_white]",
+        "messageSent": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] ⚔️ [bright_white]پیام با موفقیت به بازیکن [green1]%target% [bright_white]([bright_cyan]%message%[bright_white]) ارسال شد. توسط [green1]%sender%[/green1]",
+        "onlineModeError": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🟡 [red1]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_white]نمی‌تواند به سرور پراکسی جعلی متصل شود زیرا سرور backend در حالت آنلاین است.[/bright_white]",
+        "stopping": "\n%spaces%%prefix% [bright_white]توقف سرور پراکسی جعلی...[/bright_white]"
+      }
+    },
+    "connect": {
+      "args": ["<سرور>", "<نسخه>", "<نام کاربری>"],
+      "description": "با استفاده از یک بات به سرور داده شده متصل شوید",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]در حال بررسی سرور [green1]%server%[/green1]...[/bright_white]",
+        "connecting": "\n%spaces%%prefix% [bright_white]در حال اتصال به سرور [green1]%server%[/green1]...[/bright_white]"
+      }
+    },
+    "sendcmd": {
+      "args": ["<سرور>", "<نسخه>", "<نام کاربری>", "<فایل>"],
+      "description": "دستورات یا پیام‌ها را به سرور داده شده با استفاده از یک بات ارسال کنید",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]در حال بررسی سرور [green1]%server%[/green1]...[/bright_white]",
+        "gettingCommands": "\n%spaces%%prefix% [bright_white]در حال دریافت دستورات از فایل [bright_black]([bright_cyan]%commandsFile%[/bright_cyan])[/bright_white]",
+        "sendingCommands": "\n%spaces%%prefix% [bright_white]در حال ارسال دستورات به سرور داده شده [green1]%server%[/green1] با استفاده از بات [green1]%username%[/green1] و فایل دستورات [bright_cyan]%commandsFile%[/bright_cyan] [bright_black](%commandsCount% دستورات)[/bright_black]...[/bright_white]"
+      }
+    },
+    "kick": {
+      "args": ["<سرور>", "<نسخه>", "<نام کاربری>"],
+      "description": "بازیکن داده شده را با استفاده از یک بات از سرور بیرون کنید",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]در حال بررسی سرور [green1]%server%[/green1]...[/bright_white]",
+        "proxyAsk": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید از یک پراکسی برای بیرون کردن بات استفاده کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxyAsk": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید از یک پراکسی سفارشی برای بیرون کردن بات استفاده کنید؟ [bright_black]([green1]y/n[/bright_black])[/bright_black]",
+        "customProxy": "\n%spaces%%prefix% [bright_white]آدرس آی‌پی و پورت را برای پراکسی سفارشی وارد کنید [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "gettingFreeProxy": "\n%spaces%%prefix% [bright_white]در حال دریافت یک پراکسی رایگان برای بیرون کردن بات...[/bright_white]",
+        "kicking": "\n%spaces%%prefix% [bright_white]در حال بیرون کردن بازیکن [green1]%username%[/green1] از سرور [green1]%server%[/green1] [bright_black]([bright_cyan]%version%[/bright_cyan])[/bright_black]...[/bright_white]",
+        "playerKicked": "\n%spaces%💣 [bright_white]بازیکن [green1]%username%[/green1] از سرور بیرون شد.[/bright_white]",
+        "errorKickingPlayer": "\n%spaces%%prefix% [bright_white]امکان بیرون کردن بازیکن [green1]%username%[/green1] از سرور وجود ندارد. دلیل: [red1]%reason%[/red1][/bright_white]"
+      }
+    },
+    "kickall": {
+      "args": ["<سرور>", "<نسخه>"],
+      "description": "همه بازیکنان را با استفاده از یک بات از سرور بیرون کنید",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]در حال بررسی سرور [green1]%server%[/green1]...[/bright_white]",
+        "proxyAsk": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید از یک پراکسی برای بیرون کردن همه بازیکنان استفاده کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxiesAsk": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید از پراکسی‌های سفارشی برای بیرون کردن همه بازیکنان استفاده کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxies": "\n%spaces%%prefix% [bright_white]فایل حاوی آدرس آی‌پی‌ها و پورت‌های پراکسی‌های سفارشی را وارد کنید [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "loopExecutionAsk": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید دستور را در یک حلقه بی‌نهایت اجرا کنید؟ [bright_black]([bright_cyan]برای متوقف کردن از Ctrl C استفاده کنید[bright_black]) [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "excludingPlayerAsk": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید یک بازیکن را از بیرون شدن مستثنی کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "excludingPlayer": "\n%spaces%%prefix% [bright_white]نام کاربری بازیکنی که می‌خواهید از بیرون شدن مستثنی شود را وارد کنید[/bright_white]",
+        "excludingUser": "\n%spaces%%prefix% [bright_white]بازیکن [bright_cyan]%username%[/bright_cyan] از بیرون شدن از سرور مستثنی خواهد شد.[/bright_white]",
+        "gettingFreeProxies": "\n%spaces%%prefix% [bright_white]در حال دریافت پراکسی‌های رایگان برای بیرون کردن همه بازیکنان...[/bright_white]",
+        "failedToGetFreeProxies": "\n%spaces%%prefix% [bright_white]دریافت پراکسی‌های رایگان برای بیرون کردن همه بازیکنان ناموفق بود. لطفاً بعداً دوباره امتحان کنید یا از پراکسی‌های سفارشی استفاده کنید.[/bright_white]",
+        "invalidCustomProxies": "\n%spaces%%prefix% [bright_white]پراکسی‌های نامعتبر در فایل [bright_cyan]%file%[/bright_cyan]. لطفاً دوباره با یک فایل دیگر امتحان کنید.[/bright_white]",
+        "gettingPlayers": "\n%spaces%%prefix% [bright_white]در حال دریافت لیست بازیکنان از سرور...[/bright_white]",
+        "serverOffline": "\n%spaces%%prefix% [bright_white]سرور آفلاین است. دوباره در [bright_cyan]%seconds% ثانیه[bright_cyan] امتحان کنید...[/bright_white]",
+        "notJavaServer": "\n%spaces%%prefix% [bright_white]سرور به عنوان یک سرور Bedrock شناخته شده است، نه Java. دوباره در [bright_cyan]%seconds% ثانیه[bright_cyan] امتحان کنید...[/bright_white]",
+        "kickingAll": "\n%spaces%%prefix% [bright_white]در حال بیرون کردن همه بازیکنان از سرور...[/bright_white]",
+        "noPlayersFoundLoop": "\n%spaces%%prefix% [bright_white]هیچ بازیکنی در سرور یافت نشد. دوباره در [bright_cyan]%seconds% ثانیه[bright_cyan] امتحان کنید...[/bright_white]",
+        "playersKicked": "\n%spaces%%prefix% [bright_white]همه بازیکنان از سرور بیرون شدند.[/bright_white]",
+        "playersKickedLoop": "\n%spaces%%prefix% [bright_white]همه بازیکنان از سرور بیرون شدند. دوباره دستور در [bright_cyan]%seconds% ثانیه[bright_cyan] اجرا می‌شود...[/bright_white]",
+        "noPlayers": "\n%spaces%%prefix% [bright_white]هیچ بازیکنی برای بیرون کردن در سرور نیست.[/bright_white]",
+        "stoppingLoop": "\n%spaces%%prefix% [bright_white]توقف اجرای حلقه‌ای دستورات...[/bright_white]"
+      }
+    },
+    "botattack": {
+      "args": ["<سرور>", "<نسخه>", "<حداکثر تعداد بات‌ها>", "<تأخیر>"],
+      "description": "یک حمله بات پایه به سرور داده شده ارسال کنید",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]در حال بررسی سرور [green1]%server%[/green1]...[/bright_white]",
+        "customProxiesAsk": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید از پراکسی‌های سفارشی برای ارسال حمله بات استفاده کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxies": "\n%spaces%%prefix% [bright_white]فایل حاوی آدرس آی‌پی‌ها و پورت‌های پراکسی‌های سفارشی را وارد کنید [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "invalidCustomProxies": "\n%spaces%%prefix% [bright_white]پراکسی‌های نامعتبر در فایل [bright_cyan]%file%[/bright_cyan]. لطفاً دوباره با یک فایل دیگر امتحان کنید.[/bright_white]",
+        "gettingFreeProxies": "\n%spaces%%prefix% [bright_white]در حال دریافت پراکسی‌های رایگان برای ارسال حمله بات...[/bright_white]",
+        "failedToGetFreeProxies": "\n%spaces%%prefix% [bright_white]دریافت پراکسی‌های رایگان برای ارسال حمله بات ناموفق بود. لطفاً بعداً دوباره امتحان کنید یا از پراکسی‌های سفارشی استفاده کنید.[/bright_white]",
+        "proxiesLoaded": "\n%spaces%%prefix% [bright_white]پراکسی‌ها بارگذاری شدند: [bright_cyan]%proxies%[/bright_cyan][/bright_white]",
+        "botAttack": "\n%spaces%%prefix% [bright_white]در حال ارسال یک حمله بات پایه به سرور...[/bright_white]"
+      }
+    },
+    "rcon": {
+      "args": ["<آی‌پی:پورت_rcon>", "<رمز عبور>"],
+      "description": "به RCON سرور داده شده متصل شوید",
+      "messages": {
+        "connecting": "\n%spaces%%prefix% [bright_white]در حال اتصال به RCON سرور [green1]%server%[/green1]...[/bright_white]",
+        "connected": "\n%spaces%%prefix% [bright_white]با موفقیت به RCON متصل شدید. برای قطع اتصال [bright_cyan]exit[/bright_cyan] را تایپ کنید.[/bright_white]",
+        "commandInput": "%spaces%%prefix% [bright_white]برای اجرای دستور روی سرور تایپ کنید[/bright_white]",
+        "disconnected": "\n\n%spaces%%prefix% [bright_white]قطع اتصال از RCON.[/bright_white]"
+      }
+    },
+    "brutercon": {
+      "args": ["<آی‌پی:پورت_rcon>", "<فایل رمز عبور>"],
+      "description": "رمز عبور RCON سرور داده شده را بشکنید",
+      "messages": {
+        "noPasswords": "\n%spaces%%prefix% [bright_white]هیچ رمزی در فایل [bright_cyan]%file%[/bright_cyan] یافت نشد. لطفاً دوباره با یک فایل دیگر امتحان کنید.[/bright_white]",
+        "bruteForcing": "\n%spaces%%prefix% [bright_white]در حال brute force رمز عبور RCON برای سرور [green1]%server%[/green1]...[/bright_white]",
+        "invalidPassword": "\n%spaces%%prefix% [bright_white]رمز عبور نامعتبر: [bright_cyan]%password%[/bright_cyan][/bright_white]",
+        "passwordFound": "\n%spaces%%prefix% [bright_white]رمز عبور RCON یافت شد: [bright_cyan]%password%[/bright_cyan][/bright_white]",
+        "passwordNotFound": "\n%spaces%%prefix% [bright_white]هیچ رمز عبور RCON یافت نشد. لطفاً دوباره با یک لیست رمز عبور دیگر امتحان کنید.[/bright_white]"
+      }
+    },
+    "shell": {
+      "args": ["<پورت>"],
+      "description": "به اتصالات ورودی گوش دهید تا دستورات شل را از راه دور در پورت داده شده اجرا کنید",
+      "messages": {
+        "listening": "\n%spaces%%prefix% [bright_white]در حال گوش دادن به اتصالات ورودی در پورت داده شده [bright_cyan]%port%[/bright_cyan]...\n",
+        "errorStartingListener": "\n%spaces%%prefix% [bright_white]خطا در شروع شنونده در پورت داده شده [bright_cyan]%port%[/bright_cyan]. خطا: [bright_red]%error%[/bright_red][/bright_white]"
+      }
+    },
+    "hideip": {
+      "args": ["<سرور>"],
+      "description": "یک پراکسی ایجاد کنید تا آی‌پی شما را برای سرور داده شده پنهان کنید (فقط با سرورهای 1.8.8 کار می‌کند)",
+      "messages": {
+        "domainDetected": "\n%spaces%%prefix% [bright_white]دامنه شناسایی شد. در حال دریافت آی‌پی و پورت برای سرور ماینکرفت...[/bright_white]",
+        "serverOffline": "\n%spaces%%prefix% [bright_white]سرور آفلاین است. اگر سرور آنلاین است، دوباره دستور را با استفاده از آی‌پی و پورت سرور اجرا کنید.[/bright_white]",
+        "customProxyAsk": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید از یک پراکسی سفارشی استفاده کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxy": "\n%spaces%%prefix% [bright_white]آدرس آی‌پی و پورت را برای پراکسی سفارشی وارد کنید [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "invalidCustomProxy": "\n%spaces%%prefix% [bright_white]پراکسی سفارشی نامعتبر است. یک آی‌پی و پورت معتبر برای پراکسی سفارشی وارد کنید[/bright_white]",
+        "customProxyTimeout": "\n%spaces%%prefix% [bright_white]پراکسی سفارشی پاسخ نمی‌دهد. لطفاً دوباره با یک پراکسی سفارشی دیگر امتحان کنید.[/bright_white]",
+        "gettingFreeProxy": "\n%spaces%%prefix% [bright_white]در حال دریافت یک پراکسی رایگان...[/bright_white]",
+        "failedToGetFreeProxy": "\n%spaces%%prefix% [bright_white]دریافت یک پراکسی رایگان ناموفق بود. لطفاً بعداً دوباره امتحان کنید یا از یک پراکسی سفارشی استفاده کنید.[/bright_white]",
+        "startingProxy": "\n%spaces%%prefix% [bright_white]در حال راه‌اندازی پراکسی برای [green1]%ipAndPort%[/green1]...[/bright_white]",
+        "usingProxy": "\n%spaces%%prefix% [bright_white]در حال استفاده از پراکسی [green1]%proxyIp%:%proxyPort%[/green1].",
+        "proxyStarted": "\n%spaces%%prefix% [bright_white]پراکسی با موفقیت راه‌اندازی شد. از آی‌پی برای اتصال به سرور استفاده کنید [green1]%proxyIp%:%proxyPort%[/green1].[/bright_white]",
+        "connectionReceived": "\n%spaces%%prefix% [bright_white]اتصال دریافت شده از [green1]%clientIp%:%clientPort%[/green1].[/bright_white]",
+        "proxyStopped": "\n%spaces%%prefix% [bright_white]پراکسی با موفقیت متوقف شد.[/bright_white]"
+      }
+    },
+    "password": {
+      "args": ["<نام کاربری/نام کاربری>"],
+      "description": "جستجوی رمزهای عبور برای نام کاربری داده شده در پایگاه‌های داده لو رفته مختلف",
+      "messages": {
+        "searching": "\n%spaces%%prefix% [bright_white]در حال جستجوی رمزهای عبور برای نام کاربری [bright_cyan]%username%[/bright_cyan] در پایگاه‌های داده لو رفته...[/bright_white]",
+        "passwordNotFound": "\n%spaces%%prefix% [bright_white]هیچ رمز عبوری برای نام کاربری [bright_cyan]%username%[/bright_cyan] در پایگاه‌های داده لو رفته یافت نشد.[/bright_white]",
+        "passwordsFound": "\n%spaces%%prefix% [bright_white]رمزهای عبور یافت شده برای نام کاربری [bright_cyan]%username%[/bright_cyan]:[/bright_white]",
+        "server": "\n%spaces% [red1][[bright_red]سرو[bright_white]ر[red1]] [bright_white]%server%[/bright_white] [bright_black]([bright_cyan]%serverip%[bright_cyan])[/bright_black]",
+        "username": "%spaces% [red1][[bright_red]نام[bright_white] کاربری[red1]] [bright_white]%username%[/bright_white]",
+        "password": "%spaces% [red1][[bright_red]رمز [bright_white]عبور[red1]] [bright_white]%password%[/bright_white]",
+        "ip": "%spaces% [red1][[bright_red]آی‌پی[bright_red]][/red1] [bright_white]%ip%[/bright_white]",
+        "salt": "%spaces% [red1][[bright_red]نمک[bright_white][/bright_white][/bright_red]][/red1] [bright_white]%salt%[/bright_white]",
+        "total": "\n%spaces%%prefix% [bright_white]تعداد کل رمزهای عبور یافت شده: [bright_cyan]%total%[/bright_cyan][/bright_white] [bright_black]([bright_green]%valid%[bright_green] معتبر، [red1]%invalid%[/red1] نامعتبر)[/bright_black]",
+        "invalidPlan": "\n%spaces%%prefix% [bright_white]طرح نامعتبر است. شما باید یک [bright_cyan]طرح بالاتر[bright_cyan] داشته باشید تا از این دستور استفاده کنید.[/bright_white]"
+      }
+    },
+    "clearservers": {
+      "args": [],
+      "description": "لیست سرورهای ماینکرفت را پاک کنید",
+      "messages": {
+        "serversCleared": "\n%spaces%%prefix% [bright_white]سرورها با موفقیت پاک شدند.[/bright_white]"
+      }
+    },
+    "settings": {
+      "args": [],
+      "description": "فایل پیکربندی را باز کنید",
+      "messages": {
+        "settingsUpdated": "\n%spaces%%prefix% [bright_white]تنظیمات با موفقیت به‌روز شدند.[/bright_white]"
+      }
+    },
+    "language": {
+      "args": ["<زبان>"],
+      "description": "زبان MCPTool را تغییر دهید",
+      "messages": {
+        "sameLanguage": "\n%spaces%%prefix% [bright_white]زبان MCPTool در حال حاضر روی [bright_cyan]%language%[/bright_cyan] تنظیم شده است.[/bright_white]",
+        "languageChanged": "\n%spaces%%prefix% [bright_white]زبان MCPTool به [bright_cyan]%language%[/bright_cyan] تغییر یافت.[/bright_white]"
+      }
+    },
+    "debug": {
+      "args": [],
+      "description": "حالت اشکال‌زدایی را فعال یا غیرفعال کنید",
+      "messages": {
+        "debugEnabled": "\n%spaces%%prefix% [bright_white]حالت اشکال‌زدایی فعال شد.[/bright_white]",
+        "debugDisabled": "\n%spaces%%prefix% [bright_white]حالت اشکال‌زدایی غیرفعال شد.[/bright_white]"
+      }
+    }
+  },
+  "logs": {
+    "logsSaved": "\n%spaces%%prefix% [bright_white]گزارش‌ها در [green1]%file%[/green1] ذخیره شدند.[/bright_white]"
+  },
+  "serverMessages": {
+    "ip_and_port": "%spaces%&4[&c&lIP&f&l&f&lPort&4] &f&l&o%ipAndPort%",
+    "motd": "%spaces%&4[&c&lMO&f&lTD&4] &f&l%motd%",
+    "version": "%spaces%&4[&c&lVers&f&lion&4] &f&l%version%",
+    "protocol": "%spaces%&4[&c&lProt&f&lcol&4] &f&l&o%protocol%",
+    "connected": "%spaces%&4[&c&lConne&f&lcted&4] &f&l&o%connectedPlayers%&8&l/&f&l&o%maxPlayers%",
+    "playerList": "%spaces%&4[&c&lPlayer&f&lList&4] &f&l&o%playerList%",
+    "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
+    "modList": "%spaces%&4[&c&lMo&f&lds&4] &f&l&o%modList%",
+    "brand": "%spaces%&4[&c&lBra&f&lnd&4] &f&l&o%brand%",
+    "software": "%spaces%&4[&c&lSof&f&ltware&4] &f&l&o%software%",
+    "map": "%spaces%&4[&c&lMa&f&lp&4] &f&l&o%map%",
+    "gamemode": "%spaces%&4[&c&lGam&f&leMode&4] &f&l&o%gamemode%",
+    "ping": "%spaces%&4[&c&lPi&f&lng&4] &f&l&o%ping%ms",
+    "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%"
+  },
+  "filterServers": {
+    "filterByData": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس داده‌ها فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByOnlyBotCanJoin": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورهایی را فیلتر کنید که فقط یک بات می‌تواند به آنها متصل شود؟ [bright_black]([red1]سرورهای آفلاین[bright_black]) ([green1]y/n[/green1])[/bright_black]",
+    "filterByDescription": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس توضیحات فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByDescriptionText": "\n%spaces%%prefix% [bright_white]توضیحی را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً survival[/green1])[/bright_black][/bright_white]",
+    "filterByOnlinePlayers": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس تعداد بازیکنان آنلاین فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByOnlinePlayersText": "\n%spaces%%prefix% [bright_white]حداقل تعداد بازیکنان آنلاین را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً 5[/green1])[/bright_black][/bright_white]",
+    "filterByProtocol": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورها را بر اساس پروتکل فیلتر کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByProtocolText": "\n%spaces%%prefix% [bright_white]پروتکل را برای فیلتر کردن سرورها وارد کنید [bright_black]([green1]مثلاً 47[/bright_black])[/bright_white]",
+    "onlyBotCanJoin": "فقط یک بات می‌تواند متصل شود",
+    "description": "توضیحات",
+    "onlinePlayers": "بازیکنان آنلاین",
+    "protocol": "پروتکل"
+  },
+  "addServers": {
+    "addServersFoundToMinecraft": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید سرورهای یافت شده را به لیست سرورهای ماینکرفت اضافه کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "addBungeeExploitVulnerableServersOnly": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید فقط سرورهای آسیب‌پذیر به بهره‌برداری BungeeCord را به لیست سرورهای ماینکرفت اضافه کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]"
+  },
+  "discordPresence": {
+    "title": "یک ابزار تست نفوذ پیشرفته برای ماینکرفت",
+    "version": "نسخه %version%",
+    "menu": "در منو",
+    "usingCommand": "استفاده از فرمان %command%"
+  },
+  "errors": {
+    "missingArguments": "\n%spaces%[bright_red]آرگومان‌های گم شده. [bright_white]استفاده صحیح: [bright_cyan]%command% [bright_red]%arguments%[/bright_red]",
+    "serverOffline": "\n%spaces%%prefix% [bright_white]امکان دریافت داده‌ها از سرور داده شده وجود ندارد. سرور ممکن است آفلاین باشد.[/bright_white]",
+    "invalidServer": "\n%spaces%%prefix% [bright_white]سرور نامعتبر است. لطفاً یک آدرس آی‌پی و پورت معتبر یا یک دامنه معتبر وارد کنید.[/bright_white]",
+    "invalidDomain": "\n%spaces%%prefix% [bright_white]شما یک دامنه نامعتبر وارد کرده‌اید. لطفاً یک دامنه معتبر وارد کنید.[/bright_white]",
+    "invalidIpAndPort": "\n%spaces%%prefix% [bright_white]شما یک آدرس آی‌پی و پورت نامعتبر وارد کرده‌اید. لطفاً یک آدرس آی‌پی و پورت معتبر وارد کنید.[/bright_white]",
+    "invalidIpFormat": "\n%spaces%%prefix% [bright_white]شما یک فرمت آی‌پی نامعتبر وارد کرده‌اید. لطفاً یک آی‌پی معتبر وارد کنید.[/bright_white]",
+    "invalidScanMethod": "\n%spaces%%prefix% [bright_white]شما یک روش اسکن نامعتبر وارد کرده‌اید. لطفاً یک روش اسکن معتبر وارد کنید [bright_black]([bright_cyan]old_qubo, qubo, nmap, masscan یا py[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidIpRange": "\n%spaces%%prefix% [bright_white]شما یک محدوده آی‌پی نامعتبر وارد کرده‌اید. لطفاً یک محدوده آی‌پی معتبر وارد کنید.[/bright_white]",
+    "invalidPortRange": "\n%spaces%%prefix% [bright_white]شما یک محدوده پورت نامعتبر وارد کرده‌اید. لطفاً یک محدوده پورت معتبر وارد کنید.[/bright_white]",
+    "invalidFile": "\n%spaces%%prefix% [bright_white]شما یک فایل نامعتبر وارد کرده‌اید. لطفاً یک فایل معتبر وارد کنید.[/bright_white]",
+    "invalidIntgerInput": "\n%spaces%%prefix% [bright_white]شما یک ورودی عدد صحیح نامعتبر وارد کرده‌اید. لطفاً یک ورودی عدد صحیح معتبر وارد کنید.[/bright_white]",
+    "invalidBooleanInput": "\n%spaces%%prefix% [bright_white]شما یک ورودی بولی نامعتبر وارد کرده‌اید. لطفاً یک ورودی بولی معتبر وارد کنید [bright_black]([bright_cyan]y یا n[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidCountryCodeInput": "\n%spaces%%prefix% [bright_white]شما یک کد کشور نامعتبر وارد کرده‌اید. لطفاً یک کد کشور معتبر وارد کنید.[/bright_white]",
+    "invalidVelocityForwardingMode": "\n%spaces%%prefix% [bright_white]شما یک حالت ارسال Velocity نامعتبر وارد کرده‌اید. لطفاً یک حالت ارسال Velocity معتبر وارد کنید [bright_black]([bright_cyan]legacy, modern یا none[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidFakeProxyUpdateModeInput": "\n%spaces%%prefix% [bright_white]شما یک حالت به‌روزرسانی پراکسی جعلی نامعتبر وارد کرده‌اید. لطفاً یک حالت به‌روزرسانی معتبر وارد کنید [bright_black]([bright_cyan]1 یا 2[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidFakeProxyProtocolModeInput": "\n%spaces%%prefix% [bright_white]شما یک حالت پروتکل پراکسی جعلی نامعتبر وارد کرده‌اید. لطفاً یک حالت پروتکل معتبر وارد کنید [bright_black]([bright_cyan]1 یا 2[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidFilePath": "\n%spaces%%prefix% [bright_white]شما یک مسیر فایل نامعتبر وارد کرده‌اید. لطفاً یک مسیر فایل معتبر وارد کنید.[/bright_white]",
+    "invalidProxyInput": "\n%spaces%%prefix% [bright_white]شما یک پراکسی نامعتبر وارد کرده‌اید. لطفاً یک پراکسی معتبر وارد کنید [bright_black]([bright_cyan]socks4 یا socks5[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidProxy": "\n%spaces%%prefix% [bright_white]پراکسی پاسخ نمی‌دهد. لطفاً یک پراکسی دیگر انتخاب کنید.[/bright_white]",
+    "invalidSeekerSubcommand": "\n%spaces%%prefix% [bright_white]شما یک زیر دستور Seeker نامعتبر وارد کرده‌اید. لطفاً یک زیر دستور Seeker معتبر وارد کنید [bright_black]([bright_cyan]token servers[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidNewSettingsFile": "\n%spaces%%prefix% [bright_white]شما یک فایل تنظیمات جدید نامعتبر وارد کرده‌اید. به جای آن از فایل پیکربندی پشتیبان استفاده خواهد شد.[/bright_white]",
+    "invalidLanguage": "\n%spaces%%prefix% [bright_white]شما یک زبان نامعتبر وارد کرده‌اید. لطفاً یک زبان معتبر وارد کنید!",
+    "portNotFoundInPinggyDomain": "\n%spaces%%prefix% [bright_white]پورت در دامنه Pinggy یافت نشد. لطفاً یک پورت معتبر وارد کنید.[/bright_white]",
+    "invalidPinggyDomain": "\n%spaces%%prefix% [bright_white]شما یک دامنه Pinggy نامعتبر وارد کرده‌اید. لطفاً یک دامنه Pinggy معتبر وارد کنید.[/bright_white]",
+    "subdomainsFileEmpty": "\n%spaces%%prefix% [bright_white]فایل زیر دامنه‌ها خالی است. لطفاً یک فایل زیر دامنه‌های معتبر وارد کنید.[/bright_white]",
+    "passwordFileEmpty": "\n%spaces%%prefix% [bright_white]فایل رمزهای عبور خالی است. لطفاً یک فایل رمزهای عبور معتبر وارد کنید.[/bright_white]",
+    "nmapNotInstalled": "\n%spaces%%prefix% [bright_white]Nmap نصب نشده است. لطفاً Nmap را نصب کرده و MCPTool را دوباره راه‌اندازی کنید تا این مشکل حل شود.",
+    "masscanNotInstalled": "\n%spaces%%prefix% [bright_white]Masscan نصب نشده است. لطفاً Masscan را نصب کرده و MCPTool را دوباره راه‌اندازی کنید تا این مشکل حل شود.",
+    "javaNotInstalled": "\n%spaces%%prefix% [bright_white]Java 19 یا بالاتر نصب نشده است. لطفاً Java 19 یا بالاتر را نصب کنید تا این مشکل حل شود.",
+    "rconTimeout": "\n%spaces%%prefix% [bright_white]زمان اتصال به RCON به پایان رسیده است. لطفاً آی‌پی و پورت را بررسی کرده و دوباره امتحان کنید.[/bright_white]",
+    "rconConnectionRefused": "\n%spaces%%prefix% [bright_white]اتصال RCON رد شد. لطفاً آی‌پی و پورت را بررسی کرده و دوباره امتحان کنید.[/bright_white]",
+    "rconInvalidPassword": "\n%spaces%%prefix% [bright_white]رمز عبور RCON نامعتبر است. لطفاً رمز عبور را بررسی کرده و دوباره امتحان کنید.[/bright_white]",
+    "rconUnknownError": "\n%spaces%%prefix% [bright_white]خطای ناشناخته RCON. لطفاً آی‌پی، پورت و رمز عبور را بررسی کرده و دوباره امتحان کنید.[/bright_white]",
+    "notJavaServer": "\n%spaces%%prefix% [bright_white]سرور یک سرور جاوا نیست. این دستور فقط با سرورهای جاوا کار می‌کند.[/bright_white]",
+    "commandsFileNotFound": "\n%spaces%%prefix% [bright_white]فایل دستورات یافت نشد. لطفاً یک فایل دستورات معتبر وارد کنید.[/bright_white]",
+    "commandsFileEmpty": "\n%spaces%%prefix% [bright_white]فایل دستورات خالی است. لطفاً یک فایل دستورات معتبر وارد کنید.[/bright_white]",
+    "permissionDenied": "\n%spaces%%prefix% [bright_white]فایل [file%] اجازه اجرا ندارد. لطفاً MCPTool را ببندید و این دستور را برای حل مشکل اجرا کنید: [green1]%commandToFix%[/green1].",
+    "errorStartingListener": "\n%spaces%%prefix% [bright_white]خطا در شروع شنونده شل. خطا: %error%[/bright_white]",
+    "windowsOnly": "\n%spaces%%prefix% [bright_white]این دستور فقط در ویندوز کار می‌کند[/bright_white]",
+    "rootRequired": "\n%spaces%%prefix% [bright_white]دسترسی ریشه برای اجرای این دستور لازم است. لطفاً MCPTool را ببندید و به عنوان ریشه اجرا کنید تا مشکل حل شود.",
+    "passwordApiError": "\n%spaces%%prefix% [bright_white]خطا در دریافت رمز عبور از API. لطفاً بعداً دوباره امتحان کنید.[/bright_white]",
+    "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]پاسخ نادرست از API. لطفاً بعداً دوباره امتحان کنید.[/bright_white]"
+  },
+  "fileVersion": "1"
+}

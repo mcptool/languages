@@ -1,0 +1,481 @@
+{
+  "tool": "[red1]MCP[bold white]Tool[/bold white][/red1]",
+  "description": "Ein fortschrittliches Pentesting-Tool für Minecraft",
+  "ctrlC": "\n%spaces%%prefix% [red1]CtrlC [bright_white]erkannt. Beende laufenden Prozess...[/bright_white]",
+  "exit": "\n\n%spaces%%prefix% [bright_white]Beenden...[/bright_white]",
+  "invalidCommand": "\n%spaces%%prefix% [red1]Ungültiger Befehl. [bright_white]Um verfügbare Befehle anzuzeigen, tippe [green1]help [bright_white].[/bright_white]",
+  "checkingProxies": "%spaces%%prefix% [bright_white]Überprüfe Proxy-Server...",
+  "stoppingProxiesSearch": "\n%spaces%%prefix% [bright_white]Proxy-Server-Suche beenden",
+  "auth": {
+    "title": "Authentifizierung",
+    "welcome": "[bright_white]Willkommen bei [red1]MCP[bright_white]Tool[bright_white]\nDas ultimative Pentesting-Tool für Minecraft\nKein Konto? Hier kaufen: [underline][bold]https://buy.mcptool.net[/bold][/underline]\n",
+    "loginMessage": "%prefix% [bright_white]Bitte gib deinen [green1]Benutzernamen[/green1] und dein [green1]Passwort[/green1] ein, um dich anzumelden\n",
+    "username": ":gem: [bright_white]Benutzername",
+    "password": ":key: [bright_white]Passwort",
+    "loggingIn": "\n%prefix% [bright_white]Anmeldung...[/bright_white]",
+    "invalidCredentials": "\n%prefix% [red1]Ungültige Anmeldedaten.[/red1][bright_white] Wenn du dein Passwort vergessen hast, kannst du es auf dem Discord-Server zurücksetzen.",
+    "unauthorizedDevice": "\n%prefix% [red1]Unberechtigtes Gerät.[/red1][bright_white] Du hast die maximale Anzahl an Geräten erreicht, die mit deinem Konto verbunden sind. Du kannst ein Gerät entfernen, indem du ein Ticket auf dem Discord-Server öffnest.",
+    "success": "\n%prefix% [green1]Erfolgreich angemeldet![/green1]\n",
+    "apiOffline": "\n%prefix% [red1]Die API ist derzeit offline. Bitte versuche es später erneut.[/red1]"
+  },
+  "commands": {
+    "help": {
+      "table": {
+        "commandName": "Befehlname",
+        "args": "Argumente",
+        "description": "Beschreibung",
+        "available": "Verfügbar"
+      }
+    },
+    "server": {
+      "args": ["<Server>"],
+      "description": "Erhalte Informationen über den angegebenen Server (MOTD, Version, Online-Spieler usw.)",
+      "messages": {
+        "gettingServerData": "\n%spaces%%prefix% [bright_white]Abrufen von Daten vom Server [green1]%server%[/green1]...",
+        "sendingBot": "\n%spaces%%prefix% [bright_white]Senden eines Bots zum Server [green1]%server%[/green1]..."
+      }
+    },
+    "uuid": {
+      "args": ["<uuid/Benutzername>"],
+      "description": "Erhalte die UUID eines angegebenen Spielers oder den Benutzernamen, der mit einer angegebenen UUID verknüpft ist",
+      "messages": {
+        "gettingUUID": "\n%spaces%%prefix% [bright_white]Abrufen der UUID für den angegebenen Benutzernamen [bright_black]([green1]%username%[bright_black])[/bright_black]",
+        "gettingUsername": "\n%spaces%%prefix% [bright_white]Abrufen des Benutzernamens für die angegebene UUID [bright_black]([green1]%uuid%[bright_black])[/bright_black]",
+        "uuid": "%spaces%[red1][[bright_red]UUID[bright_white][red1]] %uuid% [bright_black]([bright_cyan]%uuidVariant%[bright_black])[/bright_black]",
+        "username": "\n%spaces%%prefix% [bright_white]Benutzername für die angegebene UUID: [green1]%username%[/green1]",
+        "usernameNotFound": "\n%spaces%%prefix% [bright_white]Benutzername für die angegebene UUID nicht gefunden. Möglicherweise ist sie falsch.[/bright_white]"
+      }
+    },
+    "ipinfo": {
+      "args": ["<IP-Adresse>"],
+      "description": "Erhalte Informationen über die angegebene IP-Adresse",
+      "messages": {
+        "gettingIpData": "\n%spaces%%prefix% [bright_white]Abrufen von Daten für die angegebene IP-Adresse...[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]Es können keine Daten für die angegebene IP-Adresse abgerufen werden. Möglicherweise ist sie falsch.[/bright_white]",
+        "continent": "\n%spaces%[red1][[bright_red]Kontinent[bright_white][red1]] [bright_white]%continent% [bright_black]([bright_cyan]+%continentCode%[bright_black])[/bright_black]",
+        "country": "%spaces%[red1][[bright_red]Land[bright_white][red1]] [bright_white]%country% [bright_black]([bright_cyan]+%countryCode%[bright_black])[/bright_black]",
+        "region": "%spaces%[red1][[bright_red]Region[bright_white][red1]] [bright_white]%region% [bright_black]([bright_cyan]+%regionName%[bright_black])[/bright_black]",
+        "city": "%spaces%[red1][[bright_red]Stadt[bright_white][red1]] [bright_white]%city%[/bright_white]",
+        "timezone": "%spaces%[red1][[bright_red]Zeitzone[bright_white][red1]] [bright_white]%timezone%[/bright_white]",
+        "isp": "%spaces%[red1][[bright_red]ISP[red1]] [bright_white]%isp%[/bright_white]",
+        "organization": "%spaces%[red1][[bright_red]Organisation[bright_white][red1]] [bright_white]%organization%[/bright_white]"
+      }
+    },
+    "iphistory": {
+      "args": ["<Domain>"],
+      "description": "Erhalte die IP-Historie der angegebenen Domain",
+      "messages": {
+        "gettingIpHistory": "\n%spaces%%prefix% [bright_white]Abrufen der IP-Historie für die angegebene Domain...[/bright_white]",
+        "noIpHistory": "\n%spaces%%prefix% [bright_white]Keine IP-Historie für die angegebene Domain gefunden.[/bright_white]",
+        "ipHistoryFound": "\n%spaces%%prefix% [bright_white]IP-Historie gefunden:[/bright_white]",
+        "ipHistoryEnd": "%spaces%%prefix% [green1]%ips% [bright_white]IP-Adressen wurden gefunden, die mit der Historie von [green1]%domain%[/bright_white] übereinstimmen"
+      }
+    },
+    "dnsrecords": {
+      "args": ["<Domain>"],
+      "description": "Erhalte DNS-Einträge der angegebenen Domain",
+      "messages": {
+        "lookingUpDnsRecords": "\n%spaces%%prefix% [bright_white]Nach DNS-Einträgen für die angegebene Domain suchen [bright_black]([green1]%domain%[bright_black])[/bright_black]...",
+        "noDnsRecords": "\n%spaces%%prefix% [bright_white]Keine DNS-Einträge für die angegebene Domain gefunden.[/bright_white]",
+        "dnsRecordsFound": "\n%spaces%%prefix% [bright_white]DNS-Einträge gefunden:[/bright_white]",
+        "dnsRecordsEnd": "%spaces%%prefix% [green1]%records% [bright_white]DNS-Einträge gefunden für [green1]%domain%[/bright_white]"
+      }
+    },
+    "checker": {
+      "args": ["<Datei>"],
+      "description": "Überprüfe den Status von Minecraft-Servern aus einer Serverliste in der Datei",
+      "messages": {
+        "checkingServers": "\n%spaces%%prefix% [bright_white]Überprüfen der Server in der angegebenen Datei...[/bright_white]",
+        "noServersFound": "\n%spaces%%prefix% [bright_white]Keine Server in der angegebenen Datei gefunden.[/bright_white]",
+        "serversFound": "\n%spaces%%prefix% [green1]%servers% [bright_white]Server in der angegebenen Datei [green1]%file%[bright_white] gefunden.[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]Überprüfung der Server beenden...[/bright_white]"
+      }
+    },
+    "subdomains": {
+      "args": ["<Domain>", "{wordlist}"],
+      "description": "Erhalte Subdomains der angegebenen Domain mit einer Wortliste",
+      "messages": {
+        "wordlist": "\n%spaces%%prefix% [bright_white]Verwenden der Wortliste [bright_black]([green1]%wordlist%[bright_black])[/bright_black] für [bright_white][green1]%subdomains% [bright_white]Subdomains...[/bright_white]",
+        "gettingSubdomains": "\n%spaces%%prefix% [bright_white]Abrufen der Subdomains für die angegebene Domain [bright_black]([green1]%domain%[bright_black])[/bright_white]...[/bright_white]\n",
+        "noSubdomains": "\n%spaces%%prefix% [bright_white]Keine Subdomains für die angegebene Domain [bright_black]([green1]%domain%[bright_black]) [bright_white]mit der angegebenen Wortliste gefunden.[/bright_white]",
+        "subdomainFound": "%spaces%%prefix% [bright_white]Subdomains gefunden: [green1]%subdomain% [bright_black]([green1]%ip%[bright_black])[/bright_black]",
+        "subdomainsEnd": "\n%spaces%%prefix% [green1]%subdomains% [bright_white]Subdomains gefunden für [green1]%domain%[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]Suche nach Subdomains beenden...[/bright_white]"
+      }
+    },
+    "seeker": {
+      "args": ["<token/servers>"],
+      "description": "Suche nach Minecraft-Servern mit der Seeker-API",
+      "messages": {
+        "token": {
+          "startingServer": "\n%spaces%%prefix% [bright_white]Starte HTTP-Server bei [green1]http://localhost:%port%[/green1]",
+          "openingSeekerDiscordUrl": "\n%spaces%%prefix% [bright_white]Öffne Seeker Discord-URL...[/bright_white]",
+          "waitingForToken": "\n%spaces%%prefix% [bright_white]Warte auf Token...[/bright_white]",
+          "tokenReceived": "\n%spaces%%prefix% [bright_white]Token empfangen![/bright_white]",
+          "note": "\n%spaces%%prefix% [bright_white]Hinweis: Wenn du die App genehmigt hast, aber keinen Token erhalten hast, starte das Tool neu und führe den Befehl erneut aus.[/bright_white]",
+          "invalidToken": "\n%spaces%%prefix% [bright_white]Ungültiger Token. Bitte verwende den Befehl [green1]seeker token[/green1], um einen neuen Token zu erhalten.[/bright_white]"
+        },
+        "servers": {
+          "sendingRequest": "\n%spaces%%prefix% [bright_white]Senden einer Anfrage an die Seeker-API...[/bright_white]",
+          "gettingServers": "\n%spaces%%prefix% [bright_white]Abrufen von Servern von der Seeker-API...[/bright_white]",
+          "filterByData": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Daten filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByCountryCode": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Länder-Code filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByCountryCodeText": "\n%spaces%%prefix% [bright_white]Gib den Länder-Code ein, um die Server zu filtern [bright_black]([green1]z.B. US[/green1])[/bright_black][/bright_white]",
+          "filterByCracked": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Cracked-Status filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByDescription": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Beschreibung filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByDescriptionText": "\n%spaces%%prefix% [bright_white]Gib eine Beschreibung ein, um die Server zu filtern [bright_black]([green1]z.B. survival[/green1])[/bright_black][/bright_white]",
+          "filterByOnlyBungeeSpoofable": "\n%spaces%%prefix% [bright_white]Möchtest du nur Server filtern, die durch BungeeCord ausgenutzt werden können? [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByProtocol": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Protokoll filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByProtocolText": "\n%spaces%%prefix% [bright_white]Gib das Protokoll ein, um die Server zu filtern [bright_black]([green1]z.B. 47[/green1])[/bright_black][/bright_white]",
+          "filterByOnlinePlayers": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Anzahl der Online-Spieler filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByOnlinePlayersText": "\n%spaces%%prefix% [bright_white]Gib die Mindestanzahl der Online-Spieler ein, um die Server zu filtern [bright_black]([green1]z.B. 5[/green1])[/bright_black][/bright_white]",
+          "serversObtained": "\n%spaces%%prefix% [green1]%servers% [bright_white]Server von der Seeker-API abgerufen.[/bright_white]",
+          "gettingData": "\n%spaces%%prefix% [bright_white]Abrufen von Daten von den Servern...[/bright_white]",
+          "serversFound": "\n%spaces%%prefix% [green1]%servers% [bright_white]Server in der Seeker-API gefunden.[/bright_white]",
+          "noServers": "\n%spaces%%prefix% [bright_white]Keine Server in der Seeker-API gefunden.[/bright_white]",
+          "stopped": "\n%spaces%%prefix% [bright_white]Server-Suche beenden...[/bright_white]"
+        }
+      }
+    },
+    "websearch": {
+      "args": [],
+      "description": "Suche nach Minecraft-Servern auf verschiedenen Websites",
+      "messages": {
+        "filterByData": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Daten filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByOnlyBotCanJoin": "\n%spaces%%prefix% [bright_white]Möchtest du Server filtern, bei denen nur ein Bot beitreten kann? [bright_black]([red1]Offline-Server[bright_black]) ([green1]y/n[/green1])[/bright_black]",
+        "filterByDescription": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Beschreibung filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByDescriptionText": "\n%spaces%%prefix% [bright_white]Gib eine Beschreibung ein, um die Server zu filtern [bright_black]([green1]z.B. survival[/green1])[/bright_black][/bright_white]",
+        "filterByOnlinePlayers": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Anzahl der Online-Spieler filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByOnlinePlayersText": "\n%spaces%%prefix% [bright_white]Gib die Mindestanzahl der Online-Spieler ein, um die Server zu filtern [bright_black]([green1]z.B. 5[/green1])[/bright_black][/bright_white]",
+        "filterByProtocol": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Protokoll filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByProtocolText": "\n%spaces%%prefix% [bright_white]Gib das Protokoll ein, um die Server zu filtern [bright_black]([green1]z.B. 47[/bright_black])[/bright_white]",
+        "searchingWebsites": "\n%spaces%%prefix% [bright_white]Suche nach Servern auf verschiedenen Websites...[/bright_white]",
+        "searchingInPage": "\n%spaces%%prefix% [bright_white]Suche auf [green1]%page%[/green1]...[/bright_white]",
+        "filterDataShow": "\n%spaces%%prefix% [bright_white]Filterdaten anzeigen: \n%spaces%  [bright_black]• [bright_white]Nur ein Bot kann beitreten: [green1]%onlyBotCanJoin%\n%spaces%  [bright_black]• [bright_white]Beschreibung: [green1]%description%\n%spaces%  [bright_black]• [bright_white]Online-Spieler: [green1]%onlinePlayers%\n%spaces%  [bright_black]• [bright_white]Protokoll: [green1]%protocol%[/green1]",
+        "noServersFound": "\n%spaces%%prefix% [bright_white]Keine Server auf den Websites gefunden.[/bright_white]",
+        "serversFound": "\n%spaces%%prefix% [green1]%servers% [bright_white]Server auf den Websites gefunden.[/bright_white]",
+        "failedToLoadConfigurationFile": "\n%spaces%%prefix% [bright_white]Das Laden der Konfigurationsdatei (mcserver-scrapper.json) ist fehlgeschlagen.[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]Websuche beenden...[/bright_white]"
+      }
+    },
+    "scan": {
+      "args": ["<IP-Adresse/Datei>", "<Ports>", "<Methode>"],
+      "description": "Scanne die angegebene IP-Adresse (oder IPs aus einer Datei) im angegebenen Portbereich mit nmap, qubo oder masscan",
+      "messages": {
+        "scanning": "\n%spaces%%prefix% [bright_white]Scanne die IP [green1]%ip%[/green1] im Portbereich [green1]%portRange%[/green1] mit der Methode [green1]%method%[/green1]...[/bright_white]",
+        "noOpenPorts": "\n%spaces%%prefix% [bright_white]Keine offenen Ports für die IP [green1]%ip%[/green1] im Portbereich [green1]%portRange%[/green1] gefunden.[/bright_white]",
+        "openPortsFound": "\n%spaces%%prefix% [green1]%openPorts% [bright_white]Offene Ports für die IP [green1]%ip%[/green1] im Portbereich [green1]%portRange%[/green1] gefunden.[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]Scan beenden...[/bright_white]"
+      }
+    },
+    "listening": {
+      "args": ["<Server>"],
+      "description": "Höre dem Server zu, um die Spieler-Liste zu erhalten",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]Überprüfe Server [green1]%server%[/green1]...[/bright_white]",
+        "showPlayersMode": "\n%spaces%%prefix% [bright_white]Wähle den Modus zur Anzeige der Spieler-Verbindungen. [bright_black]([green1]Einfaches Diagramm[/green1])[/bright_black]",
+        "invalidShowPlayersMode": "\n%spaces%%prefix% [bright_white]Ungültiger Modus. Wähle den Modus zur Anzeige der Spieler-Verbindungen. [bright_black]([green1]Einfaches Diagramm[/green1])[/bright_black]",
+        "verticalOverflowAsk": "\n%spaces%%prefix% [bright_white]Möchtest du den vertikalen Überlauf aktivieren? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "waitingPlayers": "\n%spaces%%prefix% [bright_white]Warte auf Spieler-Verbindungen zum Server [green1]%server%[/green1]...[/bright_white]",
+        "connected": "%spaces% 🟢 [bright_cyan]%player%[/bright_cyan] [bright_black](%uuid%[bright_black]) [bright_white]hat sich mit dem Server [bright_black]([bright_cyan]%time%[/bright_cyan])[bright_black] verbunden",
+        "disconnected": "%spaces% 🔴 [bright_cyan]%player%[/bright_cyan] [bright_black](%uuid%[bright_black]) [bright_white]hat sich vom Server [bright_black]([bright_cyan]%time%[/bright_cyan])[bright_black] getrennt",
+        "reconnected": "%spaces% 🟡 [bright_cyan]%player%[/bright_cyan] [bright_black](%uuid%[bright_black]) [bright_white]hat sich erneut mit dem Server [bright_black]([bright_cyan]%time%[/bright_cyan])[bright_black] verbunden"
+      }
+    },
+    "proxy": {
+      "args": ["<Server>", "<Modus>"],
+      "description": "Erstelle einen Proxy, um Verbindungen zum Server zu verbergen",
+      "messages": {
+        "configuringProxy": "\n%spaces%%prefix% [bright_white]Konfiguriere Proxy...[/bright_white]",
+        "proxyConfigured": "\n%spaces%%prefix% [bright_white]Proxy erfolgreich konfiguriert.[/bright_white]",
+        "newVelocityVersionAvailable": "\n%spaces%%prefix% [green1]Neue Velocity-Version verfügbar![/green1]",
+        "downloadingJar": "\n%spaces%%prefix% [bright_white]Lade Proxy-Jar-Datei von der Velocity-Website herunter [bright_black]([bright_cyan]%jarName%[/bright_cyan])[/bright_white]",
+        "jarDownloaded": "\n%spaces%%prefix% [bright_white]Proxy-Jar-Datei erfolgreich heruntergeladen.[/bright_white]",
+        "replacingJar": "\n%spaces%%prefix% [bright_white]Ersetze Proxy-Jar-Datei...[/bright_white]",
+        "jarReplaced": "\n%spaces%%prefix% [bright_white]Proxy-Jar-Datei erfolgreich ersetzt.[/bright_white]",
+        "startingProxy": "\n%spaces%%prefix% [bright_white]Starte Proxy...[/bright_white]",
+        "proxyStarted": "\n%spaces%%prefix% [bright_white]Proxy erfolgreich gestartet bei [green1]%proxyIp%:%proxyPort%[/green1].[/bright_white]"
+      }
+    },
+    "fakeproxy": {
+      "args": ["<Server>", "<Modus>"],
+      "description": "Erstelle einen Fake-Proxy, um Spieler-Daten zu verbergen",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]Überprüfe Server [green1]%server%[/green1]...[/bright_white]",
+        "updateMode": "\n%spaces%%prefix% [bright_white]Wähle den Aktualisierungsmodus für die Daten des Fake-Proxys.\n\n%spaces% [green1]1)[/green1] [bright_white]Proxy empfängt und verwendet Daten vom Backend-Server für jedes eingehende Ping.\n\n%spaces% [green1]2)[/green1] [bright_white]MCPTool empfängt Daten vom Backend-Server alle 3 Sekunden und wendet sie auf den Fake-Proxy an.",
+        "updateModeInput": "\n%spaces%%prefix% [bright_white]Wähle den Aktualisierungsmodus für den Fake-Proxy. [bright_black]([green1]1 2[/green1])[/bright_black]",
+        "protocolMode": "\n%spaces%%prefix% [bright_white]Wähle den Protokollmodus im Fake-Proxy. \n\n%spaces% [green1]1)[/green1] [bright_white]Verhält sich wie der Backend-Server. [bright_black]([/bright_black]Erlaubt nur bestimmten Versionen, sich mit dem Proxy zu verbinden[bright_black]) \n\n%spaces% [green1]2)[/green1] [bright_white]Stimmt immer mit dem Client überein, erlaubt jeder Version, den Proxy zu betreten. [bright_black]([/bright_black]Das bedeutet nicht, dass alle Versionen den Backend-Server betreten können, nur die, die erlaubt sind[bright_black])[/bright_black]",
+        "protocolModeInput": "\n%spaces%%prefix% [bright_white]Wähle den Protokollmodus für den Fake-Proxy. [bright_black]([green1]1 2[/green1])[/bright_black]",
+        "pinggyIO": "\n%spaces%%prefix% [bright_white]Möchtest du eine öffentliche IP und einen Port für den Fake-Proxy mit dem Dienst pinggy.io erhalten? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "pinggyIOCommand": "\n%spaces%%prefix% [bright_white]Verwende diesen Befehl, um eine Domain und einen Port vom Dienst pinggy.io zu erhalten: [green1]ssh -p 443 -R0:localhost:%port% tcp@a.pinggy.io[/green1].",
+        "pinggyIODomain": "\n%spaces%%prefix% [bright_white]Gib die Domain des Dienstes pinggy.io ein[/bright_white]",
+        "gettingPinggyIP": "\n%spaces%%prefix% [bright_white]Erhalte öffentliche IP und Port für den Fake-Proxy vom Dienst pinggy.io...[/bright_white]",
+        "couldNotGetPinggyIOIP": "\n%spaces%%prefix% [bright_red]Es konnte keine öffentliche IP und kein Port für den Fake-Proxy vom Dienst pinggy.io erhalten werden.[/bright_red]",
+        "pinggyIOIPAndPort": "\n%spaces%%prefix% [bright_white]Öffentliche IP und Port des Fake-Proxys. [bright_black]([green1]%ipAndPort%[/green1])[/bright_black]",
+        "connected": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🟢 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_white]hat sich mit dem Fake-Proxy-Server verbunden[/bright_white]",
+        "disconnected": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔴 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_white]hat sich vom Fake-Proxy-Server getrennt[/bright_white]",
+        "chat": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] ✉️ [bright_white] %username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_black]▶ [bright_white]%message%[/bright_white]",
+        "command": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 💣 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_black]▶ [bright_white]führte den Befehl [bright_cyan]%command%[/bright_cyan] aus",
+        "adminKey": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔑 [bright_white]Admin-Schlüssel [bright_black]▶ [bright_magenta]%adminKey%[/bright_magenta]",
+        "adminKeyHelp": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔑 [bright_white]Verwende den Admin-Schlüssel, um Admin-Befehle auf dem Fake-Proxy-Server auszuführen[/bright_white]",
+        "adminKeyUsed": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔑 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_black]▶ [bright_white]hat den Admin-Schlüssel verwendet[/bright_white]",
+        "messageSent": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] ⚔️ [bright_white]Nachricht erfolgreich an den Spieler [green1]%target% [bright_white]([bright_cyan]%message%[bright_white]) gesendet. Von [green1]%sender%[/green1]",
+        "onlineModeError": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🟡 [red1]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_white]kann sich nicht mit dem Fake-Proxy-Server verbinden, da der Backend-Server im Online-Modus ist.[/bright_white]",
+        "stopping": "\n%spaces%%prefix% [bright_white]Fake-Proxy-Server beenden...[/bright_white]"
+      }
+    },
+    "connect": {
+      "args": ["<Server>", "<Version>", "<Benutzername>"],
+      "description": "Verbinde dich mit einem Bot zum angegebenen Server",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]Überprüfe Server [green1]%server%[/green1]...[/bright_white]",
+        "connecting": "\n%spaces%%prefix% [bright_white]Verbinde mit dem Server [green1]%server%[/green1]...[/bright_white]"
+      }
+    },
+    "sendcmd": {
+      "args": ["<Server>", "<Version>", "<Benutzername>", "<Datei>"],
+      "description": "Sende Befehle oder Nachrichten an den angegebenen Server mit einem Bot",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]Überprüfe Server [green1]%server%[/green1]...[/bright_white]",
+        "gettingCommands": "\n%spaces%%prefix% [bright_white]Abrufen der Befehle aus der Datei [bright_black]([bright_cyan]%commandsFile%[/bright_cyan])[/bright_white]",
+        "sendingCommands": "\n%spaces%%prefix% [bright_white]Sende Befehle an den angegebenen Server [green1]%server%[/green1] mit Bot [green1]%username%[/green1] und Befehlsdatei [bright_cyan]%commandsFile%[/bright_cyan] [bright_black](%commandsCount% Befehle)[/bright_black]...[/bright_white]"
+      }
+    },
+    "kick": {
+      "args": ["<Server>", "<Version>", "<Benutzername>"],
+      "description": "Kicke den angegebenen Spieler mit einem Bot vom Server",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]Überprüfe Server [green1]%server%[/green1]...[/bright_white]",
+        "proxyAsk": "\n%spaces%%prefix% [bright_white]Möchtest du einen Proxy verwenden, um den Bot zu kicken? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxyAsk": "\n%spaces%%prefix% [bright_white]Möchtest du einen benutzerdefinierten Proxy verwenden, um den Bot zu kicken? [bright_black]([green1]y/n[/bright_black])[/bright_black]",
+        "customProxy": "\n%spaces%%prefix% [bright_white]Gib die IP-Adresse und den Port für den benutzerdefinierten Proxy ein [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "gettingFreeProxy": "\n%spaces%%prefix% [bright_white]Erhalte einen kostenlosen Proxy, um den Bot zu kicken...[/bright_white]",
+        "kicking": "\n%spaces%%prefix% [bright_white]Kicke den Spieler [green1]%username%[/green1] vom Server [green1]%server%[/green1] [bright_black]([bright_cyan]%version%[/bright_cyan])[/bright_black]...[/bright_white]",
+        "playerKicked": "\n%spaces%💣 [bright_white]Spieler [green1]%username%[/green1] wurde vom Server gekickt.[/bright_white]",
+        "errorKickingPlayer": "\n%spaces%%prefix% [bright_white]Es ist nicht möglich, den Spieler [green1]%username%[/green1] vom Server zu kicken. Grund: [red1]%reason%[/red1][/bright_white]"
+      }
+    },
+    "kickall": {
+      "args": ["<Server>", "<Version>"],
+      "description": "Kicke alle Spieler mit einem Bot vom Server",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]Überprüfe Server [green1]%server%[/green1]...[/bright_white]",
+        "proxyAsk": "\n%spaces%%prefix% [bright_white]Möchtest du einen Proxy verwenden, um alle Spieler zu kicken? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxiesAsk": "\n%spaces%%prefix% [bright_white]Möchtest du benutzerdefinierte Proxies verwenden, um alle Spieler zu kicken? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxies": "\n%spaces%%prefix% [bright_white]Gib die Datei mit den IP-Adressen und Ports der benutzerdefinierten Proxies ein [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "loopExecutionAsk": "\n%spaces%%prefix% [bright_white]Möchtest du den Befehl in einer Endlosschleife ausführen? [bright_black]([bright_cyan]Verwende Ctrl C, um zu stoppen[bright_black]) [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "excludingPlayerAsk": "\n%spaces%%prefix% [bright_white]Möchtest du einen Spieler vom Kicken ausnehmen? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "excludingPlayer": "\n%spaces%%prefix% [bright_white]Gib den Benutzernamen des Spielers ein, den du vom Kicken ausnehmen möchtest[/bright_white]",
+        "excludingUser": "\n%spaces%%prefix% [bright_white]Spieler [bright_cyan]%username%[/bright_cyan] wird vom Kicken auf dem Server ausgenommen.[/bright_white]",
+        "gettingFreeProxies": "\n%spaces%%prefix% [bright_white]Erhalte kostenlose Proxies, um alle Spieler zu kicken...[/bright_white]",
+        "failedToGetFreeProxies": "\n%spaces%%prefix% [bright_white]Es ist nicht möglich, kostenlose Proxies zu erhalten, um alle Spieler zu kicken. Bitte versuche es später erneut oder verwende benutzerdefinierte Proxies.[/bright_white]",
+        "invalidCustomProxies": "\n%spaces%%prefix% [bright_white]Ungültige Proxies in der Datei [bright_cyan]%file%[/bright_cyan]. Bitte versuche es erneut mit einer anderen Datei.[/bright_white]",
+        "gettingPlayers": "\n%spaces%%prefix% [bright_white]Abrufen der Spieler-Liste vom Server...[/bright_white]",
+        "serverOffline": "\n%spaces%%prefix% [bright_white]Der Server ist offline. Versuche es erneut in [bright_cyan]%seconds% Sekunden[bright_cyan]...[/bright_white]",
+        "notJavaServer": "\n%spaces%%prefix% [bright_white]Der Server wurde als Bedrock-Server erkannt, nicht als Java. Versuche es erneut in [bright_cyan]%seconds% Sekunden[bright_cyan]...[/bright_white]",
+        "kickingAll": "\n%spaces%%prefix% [bright_white]Kicke alle Spieler vom Server...[/bright_white]",
+        "noPlayersFoundLoop": "\n%spaces%%prefix% [bright_white]Keine Spieler auf dem Server gefunden. Versuche es erneut in [bright_cyan]%seconds% Sekunden[bright_cyan]...[/bright_white]",
+        "playersKicked": "\n%spaces%%prefix% [bright_white]Alle Spieler wurden vom Server gekickt.[/bright_white]",
+        "playersKickedLoop": "\n%spaces%%prefix% [bright_white]Alle Spieler wurden vom Server gekickt. Der Befehl wird erneut in [bright_cyan]%seconds% Sekunden[bright_cyan] ausgeführt...[/bright_white]",
+        "noPlayers": "\n%spaces%%prefix% [bright_white]Es gibt keine Spieler zum Kicken auf dem Server.[/bright_white]",
+        "stoppingLoop": "\n%spaces%%prefix% [bright_white]Endlosschleifen-Ausführung der Befehle beenden...[/bright_white]"
+      }
+    },
+    "botattack": {
+      "args": ["<Server>", "<Version>", "<Max Bots>", "<Verzögerung>"],
+      "description": "Sende einen einfachen Bot-Angriff an den angegebenen Server",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]Überprüfe Server [green1]%server%[/green1]...[/bright_white]",
+        "customProxiesAsk": "\n%spaces%%prefix% [bright_white]Möchtest du benutzerdefinierte Proxies verwenden, um den Bot-Angriff zu senden? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxies": "\n%spaces%%prefix% [bright_white]Gib die Datei mit den IP-Adressen und Ports der benutzerdefinierten Proxies ein [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "invalidCustomProxies": "\n%spaces%%prefix% [bright_white]Ungültige Proxies in der Datei [bright_cyan]%file%[/bright_cyan]. Bitte versuche es erneut mit einer anderen Datei.[/bright_white]",
+        "gettingFreeProxies": "\n%spaces%%prefix% [bright_white]Erhalte kostenlose Proxies, um den Bot-Angriff zu senden...[/bright_white]",
+        "failedToGetFreeProxies": "\n%spaces%%prefix% [bright_white]Es ist nicht möglich, kostenlose Proxies zu erhalten, um den Bot-Angriff zu senden. Bitte versuche es später erneut oder verwende benutzerdefinierte Proxies.[/bright_white]",
+        "proxiesLoaded": "\n%spaces%%prefix% [bright_white]Proxies geladen: [bright_cyan]%proxies%[/bright_cyan][/bright_white]",
+        "botAttack": "\n%spaces%%prefix% [bright_white]Sende einen einfachen Bot-Angriff an den Server...[/bright_white]"
+      }
+    },
+    "rcon": {
+      "args": ["<IP:Port_rcon>", "<Passwort>"],
+      "description": "Verbinde dich mit dem RCON des angegebenen Servers",
+      "messages": {
+        "connecting": "\n%spaces%%prefix% [bright_white]Verbinde mit dem RCON des Servers [green1]%server%[/green1]...[/bright_white]",
+        "connected": "\n%spaces%%prefix% [bright_white]Erfolgreich mit dem RCON verbunden. Um die Verbindung zu trennen, tippe [bright_cyan]exit[/bright_cyan].[/bright_white]",
+        "commandInput": "%spaces%%prefix% [bright_white]Tippe ein, um einen Befehl auf dem Server auszuführen[/bright_white]",
+        "disconnected": "\n\n%spaces%%prefix% [bright_white]Verbindung vom RCON getrennt.[/bright_white]"
+      }
+    },
+    "brutercon": {
+      "args": ["<IP:Port_rcon>", "<Passwort-Datei>"],
+      "description": "Bruteforce das RCON-Passwort des angegebenen Servers",
+      "messages": {
+        "noPasswords": "\n%spaces%%prefix% [bright_white]Keine Passwörter in der Datei [bright_cyan]%file%[/bright_cyan] gefunden. Bitte versuche es erneut mit einer anderen Datei.[/bright_white]",
+        "bruteForcing": "\n%spaces%%prefix% [bright_white]Bruteforce des RCON-Passworts für den Server [green1]%server%[/green1]...[/bright_white]",
+        "invalidPassword": "\n%spaces%%prefix% [bright_white]Ungültiges Passwort: [bright_cyan]%password%[/bright_cyan][/bright_white]",
+        "passwordFound": "\n%spaces%%prefix% [bright_white]RCON-Passwort gefunden: [bright_cyan]%password%[/bright_cyan][/bright_white]",
+        "passwordNotFound": "\n%spaces%%prefix% [bright_white]Kein RCON-Passwort gefunden. Bitte versuche es erneut mit einer anderen Passwort-Liste.[/bright_white]"
+      }
+    },
+    "shell": {
+      "args": ["<Port>"],
+      "description": "Höre eingehenden Verbindungen zu, um Remote-Shell-Befehle auf dem angegebenen Port auszuführen",
+      "messages": {
+        "listening": "\n%spaces%%prefix% [bright_white]Höre eingehenden Verbindungen auf dem angegebenen Port [bright_cyan]%port%[/bright_cyan] zu...\n",
+        "errorStartingListener": "\n%spaces%%prefix% [bright_white]Fehler beim Starten des Listeners auf dem angegebenen Port [bright_cyan]%port%[/bright_cyan]. Fehler: [bright_red]%error%[/bright_red][/bright_white]"
+      }
+    },
+    "hideip": {
+      "args": ["<Server>"],
+      "description": "Erstelle einen Proxy, um deine IP für den angegebenen Server zu verbergen (funktioniert nur mit Servern 1.8.8)",
+      "messages": {
+        "domainDetected": "\n%spaces%%prefix% [bright_white]Domain erkannt. Abrufen der IP und des Ports für den Minecraft-Server...[/bright_white]",
+        "serverOffline": "\n%spaces%%prefix% [bright_white]Server ist offline. Wenn der Server online ist, führe den Befehl erneut mit der IP und dem Port des Servers aus.[/bright_white]",
+        "customProxyAsk": "\n%spaces%%prefix% [bright_white]Möchtest du einen benutzerdefinierten Proxy verwenden? [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxy": "\n%spaces%%prefix% [bright_white]Gib die IP-Adresse und den Port für den benutzerdefinierten Proxy ein [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "invalidCustomProxy": "\n%spaces%%prefix% [bright_white]Ungültiger benutzerdefinierter Proxy. Gib eine gültige IP-Adresse und einen gültigen Port für den benutzerdefinierten Proxy ein[/bright_white]",
+        "customProxyTimeout": "\n%spaces%%prefix% [bright_white]Der benutzerdefinierte Proxy antwortet nicht. Bitte versuche es erneut mit einem anderen benutzerdefinierten Proxy.[/bright_white]",
+        "gettingFreeProxy": "\n%spaces%%prefix% [bright_white]Erhalte einen kostenlosen Proxy...[/bright_white]",
+        "failedToGetFreeProxy": "\n%spaces%%prefix% [bright_white]Es ist nicht möglich, einen kostenlosen Proxy zu erhalten. Bitte versuche es später erneut oder verwende einen benutzerdefinierten Proxy.[/bright_white]",
+        "startingProxy": "\n%spaces%%prefix% [bright_white]Starte Proxy für [green1]%ipAndPort%[/green1]...[/bright_white]",
+        "usingProxy": "\n%spaces%%prefix% [bright_white]Verwende Proxy [green1]%proxyIp%:%proxyPort%[/green1].",
+        "proxyStarted": "\n%spaces%%prefix% [bright_white]Proxy erfolgreich gestartet. Verwende die IP, um dich mit dem Server zu verbinden [green1]%proxyIp%:%proxyPort%[/green1].[/bright_white]",
+        "connectionReceived": "\n%spaces%%prefix% [bright_white]Verbindung erhalten von [green1]%clientIp%:%clientPort%[/green1].[/bright_white]",
+        "proxyStopped": "\n%spaces%%prefix% [bright_white]Proxy erfolgreich gestoppt.[/bright_white]"
+      }
+    },
+    "password": {
+      "args": ["<Benutzername/Benutzername>"],
+      "description": "Suche nach Passwörtern für den angegebenen Benutzernamen in verschiedenen geleakten Datenbanken",
+      "messages": {
+        "searching": "\n%spaces%%prefix% [bright_white]Suche nach Passwörtern für den Benutzernamen [bright_cyan]%username%[/bright_cyan] in geleakten Datenbanken...[/bright_white]",
+        "passwordNotFound": "\n%spaces%%prefix% [bright_white]Keine Passwörter für den Benutzernamen [bright_cyan]%username%[/bright_cyan] in geleakten Datenbanken gefunden.[/bright_white]",
+        "passwordsFound": "\n%spaces%%prefix% [bright_white]Gefundene Passwörter für den Benutzernamen [bright_cyan]%username%[/bright_cyan]:[/bright_white]",
+        "server": "\n%spaces% [red1][[bright_red]Server[bright_white][red1]] [bright_white]%server%[/bright_white] [bright_black]([bright_cyan]%serverip%[bright_cyan])[/bright_black]",
+        "username": "%spaces% [red1][[bright_red]Benutzer[bright_white]name[red1]] [bright_white]%username%[/bright_white]",
+        "password": "%spaces% [red1][[bright_red]Pass[bright_white]wort[red1]] [bright_white]%password%[/bright_white]",
+        "ip": "%spaces% [red1][[bright_red]IP[bright_red]][/red1] [bright_white]%ip%[/bright_white]",
+        "salt": "%spaces% [red1][[bright_red]Salt[bright_white][/bright_white][/bright_red]][/red1] [bright_white]%salt%[/bright_white]",
+        "total": "\n%spaces%%prefix% [bright_white]Gesamtzahl gefundener Passwörter: [bright_cyan]%total%[/bright_cyan][/bright_white] [bright_black]([bright_green]%valid%[bright_green] gültig, [red1]%invalid%[/red1] ungültig)[/bright_black]",
+        "invalidPlan": "\n%spaces%%prefix% [bright_white]Ungültiger Plan. Du benötigst einen [bright_cyan]höheren Plan[bright_cyan], um diesen Befehl zu verwenden.[/bright_white]"
+      }
+    },
+    "clearservers": {
+      "args": [],
+      "description": "Lösche die Liste der Minecraft-Server",
+      "messages": {
+        "serversCleared": "\n%spaces%%prefix% [bright_white]Server erfolgreich gelöscht.[/bright_white]"
+      }
+    },
+    "settings": {
+      "args": [],
+      "description": "Öffne die Konfigurationsdatei",
+      "messages": {
+        "settingsUpdated": "\n%spaces%%prefix% [bright_white]Einstellungen erfolgreich aktualisiert.[/bright_white]"
+      }
+    },
+    "language": {
+      "args": ["<Sprache>"],
+      "description": "Ändere die Sprache von MCPTool",
+      "messages": {
+        "sameLanguage": "\n%spaces%%prefix% [bright_white]Die Sprache von MCPTool ist bereits auf [bright_cyan]%language%[/bright_cyan] eingestellt.[/bright_white]",
+        "languageChanged": "\n%spaces%%prefix% [bright_white]Die Sprache von MCPTool wurde auf [bright_cyan]%language%[/bright_cyan] geändert.[/bright_white]"
+      }
+    },
+    "debug": {
+      "args": [],
+      "description": "Aktiviere oder deaktiviere den Debug-Modus",
+      "messages": {
+        "debugEnabled": "\n%spaces%%prefix% [bright_white]Debug-Modus aktiviert.[/bright_white]",
+        "debugDisabled": "\n%spaces%%prefix% [bright_white]Debug-Modus deaktiviert.[/bright_white]"
+      }
+    }
+  },
+  "logs": {
+    "logsSaved": "\n%spaces%%prefix% [bright_white]Logs gespeichert in [green1]%file%[/green1].[/bright_white]"
+  },
+  "serverMessages": {
+    "ip_and_port": "%spaces%&4[&c&lIP&f&l&f&lPort&4] &f&l&o%ipAndPort%",
+    "motd": "%spaces%&4[&c&lMO&f&lTD&4] &f&l%motd%",
+    "version": "%spaces%&4[&c&lVers&f&lion&4] &f&l%version%",
+    "protocol": "%spaces%&4[&c&lProt&f&lcol&4] &f&l&o%protocol%",
+    "connected": "%spaces%&4[&c&lConne&f&lcted&4] &f&l&o%connectedPlayers%&8&l/&f&l&o%maxPlayers%",
+    "playerList": "%spaces%&4[&c&lPlayer&f&lList&4] &f&l&o%playerList%",
+    "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
+    "modList": "%spaces%&4[&c&lMo&f&lds&4] &f&l&o%modList%",
+    "brand": "%spaces%&4[&c&lBra&f&lnd&4] &f&l&o%brand%",
+    "software": "%spaces%&4[&c&lSof&f&ltware&4] &f&l&o%software%",
+    "map": "%spaces%&4[&c&lMa&f&lp&4] &f&l&o%map%",
+    "gamemode": "%spaces%&4[&c&lGam&f&leMode&4] &f&l&o%gamemode%",
+    "ping": "%spaces%&4[&c&lPi&f&lng&4] &f&l&o%ping%ms",
+    "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%"
+  },
+  "filterServers": {
+    "filterByData": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Daten filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByOnlyBotCanJoin": "\n%spaces%%prefix% [bright_white]Möchtest du Server filtern, bei denen nur ein Bot beitreten kann? [bright_black]([red1]Offline-Server[bright_black]) ([green1]y/n[/green1])[/bright_black]",
+    "filterByDescription": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Beschreibung filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByDescriptionText": "\n%spaces%%prefix% [bright_white]Gib eine Beschreibung ein, um die Server zu filtern [bright_black]([green1]z.B. survival[/green1])[/bright_black][/bright_white]",
+    "filterByOnlinePlayers": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Anzahl der Online-Spieler filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByOnlinePlayersText": "\n%spaces%%prefix% [bright_white]Gib die Mindestanzahl der Online-Spieler ein, um die Server zu filtern [bright_black]([green1]z.B. 5[/green1])[/bright_black][/bright_white]",
+    "filterByProtocol": "\n%spaces%%prefix% [bright_white]Möchtest du die Server nach Protokoll filtern? [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByProtocolText": "\n%spaces%%prefix% [bright_white]Gib das Protokoll ein, um die Server zu filtern [bright_black]([green1]z.B. 47[/bright_black])[/bright_white]",
+    "onlyBotCanJoin": "Nur ein Bot kann beitreten",
+    "description": "Beschreibung",
+    "onlinePlayers": "Online-Spieler",
+    "protocol": "Protokoll"
+  },
+  "addServers": {
+    "addServersFoundToMinecraft": "\n%spaces%%prefix% [bright_white]Möchtest du die gefundenen Server zur Minecraft-Serverliste hinzufügen? [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "addBungeeExploitVulnerableServersOnly": "\n%spaces%%prefix% [bright_white]Möchtest du nur die gegen BungeeCord-Exploits anfälligen Server zur Minecraft-Serverliste hinzufügen? [bright_black]([green1]y/n[/green1])[/bright_black]"
+  },
+  "discordPresence": {
+    "title": "Ein fortschrittliches Pentesting-Tool für Minecraft",
+    "version": "Version %version%",
+    "menu": "Im Menü",
+    "usingCommand": "Verwende Befehl %command%"
+  },
+  "errors": {
+    "missingArguments": "\n%spaces%[bright_red]Fehlende Argumente. [bright_white]Richtige Verwendung: [bright_cyan]%command% [bright_red]%arguments%[/bright_red]",
+    "serverOffline": "\n%spaces%%prefix% [bright_white]Es können keine Daten vom angegebenen Server abgerufen werden. Der Server ist möglicherweise offline.[/bright_white]",
+    "invalidServer": "\n%spaces%%prefix% [bright_white]Ungültiger Server. Bitte gib eine gültige IP-Adresse und einen gültigen Port oder eine gültige Domain ein.[/bright_white]",
+    "invalidDomain": "\n%spaces%%prefix% [bright_white]Du hast eine ungültige Domain eingegeben. Bitte gib eine gültige Domain ein.[/bright_white]",
+    "invalidIpAndPort": "\n%spaces%%prefix% [bright_white]Du hast eine ungültige IP-Adresse und einen ungültigen Port eingegeben. Bitte gib eine gültige IP-Adresse und einen gültigen Port ein.[/bright_white]",
+    "invalidIpFormat": "\n%spaces%%prefix% [bright_white]Du hast ein ungültiges IP-Format eingegeben. Bitte gib eine gültige IP-Adresse ein.[/bright_white]",
+    "invalidScanMethod": "\n%spaces%%prefix% [bright_white]Du hast eine ungültige Scan-Methode eingegeben. Bitte gib eine gültige Scan-Methode ein [bright_black]([bright_cyan]old_qubo, qubo, nmap, masscan oder py[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidIpRange": "\n%spaces%%prefix% [bright_white]Du hast einen ungültigen IP-Bereich eingegeben. Bitte gib einen gültigen IP-Bereich ein.[/bright_white]",
+    "invalidPortRange": "\n%spaces%%prefix% [bright_white]Du hast einen ungültigen Portbereich eingegeben. Bitte gib einen gültigen Portbereich ein.[/bright_white]",
+    "invalidFile": "\n%spaces%%prefix% [bright_white]Du hast eine ungültige Datei eingegeben. Bitte gib eine gültige Datei ein.[/bright_white]",
+    "invalidIntgerInput": "\n%spaces%%prefix% [bright_white]Du hast eine ungültige Ganzzahl-Eingabe eingegeben. Bitte gib eine gültige Ganzzahl-Eingabe ein.[/bright_white]",
+    "invalidBooleanInput": "\n%spaces%%prefix% [bright_white]Du hast eine ungültige Boolesche Eingabe eingegeben. Bitte gib eine gültige Boolesche Eingabe ein [bright_black]([bright_cyan]y oder n[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidCountryCodeInput": "\n%spaces%%prefix% [bright_white]Du hast einen ungültigen Länder-Code eingegeben. Bitte gib einen gültigen Länder-Code ein.[/bright_white]",
+    "invalidVelocityForwardingMode": "\n%spaces%%prefix% [bright_white]Du hast einen ungültigen Velocity-Forwarding-Modus eingegeben. Bitte gib einen gültigen Velocity-Forwarding-Modus ein [bright_black]([bright_cyan]legacy, modern oder none[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidFakeProxyUpdateModeInput": "\n%spaces%%prefix% [bright_white]Du hast einen ungültigen Aktualisierungsmodus für den Fake-Proxy eingegeben. Bitte gib einen gültigen Aktualisierungsmodus ein [bright_black]([bright_cyan]1 oder 2[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidFakeProxyProtocolModeInput": "\n%spaces%%prefix% [bright_white]Du hast einen ungültigen Protokollmodus für den Fake-Proxy eingegeben. Bitte gib einen gültigen Protokollmodus ein [bright_black]([bright_cyan]1 oder 2[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidFilePath": "\n%spaces%%prefix% [bright_white]Du hast einen ungültigen Dateipfad eingegeben. Bitte gib einen gültigen Dateipfad ein.[/bright_white]",
+    "invalidProxyInput": "\n%spaces%%prefix% [bright_white]Du hast einen ungültigen Proxy eingegeben. Bitte gib einen gültigen Proxy ein [bright_black]([bright_cyan]socks4 oder socks5[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidProxy": "\n%spaces%%prefix% [bright_white]Der Proxy antwortet nicht. Bitte wähle einen anderen Proxy.[/bright_white]",
+    "invalidSeekerSubcommand": "\n%spaces%%prefix% [bright_white]Du hast einen ungültigen Seeker-Unterbefehl eingegeben. Bitte gib einen gültigen Seeker-Unterbefehl ein [bright_black]([bright_cyan]token servers[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidNewSettingsFile": "\n%spaces%%prefix% [bright_white]Du hast eine ungültige neue Einstellungsdatei eingegeben. Stattdessen wird die Sicherungs-Konfigurationsdatei verwendet.[/bright_white]",
+    "invalidLanguage": "\n%spaces%%prefix% [bright_white]Du hast eine ungültige Sprache eingegeben. Bitte gib eine gültige Sprache ein!",
+    "portNotFoundInPinggyDomain": "\n%spaces%%prefix% [bright_white]Der Port wurde in der Pinggy-Domain nicht gefunden. Bitte gib einen gültigen Port ein.[/bright_white]",
+    "invalidPinggyDomain": "\n%spaces%%prefix% [bright_white]Du hast eine ungültige Pinggy-Domain eingegeben. Bitte gib eine gültige Pinggy-Domain ein.[/bright_white]",
+    "subdomainsFileEmpty": "\n%spaces%%prefix% [bright_white]Die Subdomain-Datei ist leer. Bitte gib eine gültige Subdomain-Datei ein.[/bright_white]",
+    "passwordFileEmpty": "\n%spaces%%prefix% [bright_white]Die Passwort-Datei ist leer. Bitte gib eine gültige Passwort-Datei ein.[/bright_white]",
+    "nmapNotInstalled": "\n%spaces%%prefix% [bright_white]Nmap ist nicht installiert. Bitte installiere Nmap und starte MCPTool neu, um dieses Problem zu beheben.",
+    "masscanNotInstalled": "\n%spaces%%prefix% [bright_white]Masscan ist nicht installiert. Bitte installiere Masscan und starte MCPTool neu, um dieses Problem zu beheben.",
+    "javaNotInstalled": "\n%spaces%%prefix% [bright_white]Java 19 oder höher ist nicht installiert. Bitte installiere Java 19 oder höher, um dieses Problem zu beheben.",
+    "rconTimeout": "\n%spaces%%prefix% [bright_white]Zeitüberschreitung bei der Verbindung mit dem RCON. Bitte überprüfe die IP-Adresse und den Port und versuche es erneut.[/bright_white]",
+    "rconConnectionRefused": "\n%spaces%%prefix% [bright_white]RCON-Verbindung wurde abgelehnt. Bitte überprüfe die IP-Adresse und den Port und versuche es erneut.[/bright_white]",
+    "rconInvalidPassword": "\n%spaces%%prefix% [bright_white]Ungültiges RCON-Passwort. Bitte überprüfe das Passwort und versuche es erneut.[/bright_white]",
+    "rconUnknownError": "\n%spaces%%prefix% [bright_white]Unbekannter RCON-Fehler. Bitte überprüfe die IP-Adresse, den Port und das Passwort und versuche es erneut.[/bright_white]",
+    "notJavaServer": "\n%spaces%%prefix% [bright_white]Der Server ist kein Java-Server. Dieser Befehl funktioniert nur mit Java-Servern.[/bright_white]",
+    "commandsFileNotFound": "\n%spaces%%prefix% [bright_white]Befehlsdatei nicht gefunden. Bitte gib eine gültige Befehlsdatei ein.[/bright_white]",
+    "commandsFileEmpty": "\n%spaces%%prefix% [bright_white]Die Befehlsdatei ist leer. Bitte gib eine gültige Befehlsdatei ein.[/bright_white]",
+    "permissionDenied": "\n%spaces%%prefix% [bright_white]Die Datei [file%] hat keine Ausführungsberechtigung. Bitte schließe MCPTool und führe diesen Befehl aus, um das Problem zu beheben: [green1]%commandToFix%[/green1].",
+    "errorStartingListener": "\n%spaces%%prefix% [bright_white]Fehler beim Starten des Shell-Listeners. Fehler: %error%[/bright_white]",
+    "windowsOnly": "\n%spaces%%prefix% [bright_white]Dieser Befehl funktioniert nur unter Windows[/bright_white]",
+    "rootRequired": "\n%spaces%%prefix% [bright_white]Root-Zugriff ist erforderlich, um diesen Befehl auszuführen. Bitte schließe MCPTool und führe es als Root aus, um das Problem zu beheben.",
+    "passwordApiError": "\n%spaces%%prefix% [bright_white]Fehler beim Abrufen des Passworts von der API. Bitte versuche es später erneut.[/bright_white]",
+    "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Ungültige Antwort von der API. Bitte versuche es später erneut.[/bright_white]"
+  },
+  "fileVersion": "1"
+}

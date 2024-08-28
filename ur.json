@@ -1,0 +1,481 @@
+{
+  "tool": "[red1]MCP[bold white]Tool[/bold white][/red1]",
+  "description": "Minecraft کے لیے ایک اعلی درجے کا پین ٹیسٹنگ ٹول",
+  "ctrlC": "\n%spaces%%prefix% [red1]CtrlC [bright_white]پکڑا گیا۔ موجودہ عمل کو روک رہا ہے...[/bright_white]",
+  "exit": "\n\n%spaces%%prefix% [bright_white]باہر نکل رہا ہے...[/bright_white]",
+  "invalidCommand": "\n%spaces%%prefix% [red1]غلط کمانڈ۔ [bright_white]دستیاب کمانڈز دیکھنے کے لیے [green1]help [bright_white]لکھیں۔[/bright_white]",
+  "checkingProxies": "%spaces%%prefix% [bright_white]پراکسی سرورز کی جانچ ہو رہی ہے...",
+  "stoppingProxiesSearch": "\n%spaces%%prefix% [bright_white]پراکسی سرورز کی تلاش روک رہا ہے",
+  "auth": {
+    "title": "تصدیق",
+    "welcome": "[bright_white]خوش آمدید [red1]MCP[bright_white]Tool[bright_white]\nMinecraft کے لیے بہترین پین ٹیسٹنگ ٹول\nاکاؤنٹ نہیں ہے؟ یہاں خریدیں: [underline][bold]https://buy.mcptool.net[/bold][/underline]\n",
+    "loginMessage": "%prefix% [bright_white]لاگ ان کرنے کے لیے اپنا [green1]صارف نام[/green1] اور [green1]پاس ورڈ[/green1] درج کریں\n",
+    "username": ":gem: [bright_white]صارف نام",
+    "password": ":key: [bright_white]پاس ورڈ",
+    "loggingIn": "\n%prefix% [bright_white]لاگ ان ہو رہا ہے...[/bright_white]",
+    "invalidCredentials": "\n%prefix% [red1]غلط معلومات۔[/red1][bright_white] اگر آپ پاس ورڈ بھول گئے ہیں، تو آپ اسے Discord سرور پر ری سیٹ کر سکتے ہیں۔",
+    "unauthorizedDevice": "\n%prefix% [red1]غیر مجاز ڈیوائس۔[/red1][bright_white] آپ نے اپنے اکاؤنٹ کے ساتھ منسلک آلات کی زیادہ سے زیادہ حد کو پہنچا دیا ہے۔ آپ ایک آلہ کو ہٹا سکتے ہیں، Discord سرور پر ٹکٹ کھول کر۔",
+    "success": "\n%prefix% [green1]کامیاب لاگ ان![/green1]\n",
+    "apiOffline": "\n%prefix% [red1]API اس وقت آف لائن ہے۔ براہ کرم بعد میں کوشش کریں۔[/red1]"
+  },
+  "commands": {
+    "help": {
+      "table": {
+        "commandName": "کمانڈ کا نام",
+        "args": "دلائل",
+        "description": "تفصیل",
+        "available": "دستیاب"
+      }
+    },
+    "server": {
+      "args": ["<سرور>"],
+      "description": "دیے گئے سرور کی معلومات حاصل کریں (motd، ورژن، آن لائن پلیئرز وغیرہ)",
+      "messages": {
+        "gettingServerData": "\n%spaces%%prefix% [bright_white]سرور کے ڈیٹا حاصل کیے جا رہے ہیں [green1]%server%[/green1]...",
+        "sendingBot": "\n%spaces%%prefix% [bright_white]بوٹ بھیجا جا رہا ہے [green1]%server%[/green1]..."
+      }
+    },
+    "uuid": {
+      "args": ["<uuid/صارف نام>"],
+      "description": "دیے گئے پلیئر کا UUID یا دیے گئے UUID کا صارف نام حاصل کریں",
+      "messages": {
+        "gettingUUID": "\n%spaces%%prefix% [bright_white]دیے گئے صارف نام سے UUID حاصل کیا جا رہا ہے۔ [bright_black]([green1]%username%[bright_black])[/bright_black]",
+        "gettingUsername": "\n%spaces%%prefix% [bright_white]دیے گئے UUID سے صارف نام حاصل کیا جا رہا ہے۔ [bright_black]([green1]%uuid%[bright_black])[/bright_black]",
+        "uuid": "%spaces%[red1][[bright_red]UU[bright_white]ID[red1]] %uuid% [bright_black]([bright_cyan]%uuidVariant%[bright_black])[/bright_black]",
+        "username": "\n%spaces%%prefix% [bright_white]دیے گئے UUID کے لیے صارف نام: [green1]%username%[/green1]",
+        "usernameNotFound": "\n%spaces%%prefix% [bright_white]دیے گئے UUID کے لیے صارف نام نہیں ملا۔ یہ غلط ہو سکتا ہے۔[/bright_white]"
+      }
+    },
+    "ipinfo": {
+      "args": ["<آئی پی>"],
+      "description": "دیے گئے آئی پی پتے کی معلومات حاصل کریں",
+      "messages": {
+        "gettingIpData": "\n%spaces%%prefix% [bright_white]دیے گئے آئی پی سے ڈیٹا حاصل کیا جا رہا ہے...[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]دیے گئے آئی پی سے ڈیٹا حاصل نہیں کیا جا سکا۔ ممکن ہے یہ غلط ہو۔[/bright_white]",
+        "continent": "\n%spaces%[red1][[bright_red]بر[bright_white]اعظم[red1]] [bright_white]%continent% [bright_black]([bright_cyan]+%continentCode%[bright_black])[/bright_black]",
+        "country": "%spaces%[red1][[bright_red]مل[bright_white]ک[red1]] [bright_white]%country% [bright_black]([bright_cyan]+%countryCode%[bright_black])[/bright_black]",
+        "region": "%spaces%[red1][[bright_red]علاق[bright_white]ہ[red1]] [bright_white]%region% [bright_black]([bright_cyan]+%regionName%[bright_black])[/bright_black]",
+        "city": "%spaces%[red1][[bright_red]شہ[bright_white]ر[red1]] [bright_white]%city%[/bright_white]",
+        "timezone": "%spaces%[red1][[bright_red]وقت[bright_white]ی علاقہ[red1]] [bright_white]%timezone%[/bright_white]",
+        "isp": "%spaces%[red1][[bright_red]ISP[red1]] [bright_white]%isp%[/bright_white]",
+        "organization": "%spaces%[red1][[bright_red]تنظ[bright_white]یم[red1]] [bright_white]%organization%[/bright_white]"
+      }
+    },
+    "iphistory": {
+      "args": ["<ڈومین>"],
+      "description": "دیے گئے ڈومینز کے آئی پی کی تاریخ حاصل کریں",
+      "messages": {
+        "gettingIpHistory": "\n%spaces%%prefix% [bright_white]دیے گئے ڈومین کے لیے آئی پی کی تاریخ حاصل کی جا رہی ہے...[/bright_white]",
+        "noIpHistory": "\n%spaces%%prefix% [bright_white]دیے گئے ڈومین کے لیے آئی پی کی تاریخ نہیں ملی۔[/bright_white]",
+        "ipHistoryFound": "\n%spaces%%prefix% [bright_white]آئی پی کی تاریخ ملی:[/bright_white]",
+        "ipHistoryEnd": "%spaces%%prefix% [green1]%ips% [bright_white]آئی پی پتے ملے ہیں، جو [green1]%domain%[/bright_white] کی تاریخ کے ساتھ منسلک ہیں۔"
+      }
+    },
+    "dnsrecords": {
+      "args": ["<ڈومین>"],
+      "description": "دیے گئے ڈومین کے DNS ریکارڈز حاصل کریں",
+      "messages": {
+        "lookingUpDnsRecords": "\n%spaces%%prefix% [bright_white]دیے گئے ڈومین کے DNS ریکارڈز تلاش کیے جا رہے ہیں [bright_black]([green1]%domain%[bright_black])[/bright_black]...",
+        "noDnsRecords": "\n%spaces%%prefix% [bright_white]دیے گئے ڈومین کے لیے DNS ریکارڈز نہیں ملے۔[/bright_white]",
+        "dnsRecordsFound": "\n%spaces%%prefix% [bright_white]DNS ریکارڈز ملے:[/bright_white]",
+        "dnsRecordsEnd": "%spaces%%prefix% [green1]%records% [bright_white]DNS ریکارڈز ملے ہیں [green1]%domain%[/bright_white]"
+      }
+    },
+    "checker": {
+      "args": ["<فائل>"],
+      "description": "Minecraft سرور کی حیثیت چیک کریں جو فائل میں سرورز کی فہرست سے ہے",
+      "messages": {
+        "checkingServers": "\n%spaces%%prefix% [bright_white]دیے گئے فائل سے سرورز کی جانچ ہو رہی ہے...[/bright_white]",
+        "noServersFound": "\n%spaces%%prefix% [bright_white]دیے گئے فائل میں کوئی سرور نہیں ملے۔[/bright_white]",
+        "serversFound": "\n%spaces%%prefix% [green1]%servers% [bright_white]سرورز دیے گئے فائل [green1]%file%[bright_white] میں ملے ہیں۔[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]سرورز کی جانچ روک رہا ہے...[/bright_white]"
+      }
+    },
+    "subdomains": {
+      "args": ["<ڈومین>", "{ورڈ لسٹ}"],
+      "description": "ڈکشنری کا استعمال کرتے ہوئے دیے گئے ڈومین کے سب ڈومینز حاصل کریں",
+      "messages": {
+        "wordlist": "\n%spaces%%prefix% [bright_white]دیے گئے ورڈ لسٹ کا استعمال [bright_black]([green1]%wordlist%[bright_black])[/bright_black] [bright_white]سے [green1]%subdomains% [bright_white]سب ڈومینز کے لیے ہو رہا ہے...[/bright_white]",
+        "gettingSubdomains": "\n%spaces%%prefix% [bright_white]دیے گئے ڈومین کے سب ڈومینز حاصل کیے جا رہے ہیں [bright_black]([green1]%domain%[bright_black])[/bright_black][bright_white]...[/bright_white]\n",
+        "noSubdomains": "\n%spaces%%prefix% [bright_white]دیے گئے ڈومین [bright_black]([green1]%domain%[bright_black]) [bright_white]کے لیے سب ڈومینز نہیں ملے، دیے گئے ورڈ لسٹ کا استعمال کرتے ہوئے۔[/bright_white]",
+        "subdomainFound": "%spaces%%prefix% [bright_white]ملے ہوئے سب ڈومینز: [green1]%subdomain% [bright_black]([green1]%ip%[bright_black])[/bright_black]",
+        "subdomainsEnd": "\n%spaces%%prefix% [green1]%subdomains% [bright_white]سب ڈومینز ملے ہیں [green1]%domain%[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]سب ڈومینز کی تلاش روک رہا ہے...[/bright_white]"
+      }
+    },
+    "seeker": {
+      "args": ["<ٹوکن/سرورز>"],
+      "description": "Seeker API کا استعمال کرتے ہوئے Minecraft سرورز تلاش کریں",
+      "messages": {
+        "token": {
+          "startingServer": "\n%spaces%%prefix% [bright_white]HTTP سرور شروع ہو رہا ہے [green1]http://localhost:%port%[/green1] پر",
+          "openingSeekerDiscordUrl": "\n%spaces%%prefix% [bright_white]Seeker Discord کا URL کھولا جا رہا ہے...[/bright_white]",
+          "waitingForToken": "\n%spaces%%prefix% [bright_white]ٹوکن کا انتظار کیا جا رہا ہے...[/bright_white]",
+          "tokenReceived": "\n%spaces%%prefix% [bright_white]ٹوکن مل گیا![/bright_white]",
+          "note": "\n%spaces%%prefix% [bright_white]نوٹ: اگر آپ نے ایپلیکیشن کی اجازت دی ہے، لیکن ٹوکن موصول نہیں ہوا، تو آلے کو دوبارہ شروع کریں اور کمانڈ کو دوبارہ چلائیں۔[/bright_white]",
+          "invalidToken": "\n%spaces%%prefix% [bright_white]غلط ٹوکن۔ براہ کرم نیا ٹوکن حاصل کرنے کے لیے [green1]seeker token[/green1] کمانڈ استعمال کریں۔[/bright_white]"
+        },
+        "servers": {
+          "sendingRequest": "\n%spaces%%prefix% [bright_white]Seeker API کو درخواست بھیجی جا رہی ہے...[/bright_white]",
+          "gettingServers": "\n%spaces%%prefix% [bright_white]Seeker API سے سرورز حاصل کیے جا رہے ہیں...[/bright_white]",
+          "filterByData": "\n%spaces%%prefix% [bright_white]کیا آپ ڈیٹا کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByCountryCode": "\n%spaces%%prefix% [bright_white]کیا آپ ملک کے کوڈ کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByCountryCodeText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے ملک کا کوڈ درج کریں [bright_black]([green1]مثال کے طور پر، US[/green1])[/bright_black][/bright_white]",
+          "filterByCracked": "\n%spaces%%prefix% [bright_white]کیا آپ کرایکڈ حیثیت کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByDescription": "\n%spaces%%prefix% [bright_white]کیا آپ تفصیل کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByDescriptionText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے تفصیل درج کریں [bright_black]([green1]مثال کے طور پر، survival[/green1])[/bright_black][/bright_white]",
+          "filterByOnlyBungeeSpoofable": "\n%spaces%%prefix% [bright_white]کیا آپ صرف BungeeCord اسٹیلتھ کے لیے قابل فلٹر سرورز چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByProtocol": "\n%spaces%%prefix% [bright_white]کیا آپ پروٹوکول کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByProtocolText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے پروٹوکول درج کریں [bright_black]([green1]مثال کے طور پر، 47[/green1])[/bright_black][/bright_white]",
+          "filterByOnlinePlayers": "\n%spaces%%prefix% [bright_white]کیا آپ آن لائن پلیئرز کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+          "filterByOnlinePlayersText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے کم از کم آن لائن پلیئرز کی تعداد درج کریں [bright_black]([green1]مثال کے طور پر، 5[/green1])[/bright_black][/bright_white]",
+          "serversObtained": "\n%spaces%%prefix% [green1]%servers% [bright_white]سرورز Seeker API سے حاصل کیے گئے ہیں۔[/bright_white]",
+          "gettingData": "\n%spaces%%prefix% [bright_white]سرورز سے ڈیٹا حاصل کیا جا رہا ہے...[/bright_white]",
+          "serversFound": "\n%spaces%%prefix% [green1]%servers% [bright_white]سرورز Seeker API میں ملے ہیں۔[/bright_white]",
+          "noServers": "\n%spaces%%prefix% [bright_white]Seeker API میں کوئی سرورز نہیں ملے۔[/bright_white]",
+          "stopped": "\n%spaces%%prefix% [bright_white]سرورز کی تلاش روک رہا ہے...[/bright_white]"
+        }
+      }
+    },
+    "websearch": {
+      "args": [],
+      "description": "مختلف ویب سائٹس پر Minecraft سرورز کی تلاش کریں",
+      "messages": {
+        "filterByData": "\n%spaces%%prefix% [bright_white]کیا آپ ڈیٹا کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByOnlyBotCanJoin": "\n%spaces%%prefix% [bright_white]کیا آپ سرورز کو فلٹر کرنا چاہتے ہیں جہاں صرف بوٹ شامل ہو سکتا ہے؟ [bright_black]([red1]آف لائن سرورز[bright_black]) ([green1]y/n[/green1])[/bright_black]",
+        "filterByDescription": "\n%spaces%%prefix% [bright_white]کیا آپ تفصیل کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByDescriptionText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے تفصیل درج کریں [bright_black]([green1]مثال کے طور پر، survival[/green1])[/bright_black][/bright_white]",
+        "filterByOnlinePlayers": "\n%spaces%%prefix% [bright_white]کیا آپ آن لائن پلیئرز کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByOnlinePlayersText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے کم از کم آن لائن پلیئرز کی تعداد درج کریں [bright_black]([green1]مثال کے طور پر، 5[/green1])[/bright_black][/bright_white]",
+        "filterByProtocol": "\n%spaces%%prefix% [bright_white]کیا آپ پروٹوکول کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "filterByProtocolText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے پروٹوکول درج کریں [bright_black]([green1]مثال کے طور پر، 47[/green1])[/bright_black][/bright_white]",
+        "searchingWebsites": "\n%spaces%%prefix% [bright_white]مختلف ویب سائٹس پر سرورز کی تلاش ہو رہی ہے...[/bright_white]",
+        "searchingInPage": "\n%spaces%%prefix% [bright_white][green1]%page%[/green1] پر تلاش ہو رہی ہے...[/bright_white]",
+        "filterDataShow": "\n%spaces%%prefix% [bright_white]فلٹر ڈیٹا: \n%spaces%  [bright_black]• [bright_white]صرف بوٹ شامل ہو سکتا ہے: [green1]%onlyBotCanJoin%\n%spaces%  [bright_black]• [bright_white]تفصیل: [green1]%description%\n%spaces%  [bright_black]• [bright_white]آن لائن پلیئرز: [green1]%onlinePlayers%\n%spaces%  [bright_black]• [bright_white]پروٹوکول: [green1]%protocol%[/green1]",
+        "noServersFound": "\n%spaces%%prefix% [bright_white]کوئی سرورز ویب سائٹس پر نہیں ملے۔[/bright_white]",
+        "serversFound": "\n%spaces%%prefix% [green1]%servers% [bright_white]سرورز ویب سائٹس پر ملے ہیں۔[/bright_white]",
+        "failedToLoadConfigurationFile": "\n%spaces%%prefix% [bright_white]کنفیگریشن فائل (mcserver-scrapper.json) لوڈ کرنے میں ناکامی۔[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]ویب تلاش روک رہا ہے...[/bright_white]"
+      }
+    },
+    "scan": {
+      "args": ["<ip/فائل>", "<پورٹس>", "<طریقہ>"],
+      "description": "دیے گئے آئی پی (یا فائل سے آئی پیز) کو دیے گئے پورٹ رینج میں nmap، qubo یا masscan کا استعمال کرتے ہوئے اسکین کریں",
+      "messages": {
+        "scanning": "\n%spaces%%prefix% [bright_white]دیے گئے آئی پی [green1]%ip%[/green1] کو دیے گئے پورٹ رینج [green1]%portRange%[/green1] میں طریقہ [green1]%method%[/green1] کا استعمال کرتے ہوئے اسکین کیا جا رہا ہے...[/bright_white]",
+        "noOpenPorts": "\n%spaces%%prefix% [bright_white]دیے گئے آئی پی [green1]%ip%[/green1] کے لیے دیے گئے پورٹ رینج [green1]%portRange%[/green1] میں کوئی کھلے پورٹس نہیں ملے۔[/bright_white]",
+        "openPortsFound": "\n%spaces%%prefix% [green1]%openPorts% [bright_white]کھلے پورٹس ملے ہیں دیے گئے آئی پی [green1]%ip%[/green1] کے لیے دیے گئے پورٹ رینج [green1]%portRange%[/green1] میں۔[/bright_white]",
+        "stopped": "\n%spaces%%prefix% [bright_white]اسکیننگ روک رہا ہے...[/bright_white]"
+      }
+    },
+    "listening": {
+      "args": ["<سرور>"],
+      "description": "سرور کے پلیئرز کی فہرست حاصل کرنے کے لیے سرور کو سننے دیں",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]سرور [green1]%server%[/green1] کی جانچ ہو رہی ہے...[/bright_white]",
+        "showPlayersMode": "\n%spaces%%prefix% [bright_white]پلیئرز کے کنکشن کو دکھانے کا موڈ منتخب کریں۔ [bright_black]([green1]سادہ جدول[/green1])[/bright_black]",
+        "invalidShowPlayersMode": "\n%spaces%%prefix% [bright_white]غلط موڈ۔ پلیئرز کے کنکشن کو دکھانے کا موڈ منتخب کریں۔ [bright_black]([green1]سادہ جدول[/green1])[/bright_black]",
+        "verticalOverflowAsk": "\n%spaces%%prefix% [bright_white]کیا آپ عمودی سرایت کو فعال کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "waitingPlayers": "\n%spaces%%prefix% [bright_white]سرور [green1]%server%[/green1] کے پلیئرز کے کنکشن کو سن رہا ہے...[/bright_white]",
+        "connected": "%spaces% 🟢 [bright_cyan]%player%[/bright_cyan] [bright_black](%uuid%[bright_black]) [bright_white]نے سرور پر کنکشن کیا [bright_black]([bright_cyan]%time%[/bright_cyan])[/bright_black]",
+        "disconnected": "%spaces% 🔴 [bright_cyan]%player%[/bright_cyan] [bright_black](%uuid%[bright_black]) [bright_white]نے سرور پر کنکشن منقطع کیا [bright_black]([bright_cyan]%time%[/bright_cyan])[/bright_black]",
+        "reconnected": "%spaces% 🟡 [bright_cyan]%player%[/bright_cyan] [bright_black](%uuid%[bright_black]) [bright_white]نے سرور پر دوبارہ کنکشن کیا [bright_black]([bright_cyan]%time%[/bright_cyan])[/bright_black]"
+      }
+    },
+    "proxy": {
+      "args": ["<سرور>", "<موڈ>"],
+      "description": "سرور کے کنکشن کو چھپانے کے لیے پراکسی بنائیں",
+      "messages": {
+        "configuringProxy": "\n%spaces%%prefix% [bright_white]پراکسی کو ترتیب دیا جا رہا ہے...[/bright_white]",
+        "proxyConfigured": "\n%spaces%%prefix% [bright_white]پراکسی کو کامیابی سے ترتیب دیا گیا ہے۔[/bright_white]",
+        "newVelocityVersionAvailable": "\n%spaces%%prefix% [green1]نیا Velocity ورژن دستیاب ہے![/green1]",
+        "downloadingJar": "\n%spaces%%prefix% [bright_white]Velocity سائٹ سے پراکسی jar فائل ڈاؤنلوڈ ہو رہی ہے [bright_black]([bright_cyan]%jarName%[/bright_cyan])[/bright_white]",
+        "jarDownloaded": "\n%spaces%%prefix% [bright_white]پراکسی jar فائل کامیابی سے ڈاؤنلوڈ کی گئی ہے۔[/bright_white]",
+        "replacingJar": "\n%spaces%%prefix% [bright_white]پراکسی jar فائل کو تبدیل کیا جا رہا ہے...[/bright_white]",
+        "jarReplaced": "\n%spaces%%prefix% [bright_white]پراکسی jar فائل کامیابی سے تبدیل کی گئی ہے۔[/bright_white]",
+        "startingProxy": "\n%spaces%%prefix% [bright_white]پراکسی شروع کی جا رہی ہے...[/bright_white]",
+        "proxyStarted": "\n%spaces%%prefix% [bright_white]پراکسی کامیابی سے شروع کی گئی [green1]%proxyIp%:%proxyPort%[/green1] پر۔[/bright_white]"
+      }
+    },
+    "fakeproxy": {
+      "args": ["<سرور>", "<موڈ>"],
+      "description": "پلیئر کے ڈیٹا کو چھپانے کے لیے فیک پراکسی بنائیں",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]سرور [green1]%server%[/green1] کی جانچ ہو رہی ہے...[/bright_white]",
+        "updateMode": "\n%spaces%%prefix% [bright_white]فیک پراکسی کے ڈیٹا کو اپ ڈیٹ کرنے کا موڈ منتخب کریں۔\n\n%spaces% [green1]1)[/green1] [bright_white]ہر پنگ کے لیے جو سرور پر موصول ہوتا ہے، پراکسی بیک اینڈ سرور سے ڈیٹا حاصل کرے گا اور اسے استعمال کرے گا۔\n\n%spaces% [green1]2)[/green1] [bright_white]ہر 3 سیکنڈز کے بعد MCPTool بیک اینڈ سرور سے ڈیٹا حاصل کرے گا اور اسے فیک پراکسی پر لگائے گا۔",
+        "updateModeInput": "\n%spaces%%prefix% [bright_white]فیک پراکسی کے لیے اپ ڈیٹ موڈ منتخب کریں۔ [bright_black]([green1]1 2[/green1])[/bright_black]",
+        "protocolMode": "\n%spaces%%prefix% [bright_white]فیک پراکسی پر پروٹوکول کو سنبھالنے کا موڈ منتخب کریں۔ \n\n%spaces% [green1]1)[/green1] [bright_white]یہ بیک اینڈ سرور کے طور پر ہی ہوگا۔ [bright_black]([/bright_black]صرف خاص ورژن کے ساتھ پراکسی تک رسائی کی اجازت دے گا[bright_black]) \n\n%spaces% [green1]2)[/green1] [bright_white]یہ ہمیشہ کلائنٹ کے مطابق ہوگا، کسی بھی ورژن کو پراکسی میں داخل ہونے کی اجازت دیتا ہے۔ [bright_black]([/bright_black]یہ نہیں کہتا کہ تمام ورژن بیک اینڈ سرور سے جڑ سکیں گے، صرف وہ جو اجازت دیے گئے ہیں[bright_black])[/bright_black]",
+        "protocolModeInput": "\n%spaces%%prefix% [bright_white]فیک پراکسی کے لیے پروٹوکول موڈ منتخب کریں۔ [bright_black]([green1]1 2[/green1])[/bright_black]",
+        "pinggyIO": "\n%spaces%%prefix% [bright_white]کیا آپ pinggy.io سروس کا استعمال کرکے فیک پراکسی کے لیے پبلک آئی پی اور پورٹ حاصل کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "pinggyIOCommand": "\n%spaces%%prefix% [bright_white]pinggy.io سروس کا ڈومین اور پورٹ حاصل کرنے کے لیے کمانڈ استعمال کریں: [green1]ssh -p 443 -R0:localhost:%port% tcp@a.pinggy.io[/green1].",
+        "pinggyIODomain": "\n%spaces%%prefix% [bright_white]pinggy.io سروس کا ڈومین درج کریں[/bright_white]",
+        "gettingPinggyIP": "\n%spaces%%prefix% [bright_white]pinggy.io سروس سے فیک پراکسی کے لیے پبلک آئی پی اور پورٹ حاصل کیا جا رہا ہے...[/bright_white]",
+        "couldNotGetPinggyIOIP": "\n%spaces%%prefix% [bright_red]pinggy.io سروس سے فیک پراکسی کے لیے پبلک آئی پی اور پورٹ حاصل نہیں ہو سکا۔[/bright_red]",
+        "pinggyIOIPAndPort": "\n%spaces%%prefix% [bright_white]فیک پراکسی کا پبلک آئی پی اور پورٹ۔ [bright_black]([green1]%ipAndPort%[/green1])[/bright_black]",
+        "connected": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🟢 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_white]فیک پراکسی سرور سے جڑا ہوا ہے[/bright_white]",
+        "disconnected": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔴 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_white]فیک پراکسی سرور سے منقطع ہو گیا[/bright_white]",
+        "chat": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] ✉️ [bright_white] %username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_black]▶ [bright_white]%message%[/bright_white]",
+        "command": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 💣 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_black]▶ [bright_white]کمانڈ کو مکمل کیا [bright_cyan]%command%[/bright_cyan]",
+        "adminKey": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔑 [bright_white]ایڈمن کی [bright_black]▶ [bright_magenta]%adminKey%[/bright_magenta]",
+        "adminKeyHelp": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔑 [bright_white]فیک پراکسی سرور پر ایڈمن کمانڈز کو مکمل کرنے کے لیے [bright_cyan]ایڈمن کی [bright_white]کا استعمال کریں[/bright_white]",
+        "adminKeyUsed": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🔑 [bright_white]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_black]▶ [bright_white]نے ایڈمن کی کا استعمال کیا[/bright_white]",
+        "messageSent": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] ⚔️ [bright_white] پیغام کامیابی سے بھیجا گیا پلیئر کو [green1]%target% [bright_white]([bright_cyan]%message%[bright_white]). کی طرف سے [green1]%sender%[/green1]",
+        "onlineModeError": "\n%spaces%%prefix% [bright_cyan]%time%[/bright_cyan] 🟡 [red1]%username% [bright_black]([green1]%ipAddress%[bright_black]) [bright_white]فیک پراکسی سرور سے کنکشن نہیں کر سکتا کیونکہ بیک اینڈ سرور آن لائن موڈ میں ہے۔[/bright_white]",
+        "stopping": "\n%spaces%%prefix% [bright_white]فیک پراکسی سرور کو روک رہا ہے...[/bright_white]"
+      }
+    },
+    "connect": {
+      "args": ["<سرور>", "<ورژن>", "<صارف نام>"],
+      "description": "بوٹ کا استعمال کرتے ہوئے دیے گئے سرور سے جڑیں",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]سرور [green1]%server%[/green1] کی جانچ ہو رہی ہے...[/bright_white]",
+        "connecting": "\n%spaces%%prefix% [bright_white]سرور سے جڑ رہا ہے [green1]%server%[/green1]...[/bright_white]"
+      }
+    },
+    "sendcmd": {
+      "args": ["<سرور>", "<ورژن>", "<صارف نام>", "<فائل>"],
+      "description": "بوٹ کا استعمال کرتے ہوئے دیے گئے سرور پر کمانڈز یا پیغامات بھیجیں",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]سرور [green1]%server%[/green1] کی جانچ ہو رہی ہے...[/bright_white]",
+        "gettingCommands": "\n%spaces%%prefix% [bright_white]کمانڈز فائل سے حاصل کی جا رہی ہیں [bright_black]([bright_cyan]%commandsFile%[/bright_cyan])[/bright_white]",
+        "sendingCommands": "\n%spaces%%prefix% [bright_white]دیے گئے سرور [green1]%server%[/green1] پر کمانڈز بھیجی جا رہی ہیں بوٹ [green1]%username%[/green1] کا استعمال کرتے ہوئے اور کمانڈز فائل [bright_cyan]%commandsFile%[/bright_cyan] [bright_black](%commandsCount% کمانڈز)[/bright_black]...[/bright_white]"
+      }
+    },
+    "kick": {
+      "args": ["<سرور>", "<ورژن>", "<صارف نام>"],
+      "description": "بوٹ کا استعمال کرتے ہوئے دیے گئے پلیئر کو سرور سے نکالیں",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]سرور [green1]%server%[/green1] کی جانچ ہو رہی ہے...[/bright_white]",
+        "proxyAsk": "\n%spaces%%prefix% [bright_white]کیا آپ بوٹ کو نکالنے کے لیے پراکسی کا استعمال کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxyAsk": "\n%spaces%%prefix% [bright_white]کیا آپ بوٹ کو نکالنے کے لیے کسٹم پراکسی کا استعمال کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/bright_black])[/bright_black]",
+        "customProxy": "\n%spaces%%prefix% [bright_white]کسٹم پراکسی کے لیے آئی پی ایڈریس اور پورٹ درج کریں [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "gettingFreeProxy": "\n%spaces%%prefix% [bright_white]بوٹ کو نکالنے کے لیے مفت پراکسی حاصل کی جا رہی ہے...[/bright_white]",
+        "kicking": "\n%spaces%%prefix% [bright_white]پلیئر [green1]%username%[/green1] کو سرور [green1]%server%[/green1] سے نکالا جا رہا ہے [bright_black]([bright_cyan]%version%[/bright_cyan])[/bright_black]...[/bright_white]",
+        "playerKicked": "\n%spaces%💣 [bright_white]پلیئر [green1]%username%[/green1] کو سرور سے نکال دیا گیا ہے۔[/bright_white]",
+        "errorKickingPlayer": "\n%spaces%%prefix% [bright_white]پلیئر [green1]%username%[/green1] کو سرور سے نکالا نہیں جا سکا۔ وجہ: [red1]%reason%[/red1][/bright_white]"
+      }
+    },
+    "kickall": {
+      "args": ["<سرور>", "<ورژن>"],
+      "description": "بوٹ کا استعمال کرتے ہوئے تمام پلیئرز کو سرور سے نکالیں",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]سرور [green1]%server%[/green1] کی جانچ ہو رہی ہے...[/bright_white]",
+        "proxyAsk": "\n%spaces%%prefix% [bright_white]کیا آپ تمام پلیئرز کو نکالنے کے لیے پراکسی کا استعمال کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxiesAsk": "\n%spaces%%prefix% [bright_white]کیا آپ تمام پلیئرز کو نکالنے کے لیے کسٹم پراکسیز کا استعمال کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxies": "\n%spaces%%prefix% [bright_white]آئی پی ایڈریسز اور پورٹس کے ساتھ کسٹم پراکسیز کی فائل درج کریں [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "loopExecutionAsk": "\n%spaces%%prefix% [bright_white]کیا آپ کمانڈ کو لا محدود چلانا چاہتے ہیں؟ [bright_black]([bright_cyan]Ctrl C کا استعمال کرکے بند کریں[bright_black]) [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "excludingPlayerAsk": "\n%spaces%%prefix% [bright_white]کیا آپ پلیئر کو نکالنے سے خارج کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "excludingPlayer": "\n%spaces%%prefix% [bright_white]نکالنے سے خارج کرنے کے لیے پلیئر کا صارف نام درج کریں[/bright_white]",
+        "excludingUser": "\n%spaces%%prefix% [bright_white]پلیئر [bright_cyan]%username%[/bright_cyan] سرور سے نہیں نکالا جائے گا، چونکہ اسے خارج کیا گیا ہے۔[/bright_white]",
+        "gettingFreeProxies": "\n%spaces%%prefix% [bright_white]تمام پلیئرز کو نکالنے کے لیے مفت پراکسیز حاصل کی جا رہی ہیں...[/bright_white]",
+        "failedToGetFreeProxies": "\n%spaces%%prefix% [bright_white]تمام پلیئرز کو نکالنے کے لیے مفت پراکسیز حاصل کرنے میں ناکامی۔ براہ کرم بعد میں کوشش کریں یا کسٹم پراکسیز کا استعمال کریں۔[/bright_white]",
+        "invalidCustomProxies": "\n%spaces%%prefix% [bright_white]فائل میں غلط پراکسیز [bright_cyan]%file%[/bright_cyan]۔ براہ کرم کسی اور فائل کے ساتھ دوبارہ کوشش کریں۔[/bright_white]",
+        "gettingPlayers": "\n%spaces%%prefix% [bright_white]سرور سے پلیئرز کی فہرست حاصل کی جا رہی ہے...[/bright_white]",
+        "serverOffline": "\n%spaces%%prefix% [bright_white]سرور آف لائن ہے۔ [bright_cyan]%seconds% سیکنڈز[/bright_cyan] کے بعد دوبارہ کوشش کریں...[/bright_white]",
+        "notJavaServer": "\n%spaces%%prefix% [bright_white]سرور کو بیڈروک سرور کے طور پر تسلیم کیا گیا ہے، Java نہیں۔ [bright_cyan]%seconds% سیکنڈز[/bright_cyan] کے بعد دوبارہ کوشش کریں...[/bright_white]",
+        "kickingAll": "\n%spaces%%prefix% [bright_white]تمام پلیئرز کو سرور سے نکالا جا رہا ہے...[/bright_white]",
+        "noPlayersFoundLoop": "\n%spaces%%prefix% [bright_white]سرور پر کوئی پلیئرز نہیں ملے۔ [bright_cyan]%seconds% سیکنڈز[/bright_cyan] کے بعد دوبارہ کوشش کریں...[/bright_white]",
+        "playersKicked": "\n%spaces%%prefix% [bright_white]تمام پلیئرز کو سرور سے نکالا جا چکا ہے۔[/bright_white]",
+        "playersKickedLoop": "\n%spaces%%prefix% [bright_white]تمام پلیئرز کو سرور سے نکالا جا چکا ہے۔ [bright_cyan]%seconds% سیکنڈز[/bright_cyan] کے بعد دوبارہ کمانڈ کو چلایا جا رہا ہے...[/bright_white]",
+        "noPlayers": "\n%spaces%%prefix% [bright_white]سرور پر نکالنے کے لیے کوئی پلیئرز نہیں ہیں۔[/bright_white]",
+        "stoppingLoop": "\n%spaces%%prefix% [bright_white]کمانڈز کے لا محدود عمل کو روک رہا ہے...[/bright_white]"
+      }
+    },
+    "botattack": {
+      "args": ["<سرور>", "<ورژن>", "<زیادہ سے زیادہ بوٹس>", "<تاخیر>"],
+      "description": "دیے گئے سرور پر بنیادی بوٹ حملہ بھیجیں",
+      "messages": {
+        "checkingServer": "\n%spaces%%prefix% [bright_white]سرور [green1]%server%[/green1] کی جانچ ہو رہی ہے...[/bright_white]",
+        "customProxiesAsk": "\n%spaces%%prefix% [bright_white]کیا آپ بوٹ حملہ بھیجنے کے لیے کسٹم پراکسیز کا استعمال کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxies": "\n%spaces%%prefix% [bright_white]آئی پی ایڈریسز اور پورٹس کے ساتھ کسٹم پراکسیز کی فائل درج کریں [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "invalidCustomProxies": "\n%spaces%%prefix% [bright_white]فائل میں غلط پراکسیز [bright_cyan]%file%[/bright_cyan]۔ براہ کرم کسی اور فائل کے ساتھ دوبارہ کوشش کریں۔[/bright_white]",
+        "gettingFreeProxies": "\n%spaces%%prefix% [bright_white]بوٹ حملہ بھیجنے کے لیے مفت پراکسیز حاصل کی جا رہی ہیں...[/bright_white]",
+        "failedToGetFreeProxies": "\n%spaces%%prefix% [bright_white]بوٹ حملہ بھیجنے کے لیے مفت پراکسیز حاصل کرنے میں ناکامی۔ براہ کرم بعد میں کوشش کریں یا کسٹم پراکسیز کا استعمال کریں۔[/bright_white]",
+        "proxiesLoaded": "\n%spaces%%prefix% [bright_white]پراکسیز لوڈ کی گئی: [bright_cyan]%proxies%[/bright_cyan][/bright_white]",
+        "botAttack": "\n%spaces%%prefix% [bright_white]سرور پر بنیادی بوٹ حملہ بھیجا جا رہا ہے...[/bright_white]"
+      }
+    },
+    "rcon": {
+      "args": ["<ip:پورٹRcon>", "<پاس ورڈ>"],
+      "description": "دیے گئے سرور کے RCON سے جڑیں",
+      "messages": {
+        "connecting": "\n%spaces%%prefix% [bright_white]سرور کے RCON سے جڑ رہا ہے [green1]%server%[/green1]...[/bright_white]",
+        "connected": "\n%spaces%%prefix% [bright_white]RCON سے کامیابی سے جڑ چکا ہے۔ [bright_cyan]exit[/bright_cyan] لکھیں، منقطع ہونے کے لیے۔[/bright_white]",
+        "commandInput": "%spaces%%prefix% [bright_white]سرور پر کمانڈ چلانے کے لیے لکھیں[/bright_white]",
+        "disconnected": "\n\n%spaces%%prefix% [bright_white]RCON سے منقطع ہو رہا ہے۔[/bright_white]"
+      }
+    },
+    "brutercon": {
+      "args": ["<ip:پورٹRcon>", "<پاس ورڈ فائل>"],
+      "description": "دیے گئے سرور کے RCON کا پاس ورڈ بریک کریں",
+      "messages": {
+        "noPasswords": "\n%spaces%%prefix% [bright_white]فائل میں کوئی پاس ورڈ نہیں ملا [bright_cyan]%file%[/bright_cyan]۔ براہ کرم کسی اور فائل کے ساتھ دوبارہ کوشش کریں۔[/bright_white]",
+        "bruteForcing": "\n%spaces%%prefix% [bright_white]سرور کے RCON کا پاس ورڈ بریک کیا جا رہا ہے [green1]%server%[/green1]...[/bright_white]",
+        "invalidPassword": "\n%spaces%%prefix% [bright_white]غلط پاس ورڈ: [bright_cyan]%password%[/bright_cyan][/bright_white]",
+        "passwordFound": "\n%spaces%%prefix% [bright_white]RCON پاس ورڈ ملا: [bright_cyan]%password%[/bright_cyan][/bright_white]",
+        "passwordNotFound": "\n%spaces%%prefix% [bright_white]RCON پاس ورڈ نہیں ملا۔ براہ کرم کسی اور پاس ورڈ لسٹ کے ساتھ دوبارہ کوشش کریں۔[/bright_white]"
+      }
+    },
+    "shell": {
+      "args": ["<پورٹ>"],
+      "description": "دور دراز شیل کمانڈز کو انجام دینے کے لیے آنے والے کنکشنز کو سننے کے لیے دیے گئے پورٹ کو سنیں۔",
+      "messages": {
+        "listening": "\n%spaces%%prefix% [bright_white]دیے گئے پورٹ پر آنے والے کنکشنز کو سننے کے لیے سن رہا ہے [bright_cyan]%port%[/bright_cyan]...\n",
+        "errorStartingListener": "\n%spaces%%prefix% [bright_white]دیے گئے پورٹ پر سننے والے کو شروع کرنے میں غلطی ہوئی [bright_cyan]%port%[/bright_cyan]۔ غلطی: [bright_red]%error%[/bright_red][/bright_white]"
+      }
+    },
+    "hideip": {
+      "args": ["<سرور>"],
+      "description": "اپنے آئی پی کو چھپانے کے لیے دیے گئے سرور کے لیے پراکسی بنائیں (یہ صرف 1.8.8 سرورز کے ساتھ کام کرتا ہے)",
+      "messages": {
+        "domainDetected": "\n%spaces%%prefix% [bright_white]ڈومین کا پتہ چلا۔ Minecraft سرور کے لیے آئی پی ایڈریس اور پورٹ حاصل کر رہا ہے...[/bright_white]",
+        "serverOffline": "\n%spaces%%prefix% [bright_white]سرور آف لائن ہے۔ اگر سرور آن لائن ہے، تو براہ کرم سرور کے آئی پی ایڈریس اور پورٹ کا استعمال کرتے ہوئے کمانڈ کو دوبارہ چلائیں۔[/bright_white]",
+        "customProxyAsk": "\n%spaces%%prefix% [bright_white]کیا آپ کسٹم پراکسی کا استعمال کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+        "customProxy": "\n%spaces%%prefix% [bright_white]کسٹم پراکسی کے لیے آئی پی ایڈریس اور پورٹ درج کریں [bright_black]([bright_cyan]Socks4[/bright_cyan][bright_black])[/bright_white]",
+        "invalidCustomProxy": "\n%spaces%%prefix% [bright_white]غلط کسٹم پراکسی۔ کسٹم پراکسی کے لیے آئی پی ایڈریس اور پورٹ درج کریں[/bright_white]",
+        "customProxyTimeout": "\n%spaces%%prefix% [bright_white]کسٹم پراکسی جواب نہیں دے رہا ہے۔ براہ کرم کسی اور کسٹم پراکسی کے ساتھ دوبارہ کوشش کریں۔[/bright_white]",
+        "gettingFreeProxy": "\n%spaces%%prefix% [bright_white]مفت پراکسی حاصل کی جا رہی ہے...[/bright_white]",
+        "failedToGetFreeProxy": "\n%spaces%%prefix% [bright_white]مفت پراکسی حاصل کرنے میں ناکامی۔ براہ کرم بعد میں کوشش کریں یا کسٹم پراکسی کا استعمال کریں۔[/bright_white]",
+        "startingProxy": "\n%spaces%%prefix% [bright_white]پراکسی شروع کی جا رہی ہے [green1]%ipAndPort%[/green1] کے لیے...[/bright_white]",
+        "usingProxy": "\n%spaces%%prefix% [bright_white]پراکسی کا استعمال ہو رہا ہے [green1]%proxyIp%:%proxyPort%[/green1].",
+        "proxyStarted": "\n%spaces%%prefix% [bright_white]پراکسی کامیابی سے شروع کی گئی۔ سرور سے جڑنے کے لیے آئی پی ایڈریس استعمال کریں [green1]%proxyIp%:%proxyPort%[/green1].[/bright_white]",
+        "connectionReceived": "\n%spaces%%prefix% [bright_white]کنکشن موصول ہوا [green1]%clientIp%:%clientPort%[/green1] سے۔[/bright_white]",
+        "proxyStopped": "\n%spaces%%prefix% [bright_white]پراکسی کامیابی سے روکی گئی۔[/bright_white]"
+      }
+    },
+    "password": {
+      "args": ["<صارف نام/صارف ناموں>"],
+      "description": "دیے گئے صارف نام کے لیے مختلف لیک شدہ ڈیٹا بیسز میں پاس ورڈ تلاش کریں",
+      "messages": {
+        "searching": "\n%spaces%%prefix% [bright_white]لیک شدہ ڈیٹا بیسز میں صارف نام [bright_cyan]%username%[/bright_cyan] کے لیے پاس ورڈ تلاش کیا جا رہا ہے...[/bright_white]",
+        "passwordNotFound": "\n%spaces%%prefix% [bright_white]لیک شدہ ڈیٹا بیسز میں صارف نام [bright_cyan]%username%[/bright_cyan] کے لیے پاس ورڈ نہیں ملا۔[/bright_white]",
+        "passwordsFound": "\n%spaces%%prefix% [bright_white]صارف نام [bright_cyan]%username%[/bright_cyan] کے لیے پاس ورڈ ملے ہیں:[/bright_white]",
+        "server": "\n%spaces% [red1][[bright_red]سر[bright_white]ور[/bright_white][/bright_red]][/red1] [bright_white]%server%[/bright_white] [bright_black]([bright_cyan]%serverip%[/bright_cyan])[/bright_black]",
+        "username": "%spaces% [red1][[bright_red]صارف[bright_white]نام[/bright_white][/bright_red]][/red1] [bright_white]%username%[/bright_white]",
+        "password": "%spaces% [red1][[bright_red]پاس ورڈ[bright_white][/bright_white][/bright_red]][/red1] [bright_white]%password%[/bright_white]",
+        "ip": "%spaces% [red1][[bright_red]آئی پی[bright_red]][/red1] [bright_white]%ip%[/bright_white]",
+        "salt": "%spaces% [red1][[bright_red]نمک[bright_white][/bright_white][/bright_red]][/red1] [bright_white]%salt%[/bright_white]",
+        "total": "\n%spaces%%prefix% [bright_white]کل پاس ورڈ ملے: [bright_cyan]%total%[/bright_cyan][/bright_white] [bright_black]([bright_green]%valid%[bright_green] درست، [red1]%invalid%[/red1] غیر درست)[/bright_black]",
+        "invalidPlan": "\n%spaces%%prefix% [bright_white]غلط منصوبہ۔ آپ کو اس کمانڈ کو استعمال کرنے کے لیے [bright_cyan]اعلی[bright_cyan] منصوبہ ہونا چاہیے۔[/bright_white]"
+      }
+    },
+    "clearservers": {
+      "args": [],
+      "description": "Minecraft سرورز کی فہرست صاف کریں",
+      "messages": {
+        "serversCleared": "\n%spaces%%prefix% [bright_white]سرورز کو کامیابی سے صاف کر دیا گیا ہے۔[/bright_white]"
+      }
+    },
+    "settings": {
+      "args": [],
+      "description": "کنفیگریشن فائل کھولیں",
+      "messages": {
+        "settingsUpdated": "\n%spaces%%prefix% [bright_white]ترتیبات کامیابی سے اپ ڈیٹ کی گئی ہیں۔[/bright_white]"
+      }
+    },
+    "language": {
+      "args": ["<زبان>"],
+      "description": "MCPTool کی زبان تبدیل کریں",
+      "messages": {
+        "sameLanguage": "\n%spaces%%prefix% [bright_white]MCPTool کی زبان پہلے ہی [bright_cyan]%language%[/bright_cyan] پر سیٹ ہے۔[/bright_white]",
+        "languageChanged": "\n%spaces%%prefix% [bright_white]MCPTool کی زبان کو [bright_cyan]%language%[/bright_cyan] پر تبدیل کر دیا گیا ہے۔[/bright_white]"
+      }
+    },
+    "debug": {
+      "args": [],
+      "description": "ڈی بگ موڈ کو آن یا آف کریں",
+      "messages": {
+        "debugEnabled": "\n%spaces%%prefix% [bright_white]ڈی بگ موڈ فعال کر دیا گیا ہے۔[/bright_white]",
+        "debugDisabled": "\n%spaces%%prefix% [bright_white]ڈی بگ موڈ غیر فعال کر دیا گیا ہے۔[/bright_white]"
+      }
+    }
+  },
+  "logs": {
+    "logsSaved": "\n%spaces%%prefix% [bright_white]لاگز کو محفوظ کر دیا گیا ہے [green1]%file%[/green1] میں۔[/bright_white]"
+  },
+  "serverMessages": {
+    "ip_and_port": "%spaces%&4[&c&lIP&f&l&f&lPort&4] &f&l&o%ipAndPort%",
+    "motd": "%spaces%&4[&c&lMO&f&lTD&4] &f&l%motd%",
+    "version": "%spaces%&4[&c&lVers&f&lion&4] &f&l%version%",
+    "protocol": "%spaces%&4[&c&lProt&f&lcol&4] &f&l&o%protocol%",
+    "connected": "%spaces%&4[&c&lConne&f&lcted&4] &f&l&o%connectedPlayers%&8&l/&f&l&o%maxPlayers%",
+    "playerList": "%spaces%&4[&c&lPlayer&f&lList&4] &f&l&o%playerList%",
+    "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
+    "modList": "%spaces%&4[&c&lMo&f&lds&4] &f&l&o%modList%",
+    "brand": "%spaces%&4[&c&lBra&f&lnd&4] &f&l&o%brand%",
+    "software": "%spaces%&4[&c&lSof&f&ltware&4] &f&l&o%software%",
+    "map": "%spaces%&4[&c&lMa&f&lp&4] &f&l&o%map%",
+    "gamemode": "%spaces%&4[&c&lGam&f&leMode&4] &f&l&o%gamemode%",
+    "ping": "%spaces%&4[&c&lPi&f&lng&4] &f&l&o%ping%ms",
+    "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%"
+  },
+  "filterServers": {
+    "filterByData": "\n%spaces%%prefix% [bright_white]کیا آپ ڈیٹا کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByOnlyBotCanJoin": "\n%spaces%%prefix% [bright_white]کیا آپ سرورز کو فلٹر کرنا چاہتے ہیں جہاں صرف بوٹ شامل ہو سکتا ہے؟ [bright_black]([red1]آف لائن سرورز[bright_black]) ([green1]y/n[/green1])[/bright_black]",
+    "filterByDescription": "\n%spaces%%prefix% [bright_white]کیا آپ تفصیل کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByDescriptionText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے تفصیل درج کریں [bright_black]([green1]مثال کے طور پر، survival[/green1])[/bright_black][/bright_white]",
+    "filterByOnlinePlayers": "\n%spaces%%prefix% [bright_white]کیا آپ آن لائن پلیئرز کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByOnlinePlayersText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے کم از کم آن لائن پلیئرز کی تعداد درج کریں [bright_black]([green1]مثال کے طور پر، 5[/green1])[/bright_black][/bright_white]",
+    "filterByProtocol": "\n%spaces%%prefix% [bright_white]کیا آپ پروٹوکول کے ذریعہ سرورز کو فلٹر کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "filterByProtocolText": "\n%spaces%%prefix% [bright_white]سرورز کو فلٹر کرنے کے لیے پروٹوکول درج کریں [bright_black]([green1]مثال کے طور پر، 47[/bright_black])[/bright_white]",
+    "onlyBotCanJoin": "صرفبوٹشاملہو سکتا ہے",
+    "description": "تفصیل",
+    "onlinePlayers": "آنلائنکھلاڑی",
+    "protocol": "پروٹوکول"
+  },
+  "addServers": {
+    "addServersFoundToMinecraft": "\n%spaces%%prefix% [bright_white]کیا آپ ملے ہوئے سرورز کو Minecraft سرورز کی فہرست میں شامل کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
+    "addBungeeExploitVulnerableServersOnly": "\n%spaces%%prefix% [bright_white]کیا آپ صرف BungeeCord اسٹیلتھ کے قابل فلٹر سرورز کو Minecraft سرورز کی فہرست میں شامل کرنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]"
+  },
+  "discordPresence": {
+    "title": "Minecraft کے لیے ایک اعلی درجے کا پین ٹیسٹنگ ٹول",
+    "version": "ورژن %version%",
+    "menu": "مینیو میں",
+    "usingCommand": "کمانڈ کا استعمال %command%"
+  },
+  "errors": {
+    "missingArguments": "\n%spaces%[bright_red]دلائل غائب ہیں۔ [bright_white]صحیح استعمال: [bright_cyan]%command% [bright_red]%arguments%[/bright_red]",
+    "serverOffline": "\n%spaces%%prefix% [bright_white]دیے گئے سرور سے ڈیٹا حاصل نہیں کیا جا سکا۔ ممکن ہے کہ سرور آف لائن ہو۔[/bright_white]",
+    "invalidServer": "\n%spaces%%prefix% [bright_white]غلط سرور۔ براہ کرم ایک درست آئی پی ایڈریس اور پورٹ یا ڈومین درج کریں۔[/bright_white]",
+    "invalidDomain": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط ڈومین درج کیا ہے۔ براہ کرم ایک درست ڈومین درج کریں۔[/bright_white]",
+    "invalidIpAndPort": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط آئی پی ایڈریس اور پورٹ درج کیا ہے۔ براہ کرم ایک درست آئی پی ایڈریس اور پورٹ درج کریں۔[/bright_white]",
+    "invalidIpFormat": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط آئی پی فارمیٹ درج کیا ہے۔ براہ کرم ایک درست آئی پی درج کریں۔[/bright_white]",
+    "invalidScanMethod": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط اسکیننگ طریقہ درج کیا ہے۔ براہ کرم ایک درست اسکیننگ طریقہ درج کریں [bright_black]([bright_cyan]old_qubo, qubo, nmap, masscan یا py[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidIpRange": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط آئی پی رینج درج کیا ہے۔ براہ کرم ایک درست آئی پی رینج درج کریں۔[/bright_white]",
+    "invalidPortRange": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط پورٹ رینج درج کیا ہے۔ براہ کرم ایک درست پورٹ رینج درج کریں۔[/bright_white]",
+    "invalidFile": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط فائل درج کی ہے۔ براہ کرم ایک درست فائل درج کریں۔[/bright_white]",
+    "invalidIntgerInput": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط عددی ان پٹ درج کی ہے۔ براہ کرم ایک درست عددی ان پٹ درج کریں۔[/bright_white]",
+    "invalidBooleanInput": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط بُولین ان پٹ درج کی ہے۔ براہ کرم ایک درست بُولین ان پٹ درج کریں [bright_black]([bright_cyan]y یا n[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidCountryCodeInput": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط ملک کا کوڈ درج کیا ہے۔ براہ کرم ایک درست ملک کا کوڈ درج کریں۔[/bright_white]",
+    "invalidVelocityForwardingMode": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط Velocity فارورڈنگ موڈ درج کیا ہے۔ براہ کرم ایک درست Velocity فارورڈنگ موڈ درج کریں [bright_black]([bright_cyan]legacy, modern یا none[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidFakeProxyUpdateModeInput": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط فیک پراکسی اپ ڈیٹ موڈ درج کیا ہے۔ براہ کرم ایک درست پراکسی اپ ڈیٹ موڈ درج کریں [bright_black]([bright_cyan]1 یا 2[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidFakeProxyProtocolModeInput": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط فیک پراکسی پروٹوکول موڈ درج کیا ہے۔ براہ کرم ایک درست پراکسی پروٹوکول موڈ درج کریں [bright_black]([bright_cyan]1 یا 2[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidFilePath": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط فائل کا راستہ درج کیا ہے۔ براہ کرم ایک درست فائل کا راستہ درج کریں۔[/bright_white]",
+    "invalidProxyInput": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط پراکسی درج کی ہے۔ براہ کرم ایک درست پراکسی درج کریں [bright_black]([bright_cyan]socks4 یا socks5[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidProxy": "\n%spaces%%prefix% [bright_white]پراکسی جواب نہیں دے رہی ہے۔ براہ کرم کسی اور پراکسی کا انتخاب کریں۔[/bright_white]",
+    "invalidSeekerSubcommand": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط Seeker ذیلی کمانڈ درج کی ہے۔ براہ کرم ایک درست Seeker ذیلی کمانڈ درج کریں [bright_black]([bright_cyan]token servers[/bright_cyan])[/bright_black].[/bright_white]",
+    "invalidNewSettingsFile": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط نئی ترتیبات کی فائل درج کی ہے۔ اس کے بجائے بیک اپ کنفیگریشن فائل استعمال کی جائے گی۔[/bright_white]",
+    "invalidLanguage": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط زبان درج کی ہے۔ براہ کرم ایک درست زبان درج کریں!",
+    "portNotFoundInPinggyDomain": "\n%spaces%%prefix% [bright_white]Pinggy ڈومین میں پورٹ نہیں ملی۔ براہ کرم ایک درست پورٹ درج کریں۔[/bright_white]",
+    "invalidPinggyDomain": "\n%spaces%%prefix% [bright_white]آپ نے ایک غلط Pinggy ڈومین درج کیا ہے۔ براہ کرم ایک درست Pinggy ڈومین درج کریں۔[/bright_white]",
+    "subdomainsFileEmpty": "\n%spaces%%prefix% [bright_white]سب ڈومینز کی فائل خالی ہے۔ براہ کرم ایک درست سب ڈومینز فائل درج کریں۔[/bright_white]",
+    "passwordFileEmpty": "\n%spaces%%prefix% [bright_white]پاس ورڈ فائل خالی ہے۔ براہ کرم ایک درست پاس ورڈ فائل درج کریں۔[/bright_white]",
+    "nmapNotInstalled": "\n%spaces%%prefix% [bright_white]Nmap انسٹال نہیں ہے۔ براہ کرم Nmap انسٹال کریں اور اس مسئلے کو حل کرنے کے لیے MCPTool کو دوبارہ شروع کریں۔",
+    "masscanNotInstalled": "\n%spaces%%prefix% [bright_white]Masscan انسٹال نہیں ہے۔ براہ کرم Masscan انسٹال کریں اور اس مسئلے کو حل کرنے کے لیے MCPTool کو دوبارہ شروع کریں۔",
+    "javaNotInstalled": "\n%spaces%%prefix% [bright_white]Java 19 یا اس سے اوپر کا ورژن انسٹال نہیں ہے۔ براہ کرم Java 19 یا اس سے اوپر کا ورژن انسٹال کریں اس مسئلے کو حل کرنے کے لیے۔",
+    "rconTimeout": "\n%spaces%%prefix% [bright_white]RCON کنکشن کا وقت ختم ہو گیا۔ براہ کرم آئی پی ایڈریس اور پورٹ چیک کریں اور دوبارہ کوشش کریں۔[/bright_white]",
+    "rconConnectionRefused": "\n%spaces%%prefix% [bright_white]RCON کنکشن کو مسترد کر دیا گیا۔ براہ کرم آئی پی ایڈریس اور پورٹ چیک کریں اور دوبارہ کوشش کریں۔[/bright_white]",
+    "rconInvalidPassword": "\n%spaces%%prefix% [bright_white]غلط RCON پاس ورڈ۔ براہ کرم پاس ورڈ چیک کریں اور دوبارہ کوشش کریں۔[/bright_white]",
+    "rconUnknownError": "\n%spaces%%prefix% [bright_white]نامعلوم RCON غلطی۔ براہ کرم آئی پی ایڈریس، پورٹ اور پاس ورڈ چیک کریں اور دوبارہ کوشش کریں۔[/bright_white]",
+    "notJavaServer": "\n%spaces%%prefix% [bright_white]سرور Java سرور نہیں ہے۔ یہ کمانڈ صرف Java سرورز کے ساتھ کام کرتی ہے۔[/bright_white]",
+    "commandsFileNotFound": "\n%spaces%%prefix% [bright_white]کمانڈز فائل نہیں ملی۔ براہ کرم ایک درست کمانڈز فائل درج کریں۔[/bright_white]",
+    "commandsFileEmpty": "\n%spaces%%prefix% [bright_white]کمانڈز فائل خالی ہے۔ براہ کرم ایک درست کمانڈز فائل درج کریں۔[/bright_white]",
+    "permissionDenied": "\n%spaces%%prefix% [bright_white]فائل [file%] کو چلانے کی اجازت نہیں ہے۔ براہ کرم MCPTool کو بند کریں اور مسئلہ حل کرنے کے لیے یہ کمانڈ چلائیں: [green1]%commandToFix%[/green1].",
+    "errorStartingListener": "\n%spaces%%prefix% [bright_white]شیل سننے والے کو شروع کرنے میں غلطی ہوئی۔ غلطی: %error%[/bright_white]",
+    "windowsOnly": "\n%spaces%%prefix% [bright_white]یہ کمانڈ صرف Windows پر کام کرتی ہے[/bright_white]",
+    "rootRequired": "\n%spaces%%prefix% [bright_white]یہ کمانڈ چلانے کے لیے روٹ کی اجازت درکار ہے۔ براہ کرم MCPTool کو بند کریں اور مسئلہ حل کرنے کے لیے اسے روٹ کے طور پر چلائیں۔",
+    "passwordApiError": "\n%spaces%%prefix% [bright_white]API سے پاس ورڈ حاصل کرنے میں غلطی ہوئی۔ براہ کرم بعد میں کوشش کریں۔[/bright_white]",
+    "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]API سے غلط جواب۔ براہ کرم بعد میں کوشش کریں۔[/bright_white]"
+  },
+  "fileVersion": "1"
+}
