@@ -381,6 +381,15 @@
         "languageChanged": "\n%spaces%%prefix% [bright_white]The language of the MCPTool has been changed to [bright_cyan]%language%[/bright_cyan].[/bright_white]"
       }
     },
+    "history": {
+      "args": [],
+      "description": "Show the command history (up to 10 commands)",
+      "messages": {
+        "historyEmpty": "\n%spaces%%prefix% [bright_white]The command history is empty.[/bright_white]",
+        "history": "\n%spaces%%prefix% [bright_white]Command history:[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]An error occurred while trying to show the command history.[/bright_white]"
+      }
+    },
     "debug": {
       "args": [],
       "description": "Enable or disable debug mode",
@@ -477,5 +486,5 @@
     "passwordApiError": "\n%spaces%%prefix% [bright_white]Error getting password from the API. Please try again later.[/bright_white]",
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Invalid response from the password API. Please try again later.[/bright_white]"
   },
-  "fileVersion": "1"
+  "fileVersion": "2"
 }
