@@ -484,7 +484,8 @@
     "windowsOnly": "\n%spaces%%prefix% [bright_white]این دستور فقط در ویندوز کار می‌کند[/bright_white]",
     "rootRequired": "\n%spaces%%prefix% [bright_white]دسترسی ریشه برای اجرای این دستور لازم است. لطفاً MCPTool را ببندید و به عنوان ریشه اجرا کنید تا مشکل حل شود.",
     "passwordApiError": "\n%spaces%%prefix% [bright_white]خطا در دریافت رمز عبور از API. لطفاً بعداً دوباره امتحان کنید.[/bright_white]",
-    "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]پاسخ نادرست از API. لطفاً بعداً دوباره امتحان کنید.[/bright_white]"
+    "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]پاسخ نادرست از API. لطفاً بعداً دوباره امتحان کنید.[/bright_white]",
+    "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]محدوده پورت سفارشی یافت نشد. لطفاً یک محدوده پورت سفارشی وارد کنید.[/bright_white]"
   },
-  "fileVersion": "1"
+  "fileVersion": "2"
 }

@@ -484,7 +484,8 @@
     "windowsOnly": "\n%spaces%%prefix% [bright_white]Este comando solo funciona en Windows[/bright_white]",
     "rootRequired": "\n%spaces%%prefix% [bright_white]Se requieren permisos de root para ejecutar este comando. Cierra MCPTool y ejecútalo como root para solucionar este problema.",
     "passwordApiError": "\n%spaces%%prefix% [bright_white]Error al obtener la contraseña desde la API. Por favor, inténtalo de nuevo más tarde.[/bright_white]",
-    "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Respuesta inválida de la API de contraseñas. Por favor, inténtalo de nuevo más tarde.[/bright_white]"
+    "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Respuesta inválida de la API de contraseñas. Por favor, inténtalo de nuevo más tarde.[/bright_white]",
+    "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]No se encontró el rango de puertos personalizado. Por favor, ingresa un rango de puertos personalizado válido.[/bright_white]"
   },
-  "fileVersion": "1"
+  "fileVersion": "2"
 }

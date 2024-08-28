@@ -484,7 +484,8 @@
     "windowsOnly": "\n%spaces%%prefix% [bright_white]Эта команда работает только на Windows[/bright_white]",
     "rootRequired": "\n%spaces%%prefix% [bright_white]Для выполнения этой команды требуются права root. Закройте MCPTool и запустите его от имени root, чтобы решить эту проблему.",
     "passwordApiError": "\n%spaces%%prefix% [bright_white]Ошибка при получении пароля из API. Попробуйте позже.[/bright_white]",
-    "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Недействительный ответ от API паролей. Попробуйте позже.[/bright_white]"
+    "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Недействительный ответ от API паролей. Попробуйте позже.[/bright_white]",
+    "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]Диапазон портов не найден в файле конфигурации. Введите действительный диапазон портов.[/bright_white]"
   },
-  "fileVersion": "1"
+  "fileVersion": "2"
 }
