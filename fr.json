@@ -381,6 +381,15 @@
         "languageChanged": "\n%spaces%%prefix% [bright_white]La langue de MCPTool a été changée en [bright_cyan]%language%[/bright_cyan].[/bright_white]"
       }
     },
+    "history": {
+      "args": [],
+      "description": "Afficher l'historique des commandes (jusqu'à 10 commandes)",
+      "messages": {
+        "historyEmpty": "\n%spaces%%prefix% [bright_white]L'historique des commandes est vide.[/bright_white]",
+        "history": "\n%spaces%%prefix% [bright_white]Historique des commandes:[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]Une erreur est survenue lors de la tentative d'affichage de l'historique des commandes.[/bright_white]"
+      }
+    },
     "debug": {
       "args": [],
       "description": "Activez ou désactivez le mode debug",

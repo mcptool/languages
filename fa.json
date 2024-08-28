@@ -381,6 +381,15 @@
         "languageChanged": "\n%spaces%%prefix% [bright_white]زبان MCPTool به [bright_cyan]%language%[/bright_cyan] تغییر یافت.[/bright_white]"
       }
     },
+    "history": {
+      "args": [],
+      "description": "نمایش تاریخچه دستورات (تا 10 دستور)",
+      "messages": {
+        "historyEmpty": "\n%spaces%%prefix% [bright_white]تاریخچه دستورات خالی است.[/bright_white]",
+        "history": "\n%spaces%%prefix% [bright_white]تاریخچه دستورات:[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]هنگام تلاش برای نمایش تاریخچه دستورات، خطایی رخ داد.[/bright_white]"
+      }
+    },
     "debug": {
       "args": [],
       "description": "حالت اشکال‌زدایی را فعال یا غیرفعال کنید",

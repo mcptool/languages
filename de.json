@@ -381,6 +381,15 @@
         "languageChanged": "\n%spaces%%prefix% [bright_white]Die Sprache von MCPTool wurde auf [bright_cyan]%language%[/bright_cyan] geändert.[/bright_white]"
       }
     },
+    "history": {
+      "args": [],
+      "description": "Zeige den Befehlsverlauf (bis zu 10 Befehle)",
+      "messages": {
+        "historyEmpty": "\n%spaces%%prefix% [bright_white]Der Befehlsverlauf ist leer.[/bright_white]",
+        "history": "\n%spaces%%prefix% [bright_white]Befehlsverlauf:[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]Ein Fehler ist aufgetreten, während versucht wurde, den Befehlsverlauf anzuzeigen.[/bright_white]"
+      }
+    },
     "debug": {
       "args": [],
       "description": "Aktiviere oder deaktiviere den Debug-Modus",

@@ -381,6 +381,15 @@
         "languageChanged": "\n%spaces%%prefix% [bright_white]MCPTool کی زبان کو [bright_cyan]%language%[/bright_cyan] پر تبدیل کر دیا گیا ہے۔[/bright_white]"
       }
     },
+    "history": {
+      "args": [],
+      "description": "کمانڈ ہسٹری دکھائیں (زیادہ سے زیادہ 10 کمانڈز)",
+      "messages": {
+        "historyEmpty": "\n%spaces%%prefix% [bright_white]کمانڈ ہسٹری خالی ہے۔[/bright_white]",
+        "history": "\n%spaces%%prefix% [bright_white]کمانڈ ہسٹری:[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]کمانڈ ہسٹری دکھانے کی کوشش کے دوران ایک غلطی واقع ہوئی۔[/bright_white]"
+      }
+    },
     "debug": {
       "args": [],
       "description": "ڈی بگ موڈ کو آن یا آف کریں",

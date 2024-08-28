@@ -381,6 +381,15 @@
         "languageChanged": "\n%spaces%%prefix% [bright_white]El idioma de MCPTool ha sido cambiado a [bright_cyan]%language%[/bright_cyan].[/bright_white]"
       }
     },
+    "history": {
+      "args": [],
+      "description": "Muestra el historial de comandos (hasta 10 comandos)",
+      "messages": {
+        "historyEmpty": "\n%spaces%%prefix% [bright_white]El historial de comandos está vacío.[/bright_white]",
+        "history": "\n%spaces%%prefix% [bright_white]Historial de comandos:[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]Ocurrió un error al intentar mostrar el historial de comandos.[/bright_white]"
+      }
+    },
     "debug": {
       "args": [],
       "description": "Habilitar o deshabilitar el modo de depuración",

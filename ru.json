@@ -381,6 +381,15 @@
         "languageChanged": "\n%spaces%%prefix% [bright_white]Язык MCPTool изменен на [bright_cyan]%language%[/bright_cyan].[/bright_white]"
       }
     },
+    "history": {
+      "args": [],
+      "description": "Показать историю команд (до 10 команд)",
+      "messages": {
+        "historyEmpty": "\n%spaces%%prefix% [bright_white]История команд пуста.[/bright_white]",
+        "history": "\n%spaces%%prefix% [bright_white]История команд:[/bright_white]",
+        "error": "\n%spaces%%prefix% [bright_white]Произошла ошибка при попытке показать историю команд.[/bright_white]"
+      }
+    },
     "debug": {
       "args": [],
       "description": "Включить или отключить режим отладки",
