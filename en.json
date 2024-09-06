@@ -370,7 +370,8 @@
         "webhookRemoved": "\n%spaces%%prefix% [bright_white]The webhook [bright_cyan]%webhook%[/bright_cyan] has been removed successfully.[/bright_white]",
         "noWebhooks": "\n%spaces%%prefix% [bright_white]There are no webhooks added.[/bright_white]",
         "webhookList": "\n%spaces%%prefix% [bright_white]Webhooks:[/bright_white]",
-        "invalidWebhook": "\n%spaces%%prefix% [bright_white]The webhook [bright_cyan]%webhook%[/bright_cyan] does not exist.[/bright_white]",
+        "invalidWebhookUrl": "\n%spaces%%prefix% [bright_white]Invalid webhook URL. Enter a valid URL.[/bright_white]",
+        "webhookNotWorking": "\n%spaces%%prefix% [bright_white]The webhook [bright_cyan]%webhook%[/bright_cyan] is not working. Delete it and add it again.[/bright_white]",
         "webhookUrlAlreadyExists": "\n%spaces%%prefix% [bright_white]The webhook URL [bright_cyan]%webhookUrl%[/bright_cyan] already exists in [bright_cyan]%webhook%[/bright_cyan].[/bright_white]",
         "invalidOption": "\n%spaces%%prefix% [bright_white]Invalid option. Use [green1]add[/green1], [green1]remove[/green1], or [green1]list[/green1].[/bright_white]"
       }
