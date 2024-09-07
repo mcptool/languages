@@ -363,6 +363,7 @@
       "args": ["<subcommand>"],
       "description": "Manage the discord webhooks",
       "messages": {
+        "useWebhook": "\n%spaces%%prefix% [bright_white]Do you want to use a webhook to save the logs? [bright_black]([green1]y/n[/green1])[/bright_black]",
         "webhookName": "\n%spaces%%prefix% [bright_white]Enter the name of the webhook[/bright_white]",
         "webhookUrl": "\n%spaces%%prefix% [bright_white]Enter the URL of the webhook[/bright_white]",
         "webhookAdded": "\n%spaces%%prefix% [bright_white]The webhook [bright_cyan]%webhook%[/bright_cyan] has been added successfully.[/bright_white]",
@@ -504,5 +505,5 @@
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Invalid response from the password API. Please try again later.[/bright_white]",
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]The custom port range was not found. Please enter a valid custom port range.[/bright_white]"
   },
-  "fileVersion": "2.1"
+  "fileVersion": "2.2"
 }
