@@ -162,6 +162,7 @@
       "args": ["<ip/فائل>", "<پورٹس>", "<طریقہ>"],
       "description": "دیے گئے آئی پی (یا فائل سے آئی پیز) کو دیے گئے پورٹ رینج میں nmap، qubo یا masscan کا استعمال کرتے ہوئے اسکین کریں",
       "messages": {
+        "useWebhook": "\n%spaces%%prefix% [bright_white]کیا آپ اسکین کے نتائج کو ویب ہک کے ذریعہ بھیجنا چاہتے ہیں؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
         "scanning": "\n%spaces%%prefix% [bright_white]دیے گئے آئی پی [green1]%ip%[/green1] کو دیے گئے پورٹ رینج [green1]%portRange%[/green1] میں طریقہ [green1]%method%[/green1] کا استعمال کرتے ہوئے اسکین کیا جا رہا ہے...[/bright_white]",
         "noOpenPorts": "\n%spaces%%prefix% [bright_white]دیے گئے آئی پی [green1]%ip%[/green1] کے لیے دیے گئے پورٹ رینج [green1]%portRange%[/green1] میں کوئی کھلے پورٹس نہیں ملے۔[/bright_white]",
         "openPortsFound": "\n%spaces%%prefix% [green1]%openPorts% [bright_white]کھلے پورٹس ملے ہیں دیے گئے آئی پی [green1]%ip%[/green1] کے لیے دیے گئے پورٹ رینج [green1]%portRange%[/green1] میں۔[/bright_white]",
@@ -359,6 +360,46 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]غلط منصوبہ۔ آپ کو اس کمانڈ کو استعمال کرنے کے لیے [bright_cyan]اعلی[bright_cyan] منصوبہ ہونا چاہیے۔[/bright_white]"
       }
     },
+    "serverdata": {
+      "args": ["<موڈ>"],
+      "description": "سرور کے ڈیٹا حاصل کرنے کے لیے موڈ تبدیل کریں",
+      "messages": {
+        "invalidMode": "\n%spaces%%prefix% [bright_white]غلط موڈ۔ سرور کے ڈیٹا حاصل کرنے کے لیے موڈ کا انتخاب کریں۔ [bright_black]([green1]local mcstatus.io[/green1])[/bright_black]",
+        "success": "\n%spaces%%prefix% [bright_white]سرور کے ڈیٹا حاصل کرنے کے موڈ کو کامیابی سے تبدیل کر دیا گیا ہے۔[/bright_white]"
+      }
+    },
+    "customport": {
+      "args": ["<ذیلی کمانڈ>"],
+      "description": "کسٹم پورٹس کا انتظام کریں",
+      "messages": {
+        "customportName": "\n%spaces%%prefix% [bright_white]کسٹم پورٹ کا نام درج کریں[/bright_white]",
+        "customportRange": "\n%spaces%%prefix% [bright_white]کسٹم پورٹ کی رینج درج کریں[/bright_white]",
+        "customportAdded": "\n%spaces%%prefix% [bright_white]کسٹم پورٹ [bright_cyan]%customport%[/bright_cyan] کامیابی سے شامل کر دیا گیا ہے۔[/bright_white]",
+        "customportNotFound": "\n%spaces%%prefix% [bright_white]کسٹم پورٹ [bright_cyan]%customport%[/bright_cyan] نہیں ملا۔[/bright_white]",
+        "customportRemoved": "\n%spaces%%prefix% [bright_white]کسٹم پورٹ [bright_cyan]%customport%[/bright_cyan] کامیابی سے ہٹا دیا گیا ہے۔[/bright_white]",
+        "noCustomports": "\n%spaces%%prefix% [bright_white]کوئی کسٹم پورٹس شامل نہیں ہیں۔[/bright_white]",
+        "customportList": "\n%spaces%%prefix% [bright_white]کسٹم پورٹس:[/bright_white]",
+        "customportRangeAlreadyExists": "\n%spaces%%prefix% [bright_white]پورٹ رینج [bright_cyan]%customportRange%[/bright_cyan] پہلے سے [bright_cyan]%customport%[/bright_cyan] میں موجود ہے۔[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]غلط آپشن۔ استعمال کریں [green1]add[/green1], [green1]remove[/green1], یا [green1]list[/green1]۔[/bright_white]"
+      }
+    },
+    "webhook": {
+      "args": ["<ذیلی کمانڈ>"],
+      "description": "ڈسکورڈ ویب ہکس کا انتظام کریں",
+      "messages": {
+        "webhookName": "\n%spaces%%prefix% [bright_white]ویب ہک کا نام درج کریں[/bright_white]",
+        "webhookUrl": "\n%spaces%%prefix% [bright_white]ویب ہک کا URL درج کریں[/bright_white]",
+        "webhookAdded": "\n%spaces%%prefix% [bright_white]ویب ہک [bright_cyan]%webhook%[/bright_cyan] کامیابی سے شامل کر دیا گیا ہے۔[/bright_white]",
+        "webhookNotFound": "\n%spaces%%prefix% [bright_white]ویب ہک [bright_cyan]%webhook%[/bright_cyan] نہیں ملا۔[/bright_white]",
+        "webhookRemoved": "\n%spaces%%prefix% [bright_white]ویب ہک [bright_cyan]%webhook%[/bright_cyan] کامیابی سے ہٹا دیا گیا ہے۔[/bright_white]",
+        "noWebhooks": "\n%spaces%%prefix% [bright_white]کوئی ویب ہکس شامل نہیں ہیں۔[/bright_white]",
+        "webhookList": "\n%spaces%%prefix% [bright_white]ویب ہکس:[/bright_white]",
+        "invalidWebhookUrl": "\n%spaces%%prefix% [bright_white]غلط ویب ہک URL۔ ایک درست URL درج کریں۔[/bright_white]",
+        "webhookNotWorking": "\n%spaces%%prefix% [bright_white]ویب ہک [bright_cyan]%webhook%[/bright_cyan] کام نہیں کر رہا۔ اسے حذف کریں اور دوبارہ شامل کریں۔[/bright_white]",
+        "webhookUrlAlreadyExists": "\n%spaces%%prefix% [bright_white]ویب ہک URL [bright_cyan]%webhookUrl%[/bright_cyan] پہلے سے [bright_cyan]%webhook%[/bright_cyan] میں موجود ہے۔[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]غلط آپشن۔ استعمال کریں [green1]add[/green1], [green1]remove[/green1], یا [green1]list[/green1]۔[/bright_white]"
+      }
+    },
     "clearservers": {
       "args": [],
       "description": "Minecraft سرورز کی فہرست صاف کریں",
@@ -487,5 +528,5 @@
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]API سے غلط جواب۔ براہ کرم بعد میں کوشش کریں۔[/bright_white]",
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]کسٹم پورٹ رینج نہیں ملی۔ براہ کرم ایک درست کسٹم پورٹ رینج درج کریں۔[/bright_white]"
   },
-  "fileVersion": "2"
+  "fileVersion": "3"
 }

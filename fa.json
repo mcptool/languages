@@ -162,6 +162,7 @@
       "args": ["<آی‌پی/فایل>", "<پورت‌ها>", "<روش>"],
       "description": "آی‌پی داده شده (یا آی‌پی‌ها از فایل) را در محدوده پورت داده شده با استفاده از nmap، qubo یا masscan اسکن کنید",
       "messages": {
+        "useWebhook": "\n%spaces%%prefix% [bright_white]آیا می‌خواهید از وب‌هوک برای ارسال نتایج استفاده کنید؟ [bright_black]([green1]y/n[/green1])[/bright_black]",
         "scanning": "\n%spaces%%prefix% [bright_white]اسکن آی‌پی [green1]%ip%[/green1] در محدوده پورت [green1]%portRange%[/green1] با استفاده از روش [green1]%method%[/green1]...[/bright_white]",
         "noOpenPorts": "\n%spaces%%prefix% [bright_white]هیچ پورتی باز برای آی‌پی [green1]%ip%[/green1] در محدوده پورت [green1]%portRange%[/green1] یافت نشد.[/bright_white]",
         "openPortsFound": "\n%spaces%%prefix% [green1]%openPorts% [bright_white]پورت باز برای آی‌پی [green1]%ip%[/green1] در محدوده پورت [green1]%portRange%[/green1] یافت شد.[/bright_white]",
@@ -359,6 +360,46 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]طرح نامعتبر است. شما باید یک [bright_cyan]طرح بالاتر[bright_cyan] داشته باشید تا از این دستور استفاده کنید.[/bright_white]"
       }
     },
+    "serverdata": {
+      "args": ["<حالت>"],
+      "description": "تغییر حالت برای دریافت داده‌های سرور",
+      "messages": {
+        "invalidMode": "\n%spaces%%prefix% [bright_white]حالت نامعتبر. حالت مناسب را برای دریافت داده‌های سرور انتخاب کنید. [bright_black]([green1]local mcstatus.io[/green1])[/bright_black]",
+        "success": "\n%spaces%%prefix% [bright_white]حالت برای دریافت داده‌های سرور با موفقیت تغییر یافت.[/bright_white]"
+      }
+    },
+    "customport": {
+      "args": ["<دستور فرعی>"],
+      "description": "مدیریت پورت‌های سفارشی",
+      "messages": {
+        "customportName": "\n%spaces%%prefix% [bright_white]نام پورت سفارشی را وارد کنید[/bright_white]",
+        "customportRange": "\n%spaces%%prefix% [bright_white]محدوده پورت سفارشی را وارد کنید[/bright_white]",
+        "customportAdded": "\n%spaces%%prefix% [bright_white]پورت سفارشی [bright_cyan]%customport%[/bright_cyan] با موفقیت اضافه شد.[/bright_white]",
+        "customportNotFound": "\n%spaces%%prefix% [bright_white]پورت سفارشی [bright_cyan]%customport%[/bright_cyan] یافت نشد.[/bright_white]",
+        "customportRemoved": "\n%spaces%%prefix% [bright_white]پورت سفارشی [bright_cyan]%customport%[/bright_cyan] با موفقیت حذف شد.[/bright_white]",
+        "noCustomports": "\n%spaces%%prefix% [bright_white]هیچ پورت سفارشی اضافه نشده است.[/bright_white]",
+        "customportList": "\n%spaces%%prefix% [bright_white]پورت‌های سفارشی:[/bright_white]",
+        "customportRangeAlreadyExists": "\n%spaces%%prefix% [bright_white]محدوده پورت [bright_cyan]%customportRange%[/bright_cyan] در [bright_cyan]%customport%[/bright_cyan] قبلاً وجود دارد.[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]گزینه نامعتبر. از [green1]اضافه کردن[/green1], [green1]حذف کردن[/green1], یا [green1]لیست کردن[/green1] استفاده کنید.[/bright_white]"
+      }
+    },
+    "webhook": {
+      "args": ["<دستور فرعی>"],
+      "description": "مدیریت webhook های دیسکورد",
+      "messages": {
+        "webhookName": "\n%spaces%%prefix% [bright_white]نام webhook را وارد کنید[/bright_white]",
+        "webhookUrl": "\n%spaces%%prefix% [bright_white]URL webhook را وارد کنید[/bright_white]",
+        "webhookAdded": "\n%spaces%%prefix% [bright_white]webhook [bright_cyan]%webhook%[/bright_cyan] با موفقیت اضافه شد.[/bright_white]",
+        "webhookNotFound": "\n%spaces%%prefix% [bright_white]webhook [bright_cyan]%webhook%[/bright_cyan] یافت نشد.[/bright_white]",
+        "webhookRemoved": "\n%spaces%%prefix% [bright_white]webhook [bright_cyan]%webhook%[/bright_cyan] با موفقیت حذف شد.[/bright_white]",
+        "noWebhooks": "\n%spaces%%prefix% [bright_white]هیچ webhook اضافه نشده است.[/bright_white]",
+        "webhookList": "\n%spaces%%prefix% [bright_white]webhook‌ها:[/bright_white]",
+        "invalidWebhookUrl": "\n%spaces%%prefix% [bright_white]URL نامعتبر webhook. لطفاً یک URL معتبر وارد کنید.[/bright_white]",
+        "webhookNotWorking": "\n%spaces%%prefix% [bright_white]webhook [bright_cyan]%webhook%[/bright_cyan] کار نمی‌کند. آن را حذف کرده و دوباره اضافه کنید.[/bright_white]",
+        "webhookUrlAlreadyExists": "\n%spaces%%prefix% [bright_white]URL webhook [bright_cyan]%webhookUrl%[/bright_cyan] قبلاً در [bright_cyan]%webhook%[/bright_cyan] وجود دارد.[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]گزینه نامعتبر. از [green1]اضافه کردن[/green1], [green1]حذف کردن[/green1], یا [green1]لیست کردن[/green1] استفاده کنید.[/bright_white]"
+      }
+    },
     "clearservers": {
       "args": [],
       "description": "لیست سرورهای ماینکرفت را پاک کنید",
@@ -487,5 +528,5 @@
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]پاسخ نادرست از API. لطفاً بعداً دوباره امتحان کنید.[/bright_white]",
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]محدوده پورت سفارشی یافت نشد. لطفاً یک محدوده پورت سفارشی وارد کنید.[/bright_white]"
   },
-  "fileVersion": "2"
+  "fileVersion": "3"
 }

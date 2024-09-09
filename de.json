@@ -162,6 +162,7 @@
       "args": ["<IP-Adresse/Datei>", "<Ports>", "<Methode>"],
       "description": "Scanne die angegebene IP-Adresse (oder IPs aus einer Datei) im angegebenen Portbereich mit nmap, qubo oder masscan",
       "messages": {
+        "useWebhook": "\n%spaces%%prefix% [bright_white]Möchtest du einen Webhook verwenden, um die Ergebnisse des Scans zu erhalten? [bright_black]([green1]y/n[/green1])[/bright_black]",
         "scanning": "\n%spaces%%prefix% [bright_white]Scanne die IP [green1]%ip%[/green1] im Portbereich [green1]%portRange%[/green1] mit der Methode [green1]%method%[/green1]...[/bright_white]",
         "noOpenPorts": "\n%spaces%%prefix% [bright_white]Keine offenen Ports für die IP [green1]%ip%[/green1] im Portbereich [green1]%portRange%[/green1] gefunden.[/bright_white]",
         "openPortsFound": "\n%spaces%%prefix% [green1]%openPorts% [bright_white]Offene Ports für die IP [green1]%ip%[/green1] im Portbereich [green1]%portRange%[/green1] gefunden.[/bright_white]",
@@ -487,5 +488,5 @@
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Ungültige Antwort von der API. Bitte versuche es später erneut.[/bright_white]",
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]Der benutzerdefinierte Portbereich wurde nicht gefunden. Bitte gib einen gültigen Portbereich ein.[/bright_white]"
   },
-  "fileVersion": "2"
+  "fileVersion": "3"
 }

@@ -162,6 +162,7 @@
       "args": ["<ip/fichier>", "<ports>", "<méthode>"],
       "description": "Scannez l'IP donnée (ou les IPs du fichier) dans la plage de ports donnée en utilisant nmap, qubo ou masscan",
       "messages": {
+        "useWebhook": "\n%spaces%%prefix% [bright_white]Souhaitez-vous utiliser un webhook pour envoyer les résultats du scan ? [bright_black]([green1]y/n[/green1])[/bright_black]",
         "scanning": "\n%spaces%%prefix% [bright_white]Scan de l'IP [green1]%ip%[/green1] dans la plage de ports [green1]%portRange%[/green1] en utilisant la méthode [green1]%method%[/green1]...[/bright_white]",
         "noOpenPorts": "\n%spaces%%prefix% [bright_white]Aucun port ouvert trouvé pour l'IP [green1]%ip%[/green1] dans la plage de ports [green1]%portRange%[/green1].[/bright_white]",
         "openPortsFound": "\n%spaces%%prefix% [green1]%openPorts% [bright_white]ports ouverts trouvés pour l'IP [green1]%ip%[/green1] dans la plage de ports [green1]%portRange%[/green1].[/bright_white]",
@@ -359,6 +360,46 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]Plan invalide. Vous devez avoir un [bright_cyan]plan supérieur[bright_cyan] pour utiliser cette commande.[/bright_white]"
       }
     },
+    "serverdata": {
+      "args": ["<mode>"],
+      "description": "Changer le mode pour obtenir les données du serveur",
+      "messages": {
+        "invalidMode": "\n%spaces%%prefix% [bright_white]Mode invalide. Sélectionnez le mode pour obtenir les données du serveur. [bright_black]([green1]local mcstatus.io[/green1])[/bright_black]",
+        "success": "\n%spaces%%prefix% [bright_white]Le mode pour obtenir les données du serveur a été modifié avec succès.[/bright_white]"
+      }
+    },
+    "customport": {
+      "args": ["<sous-commande>"],
+      "description": "Gérer les ports personnalisés",
+      "messages": {
+        "customportName": "\n%spaces%%prefix% [bright_white]Entrez le nom du port personnalisé[/bright_white]",
+        "customportRange": "\n%spaces%%prefix% [bright_white]Entrez la plage du port personnalisé[/bright_white]",
+        "customportAdded": "\n%spaces%%prefix% [bright_white]Le port personnalisé [bright_cyan]%customport%[/bright_cyan] a été ajouté avec succès.[/bright_white]",
+        "customportNotFound": "\n%spaces%%prefix% [bright_white]Le port personnalisé [bright_cyan]%customport%[/bright_cyan] n'a pas été trouvé.[/bright_white]",
+        "customportRemoved": "\n%spaces%%prefix% [bright_white]Le port personnalisé [bright_cyan]%customport%[/bright_cyan] a été supprimé avec succès.[/bright_white]",
+        "noCustomports": "\n%spaces%%prefix% [bright_white]Aucun port personnalisé n'a été ajouté.[/bright_white]",
+        "customportList": "\n%spaces%%prefix% [bright_white]Ports personnalisés:[/bright_white]",
+        "customportRangeAlreadyExists": "\n%spaces%%prefix% [bright_white]La plage de ports [bright_cyan]%customportRange%[/bright_cyan] existe déjà dans [bright_cyan]%customport%[/bright_cyan].[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]Option invalide. Utilisez [green1]ajouter[/green1], [green1]supprimer[/green1], ou [green1]lister[/green1].[/bright_white]"
+      }
+    },
+    "webhook": {
+      "args": ["<sous-commande>"],
+      "description": "Gérer les webhooks Discord",
+      "messages": {
+        "webhookName": "\n%spaces%%prefix% [bright_white]Entrez le nom du webhook[/bright_white]",
+        "webhookUrl": "\n%spaces%%prefix% [bright_white]Entrez l'URL du webhook[/bright_white]",
+        "webhookAdded": "\n%spaces%%prefix% [bright_white]Le webhook [bright_cyan]%webhook%[/bright_cyan] a été ajouté avec succès.[/bright_white]",
+        "webhookNotFound": "\n%spaces%%prefix% [bright_white]Le webhook [bright_cyan]%webhook%[/bright_cyan] n'a pas été trouvé.[/bright_white]",
+        "webhookRemoved": "\n%spaces%%prefix% [bright_white]Le webhook [bright_cyan]%webhook%[/bright_cyan] a été supprimé avec succès.[/bright_white]",
+        "noWebhooks": "\n%spaces%%prefix% [bright_white]Aucun webhook n'a été ajouté.[/bright_white]",
+        "webhookList": "\n%spaces%%prefix% [bright_white]Webhooks:[/bright_white]",
+        "invalidWebhookUrl": "\n%spaces%%prefix% [bright_white]URL de webhook invalide. Entrez une URL valide.[/bright_white]",
+        "webhookNotWorking": "\n%spaces%%prefix% [bright_white]Le webhook [bright_cyan]%webhook%[/bright_cyan] ne fonctionne pas. Supprimez-le et ajoutez-le à nouveau.[/bright_white]",
+        "webhookUrlAlreadyExists": "\n%spaces%%prefix% [bright_white]L'URL du webhook [bright_cyan]%webhookUrl%[/bright_cyan] existe déjà dans [bright_cyan]%webhook%[/bright_cyan].[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]Option invalide. Utilisez [green1]ajouter[/green1], [green1]supprimer[/green1], ou [green1]lister[/green1].[/bright_white]"
+      }
+    },
     "clearservers": {
       "args": [],
       "description": "Effacez la liste des serveurs Minecraft",
@@ -487,5 +528,5 @@
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Réponse incorrecte de l'API. Veuillez réessayer plus tard.[/bright_white]",
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]Plage de ports personnalisée non trouvée. Veuillez entrer une plage de ports personnalisée valide.[/bright_white]"
   },
-  "fileVersion": "2"
+  "fileVersion": "3"
 }

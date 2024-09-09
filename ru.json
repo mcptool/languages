@@ -162,6 +162,7 @@
       "args": ["<ip/файл>", "<порты>", "<метод>"],
       "description": "Сканировать указанный IP (или файл с IP) в указанном диапазоне портов с использованием nmap, qubo или masscan",
       "messages": {
+        "useWebhook": "\n%spaces%%prefix% [bright_white]Хотите использовать вебхук для отправки результатов сканирования? [bright_black]([green1]y/n[/green1])[/bright_black]",
         "scanning": "\n%spaces%%prefix% [bright_white]Сканирование введенного IP [green1]%ip%[/green1] с диапазоном портов [green1]%portRange%[/green1] с использованием метода [green1]%method%[/green1]...[/bright_white]",
         "noOpenPorts": "\n%spaces%%prefix% [bright_white]Открытые порты для введенного IP [green1]%ip%[/green1] в диапазоне портов [green1]%portRange%[/green1] не найдены.[/bright_white]",
         "openPortsFound": "\n%spaces%%prefix% [green1]%openPorts% [bright_white]открытых портов найдено для введенного IP [green1]%ip%[/green1] в диапазоне портов [green1]%portRange%[/green1].[/bright_white]",
@@ -359,6 +360,46 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]Неверный план. Вы должны иметь [bright_cyan]Расширенный[/bright_cyan] план, чтобы использовать эту команду.[/bright_white]"
       }
     },
+    "serverdata": {
+      "args": ["<режим>"],
+      "description": "Изменить режим для получения данных с сервера",
+      "messages": {
+        "invalidMode": "\n%spaces%%prefix% [bright_white]Неверный режим. Выберите режим для получения данных с сервера. [bright_black]([green1]local mcstatus.io[/green1])[/bright_black]",
+        "success": "\n%spaces%%prefix% [bright_white]Режим получения данных с сервера успешно изменен.[/bright_white]"
+      }
+    },
+    "customport": {
+      "args": ["<подкоманда>"],
+      "description": "Управление пользовательскими портами",
+      "messages": {
+        "customportName": "\n%spaces%%prefix% [bright_white]Введите имя пользовательского порта[/bright_white]",
+        "customportRange": "\n%spaces%%prefix% [bright_white]Введите диапазон пользовательского порта[/bright_white]",
+        "customportAdded": "\n%spaces%%prefix% [bright_white]Пользовательский порт [bright_cyan]%customport%[/bright_cyan] успешно добавлен.[/bright_white]",
+        "customportNotFound": "\n%spaces%%prefix% [bright_white]Пользовательский порт [bright_cyan]%customport%[/bright_cyan] не найден.[/bright_white]",
+        "customportRemoved": "\n%spaces%%prefix% [bright_white]Пользовательский порт [bright_cyan]%customport%[/bright_cyan] успешно удален.[/bright_white]",
+        "noCustomports": "\n%spaces%%prefix% [bright_white]Нет добавленных пользовательских портов.[/bright_white]",
+        "customportList": "\n%spaces%%prefix% [bright_white]Пользовательские порты:[/bright_white]",
+        "customportRangeAlreadyExists": "\n%spaces%%prefix% [bright_white]Диапазон портов [bright_cyan]%customportRange%[/bright_cyan] уже существует в [bright_cyan]%customport%[/bright_cyan].[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]Неверная опция. Используйте [green1]добавить[/green1], [green1]удалить[/green1] или [green1]список[/green1].[/bright_white]"
+      }
+    },
+    "webhook": {
+      "args": ["<подкоманда>"],
+      "description": "Управление вебхуками Discord",
+      "messages": {
+        "webhookName": "\n%spaces%%prefix% [bright_white]Введите имя вебхука[/bright_white]",
+        "webhookUrl": "\n%spaces%%prefix% [bright_white]Введите URL вебхука[/bright_white]",
+        "webhookAdded": "\n%spaces%%prefix% [bright_white]Вебхук [bright_cyan]%webhook%[/bright_cyan] успешно добавлен.[/bright_white]",
+        "webhookNotFound": "\n%spaces%%prefix% [bright_white]Вебхук [bright_cyan]%webhook%[/bright_cyan] не найден.[/bright_white]",
+        "webhookRemoved": "\n%spaces%%prefix% [bright_white]Вебхук [bright_cyan]%webhook%[/bright_cyan] успешно удален.[/bright_white]",
+        "noWebhooks": "\n%spaces%%prefix% [bright_white]Нет добавленных вебхуков.[/bright_white]",
+        "webhookList": "\n%spaces%%prefix% [bright_white]Вебхуки:[/bright_white]",
+        "invalidWebhookUrl": "\n%spaces%%prefix% [bright_white]Неверный URL вебхука. Введите корректный URL.[/bright_white]",
+        "webhookNotWorking": "\n%spaces%%prefix% [bright_white]Вебхук [bright_cyan]%webhook%[/bright_cyan] не работает. Удалите его и добавьте снова.[/bright_white]",
+        "webhookUrlAlreadyExists": "\n%spaces%%prefix% [bright_white]URL вебхука [bright_cyan]%webhookUrl%[/bright_cyan] уже существует в [bright_cyan]%webhook%[/bright_cyan].[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]Неверная опция. Используйте [green1]добавить[/green1], [green1]удалить[/green1] или [green1]список[/green1].[/bright_white]"
+      }
+    },
     "clearservers": {
       "args": [],
       "description": "Очистить список серверов Minecraft",
@@ -487,5 +528,5 @@
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Недействительный ответ от API паролей. Попробуйте позже.[/bright_white]",
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]Диапазон портов не найден в файле конфигурации. Введите действительный диапазон портов.[/bright_white]"
   },
-  "fileVersion": "2"
+  "fileVersion": "3"
 }
