@@ -360,6 +360,14 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]Invalid plan. You must have a [bright_cyan]Advanced[/bright_cyan] plan to use this command.[/bright_white]"
       }
     },
+    "serverdata": {
+      "args": ["<mode>"],
+      "description": "Change the mode to get the server data",
+      "messages": {
+        "invalidMode": "\n%spaces%%prefix% [bright_white]Invalid mode. Select the mode to get the server data. [bright_black]([green1]local mcstatus.io[/green1])[/bright_black]",
+        "success": "\n%spaces%%prefix% [bright_white]The mode to get the server data has been changed successfully.[/bright_white]"
+      }
+    },
     "webhook": {
       "args": ["<subcommand>"],
       "description": "Manage the discord webhooks",
@@ -505,5 +513,5 @@
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Invalid response from the password API. Please try again later.[/bright_white]",
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]The custom port range was not found. Please enter a valid custom port range.[/bright_white]"
   },
-  "fileVersion": "2.4"
+  "fileVersion": "2.5"
 }
