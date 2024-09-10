@@ -360,6 +360,13 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]Invalid plan. You must have a [bright_cyan]Advanced[/bright_cyan] plan to use this command.[/bright_white]"
       }
     },
+    "path": {
+      "args": [],
+      "description": "Show the path of the MCPTool",
+      "messages": {
+        "path": "\n%spaces%%prefix% [bright_white]The path of the MCPTool is [bright_cyan]%path%[/bright_cyan].[/bright_white]"
+      }
+    },
     "serverdata": {
       "args": ["<mode>"],
       "description": "Change the mode to get the server data",
@@ -529,5 +536,5 @@
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]The custom port range was not found. Please enter a valid custom port range.[/bright_white]",
     "commandNotSupportedInTermuxAndroid": "\n%spaces%%prefix% [bright_white]This command is not supported in Termux Android"
   },
-  "fileVersion": "3.1"
+  "fileVersion": "4"
 }

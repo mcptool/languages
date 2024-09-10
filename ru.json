@@ -360,6 +360,13 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]Неверный план. Вы должны иметь [bright_cyan]Расширенный[/bright_cyan] план, чтобы использовать эту команду.[/bright_white]"
       }
     },
+    "path": {
+      "args": [],
+      "description": "Показать путь к MCPTool",
+      "messages": {
+        "path": "\n%spaces%%prefix% [bright_white]Путь к MCPTool: [bright_cyan]%path%[/bright_cyan][/bright_white]"
+      }
+    },
     "serverdata": {
       "args": ["<режим>"],
       "description": "Изменить режим для получения данных с сервера",
@@ -529,5 +536,5 @@
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]Диапазон портов не найден в файле конфигурации. Введите действительный диапазон портов.[/bright_white]",
     "commandNotSupportedInTermuxAndroid": "\n%spaces%%prefix% [bright_white]Эта команда не поддерживается в Termux на Android. Попробуйте выполнить эту команду на другой платформе.[/bright_white]"
   },
-  "fileVersion": "3.1"
+  "fileVersion": "4"
 }

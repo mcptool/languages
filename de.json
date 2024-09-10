@@ -360,6 +360,53 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]Ungültiger Plan. Du benötigst einen [bright_cyan]höheren Plan[bright_cyan], um diesen Befehl zu verwenden.[/bright_white]"
       }
     },
+    "path": {
+      "args": [],
+      "description": "Zeige den Pfad des MCPTool",
+      "messages": {
+        "path": "\n%spaces%%prefix% [bright_white]Pfad des MCPTool: [bright_cyan]%path%[/bright_cyan][/bright_white]"
+      }
+    },
+    "serverdata": {
+      "args": ["<mode>"],
+      "description": "Ändern Sie den Modus, um die Serverdaten abzurufen",
+      "messages": {
+        "invalidMode": "\n%spaces%%prefix% [bright_white]Ungültiger Modus. Wählen Sie den Modus, um die Serverdaten abzurufen. [bright_black]([green1]lokal mcstatus.io[/green1])[/bright_black]",
+        "success": "\n%spaces%%prefix% [bright_white]Der Modus zum Abrufen der Serverdaten wurde erfolgreich geändert.[/bright_white]"
+      }
+    },
+    "customport": {
+      "args": ["<subcommand>"],
+      "description": "Verwalten Sie die benutzerdefinierten Ports",
+      "messages": {
+        "customportName": "\n%spaces%%prefix% [bright_white]Geben Sie den Namen des benutzerdefinierten Ports ein[/bright_white]",
+        "customportRange": "\n%spaces%%prefix% [bright_white]Geben Sie den Bereich des benutzerdefinierten Ports ein[/bright_white]",
+        "customportAdded": "\n%spaces%%prefix% [bright_white]Der benutzerdefinierte Port [bright_cyan]%customport%[/bright_cyan] wurde erfolgreich hinzugefügt.[/bright_white]",
+        "customportNotFound": "\n%spaces%%prefix% [bright_white]Der benutzerdefinierte Port [bright_cyan]%customport%[/bright_cyan] wurde nicht gefunden.[/bright_white]",
+        "customportRemoved": "\n%spaces%%prefix% [bright_white]Der benutzerdefinierte Port [bright_cyan]%customport%[/bright_cyan] wurde erfolgreich entfernt.[/bright_white]",
+        "noCustomports": "\n%spaces%%prefix% [bright_white]Es wurden keine benutzerdefinierten Ports hinzugefügt.[/bright_white]",
+        "customportList": "\n%spaces%%prefix% [bright_white]Benutzerdefinierte Ports:[/bright_white]",
+        "customportRangeAlreadyExists": "\n%spaces%%prefix% [bright_white]Der Portbereich [bright_cyan]%customportRange%[/bright_cyan] existiert bereits in [bright_cyan]%customport%[/bright_cyan].[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]Ungültige Option. Verwenden Sie [green1]add[/green1], [green1]remove[/green1] oder [green1]list[/green1].[/bright_white]"
+      }
+    },
+    "webhook": {
+      "args": ["<subcommand>"],
+      "description": "Verwalten Sie die Discord-Webhooks",
+      "messages": {
+        "webhookName": "\n%spaces%%prefix% [bright_white]Geben Sie den Namen des Webhooks ein[/bright_white]",
+        "webhookUrl": "\n%spaces%%prefix% [bright_white]Geben Sie die URL des Webhooks ein[/bright_white]",
+        "webhookAdded": "\n%spaces%%prefix% [bright_white]Der Webhook [bright_cyan]%webhook%[/bright_cyan] wurde erfolgreich hinzugefügt.[/bright_white]",
+        "webhookNotFound": "\n%spaces%%prefix% [bright_white]Der Webhook [bright_cyan]%webhook%[/bright_cyan] wurde nicht gefunden.[/bright_white]",
+        "webhookRemoved": "\n%spaces%%prefix% [bright_white]Der Webhook [bright_cyan]%webhook%[/bright_cyan] wurde erfolgreich entfernt.[/bright_white]",
+        "noWebhooks": "\n%spaces%%prefix% [bright_white]Es wurden keine Webhooks hinzugefügt.[/bright_white]",
+        "webhookList": "\n%spaces%%prefix% [bright_white]Webhooks:[/bright_white]",
+        "invalidWebhookUrl": "\n%spaces%%prefix% [bright_white]Ungültige Webhook-URL. Geben Sie eine gültige URL ein.[/bright_white]",
+        "webhookNotWorking": "\n%spaces%%prefix% [bright_white]Der Webhook [bright_cyan]%webhook%[/bright_cyan] funktioniert nicht. Löschen Sie ihn und fügen Sie ihn erneut hinzu.[/bright_white]",
+        "webhookUrlAlreadyExists": "\n%spaces%%prefix% [bright_white]Die Webhook-URL [bright_cyan]%webhookUrl%[/bright_cyan] existiert bereits in [bright_cyan]%webhook%[/bright_cyan].[/bright_white]",
+        "invalidOption": "\n%spaces%%prefix% [bright_white]Ungültige Option. Verwenden Sie [green1]add[/green1], [green1]remove[/green1] oder [green1]list[/green1].[/bright_white]"
+      }
+    },
     "clearservers": {
       "args": [],
       "description": "Lösche die Liste der Minecraft-Server",
@@ -489,5 +536,5 @@
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]Der benutzerdefinierte Portbereich wurde nicht gefunden. Bitte gib einen gültigen Portbereich ein.[/bright_white]",
     "commandNotSupportedInTermuxAndroid": "\n%spaces%%prefix% [bright_white]Dieser Befehl wird in Termux auf Android nicht unterstützt.[/bright_white]"
   },
-  "fileVersion": "3.1"
+  "fileVersion": "4"
 }

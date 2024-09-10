@@ -360,6 +360,13 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]Plan invalide. Vous devez avoir un [bright_cyan]plan supérieur[bright_cyan] pour utiliser cette commande.[/bright_white]"
       }
     },
+    "path": {
+      "args": [],
+      "description": "Affichez le chemin du MCPTool",
+      "messages": {
+        "path": "\n%spaces%%prefix% [bright_white]Chemin du MCPTool : [bright_cyan]%path%[/bright_cyan][/bright_white]"
+      }
+    },
     "serverdata": {
       "args": ["<mode>"],
       "description": "Changer le mode pour obtenir les données du serveur",
@@ -529,5 +536,5 @@
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]Plage de ports personnalisée non trouvée. Veuillez entrer une plage de ports personnalisée valide.[/bright_white]",
     "commandNotSupportedInTermuxAndroid": "\n%spaces%%prefix% [bright_white]Cette commande n'est pas prise en charge dans Termux Android.[/bright_white]"
   },
-  "fileVersion": "3.1"
+  "fileVersion": "4"
 }

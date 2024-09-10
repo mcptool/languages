@@ -360,6 +360,13 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]طرح نامعتبر است. شما باید یک [bright_cyan]طرح بالاتر[bright_cyan] داشته باشید تا از این دستور استفاده کنید.[/bright_white]"
       }
     },
+    "path": {
+      "args": [],
+      "description": "مسیر MCPTool را نشان دهید",
+      "messages": {
+        "path": "\n%spaces%%prefix% [bright_white]مسیر MCPTool: [bright_cyan]%path%[/bright_cyan][/bright_white]"
+      }
+    },
     "serverdata": {
       "args": ["<حالت>"],
       "description": "تغییر حالت برای دریافت داده‌های سرور",
@@ -529,5 +536,5 @@
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]محدوده پورت سفارشی یافت نشد. لطفاً یک محدوده پورت سفارشی وارد کنید.[/bright_white]",
     "commandNotSupportedInTermuxAndroid": "\n%spaces%%prefix% [bright_white]این دستور در Termux (اندروید) پشتیبانی نمی‌شود.[/bright_white]"
   },
-  "fileVersion": "3.1"
+  "fileVersion": "4"
 }

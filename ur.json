@@ -360,6 +360,13 @@
         "invalidPlan": "\n%spaces%%prefix% [bright_white]غلط منصوبہ۔ آپ کو اس کمانڈ کو استعمال کرنے کے لیے [bright_cyan]اعلی[bright_cyan] منصوبہ ہونا چاہیے۔[/bright_white]"
       }
     },
+    "path": {
+      "args": [],
+      "description": "MCPTool کا راستہ دکھائیں",
+      "messages": {
+        "path": "\n%spaces%%prefix% [bright_white]MCPTool کا راستہ: [bright_cyan]%path%[/bright_cyan][/bright_white]"
+      }
+    },
     "serverdata": {
       "args": ["<موڈ>"],
       "description": "سرور کے ڈیٹا حاصل کرنے کے لیے موڈ تبدیل کریں",
@@ -529,5 +536,5 @@
     "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]کسٹم پورٹ رینج نہیں ملی۔ براہ کرم ایک درست کسٹم پورٹ رینج درج کریں۔[/bright_white]",
     "commandNotSupportedInTermuxAndroid": "\n%spaces%%prefix% [bright_white]یہ کمانڈ Termux Android پر معاونت نہیں کرتی۔[/bright_white]"
   },
-  "fileVersion": "3.1"
+  "fileVersion": "4"
 }
