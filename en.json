@@ -526,7 +526,8 @@
     "rootRequired": "\n%spaces%%prefix% [bright_white]Root permission is required to execute this command. Close MCPTool and run it as root to fix this issue.",
     "passwordApiError": "\n%spaces%%prefix% [bright_white]Error getting password from the API. Please try again later.[/bright_white]",
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]Invalid response from the password API. Please try again later.[/bright_white]",
-    "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]The custom port range was not found. Please enter a valid custom port range.[/bright_white]"
+    "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]The custom port range was not found. Please enter a valid custom port range.[/bright_white]",
+    "commandNotSupportedInTermuxAndroid": "\n%spaces%%prefix% [bright_white]This command is not supported in Termux Android"
   },
-  "fileVersion": "3"
+  "fileVersion": "3.1"
 }

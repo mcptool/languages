@@ -526,7 +526,8 @@
     "rootRequired": "\n%spaces%%prefix% [bright_white]یہ کمانڈ چلانے کے لیے روٹ کی اجازت درکار ہے۔ براہ کرم MCPTool کو بند کریں اور مسئلہ حل کرنے کے لیے اسے روٹ کے طور پر چلائیں۔",
     "passwordApiError": "\n%spaces%%prefix% [bright_white]API سے پاس ورڈ حاصل کرنے میں غلطی ہوئی۔ براہ کرم بعد میں کوشش کریں۔[/bright_white]",
     "passwordApiInvalidResponse": "\n%spaces%%prefix% [bright_white]API سے غلط جواب۔ براہ کرم بعد میں کوشش کریں۔[/bright_white]",
-    "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]کسٹم پورٹ رینج نہیں ملی۔ براہ کرم ایک درست کسٹم پورٹ رینج درج کریں۔[/bright_white]"
+    "customPortRangeNotFound": "\n%spaces%%prefix% [bright_white]کسٹم پورٹ رینج نہیں ملی۔ براہ کرم ایک درست کسٹم پورٹ رینج درج کریں۔[/bright_white]",
+    "commandNotSupportedInTermuxAndroid": "\n%spaces%%prefix% [bright_white]یہ کمانڈ Termux Android پر معاونت نہیں کرتی۔[/bright_white]"
   },
-  "fileVersion": "3"
+  "fileVersion": "3.1"
 }
